@@ -31,6 +31,43 @@ body {
   background-attachment: fixed;
 }
 
+.headerSite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #002fff;
+  width: 100%;
+  height: 100px;
+  color: #fff;
+  font-size: 36px;
+}
+
+.startPage {
+  line-height: normal;
+}
+
+.startPage h1{
+  text-align: start;
+}
+
+.startPage p {
+  font-size: 32px;
+}
+
+.startPage button {
+  margin-top: 40px;
+  width: 125px;
+  height: 60px;
+  background-color: #002fff;
+  color: #fff;
+  font-size: 24px;
+}
+
+.startPage button:hover {
+  cursor: pointer;
+  background-color: #001c97;
+}
+
 .start {
   margin: 0 auto;
   padding-top: 100px;
