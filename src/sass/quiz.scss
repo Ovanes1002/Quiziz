@@ -1,0 +1,30 @@
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+html {
+	height: 100%;
+}
+body {
+	width: 100%;
+	min-height: 100%;
+	font-family: "Times New Roman", Helvetica, sans-serif;
+	font-size: 28px;
+	line-height: 20px;
+	color: #ffffff;
+	background: #2d53ff;
+	background: -webkit-linear-gradient(top left, #2d53ff, #31b1a2);
+	background: -moz-linear-gradient(top left, #2d53ff, #31b1a2);
+	background: linear-gradient(to bottom right, #2d53ff, #31b1a2);
+	background-attachment: fixed;
+}
+
+
+@import 'blocks/block';
