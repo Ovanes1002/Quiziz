@@ -9,20 +9,19 @@
 	font-size: 36px;
 }
 .startPage {
+	text-align: center;
 	line-height: normal;
-	h1 {
-		text-align: start;
-	}
 	p {
 		font-size: 32px;
+		margin-bottom: 20px;
 	}
 	button {
 		margin-top: 40px;
-		width: 125px;
-		height: 60px;
+		width: 150px;
+		height: 75px;
 		background-color: #002fff;
 		color: #fff;
-		font-size: 24px;
+		font-size: 28px;
 		&:hover {
 			cursor: pointer;
 			background-color: #001c97;
@@ -344,6 +343,25 @@ input {
     a {
         padding: 10px 5px;
     }
+	.headerSite {
+		height: 70px;
+		font-size: 28px;
+	}
+	.startPage {
+		h1 {
+			font-size: 32px;
+		}
+		p {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+		button {
+			margin-top: 20px;
+			width: 120px;
+			height: 60px;
+			font-size: 24px;
+		}
+	}
     .startMenu {
         min-height: 190px;
     }

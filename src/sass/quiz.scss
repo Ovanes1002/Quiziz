@@ -19,11 +19,12 @@ body {
 	font-size: 28px;
 	line-height: 20px;
 	color: #ffffff;
-	background: #2d53ff;
-	background: -webkit-linear-gradient(top left, #2d53ff, #31b1a2);
-	background: -moz-linear-gradient(top left, #2d53ff, #31b1a2);
-	background: linear-gradient(to bottom right, #2d53ff, #31b1a2);
+	// background: #2d53ff;
+	// background: -webkit-linear-gradient(top left, #2d53ff, #31b1a2);
+	// background: -moz-linear-gradient(top left, #2d53ff, #31b1a2);
+	// background: linear-gradient(to bottom right, #2d53ff, #31b1a2);
 	background-attachment: fixed;
+	background: url('../images/quiz_bg.jpeg') center (center/cover) no-repeat;
 }
 
 
