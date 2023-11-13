@@ -1,0 +1,46 @@
+@media (max-width: 767px) {
+	body {
+        font-size: calc(0.7em + 1.5vw);
+	}
+    a {
+        padding: 10px 5px;
+    }
+	.headerSite {
+		height: 70px;
+		font-size: 28px;
+	}
+	.startPage {
+		h1 {
+			font-size: 32px;
+		}
+		p {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+		button {
+			margin-top: 20px;
+			width: 120px;
+			height: 60px;
+			font-size: 24px;
+		}
+	}
+    .startMenu {
+        min-height: 190px;
+    }
+
+    .button {
+        img {
+            height: calc(12em + 1.5vw);
+        }
+    }
+
+    .button:nth-child(-n + 2),
+    .topic:nth-child(-n + 2),
+    .score_topic:nth-child(-n + 2) {
+        margin-bottom: 15px;
+    }
+    audio {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+}

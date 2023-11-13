@@ -22,7 +22,7 @@ const scoreArt = document.querySelector(".score__art");
 const scoreHistory = document.querySelector(".score__history");
 const count = document.querySelector(".questionNumber");
 const points = document.querySelector(".points");
-const start = document.querySelector(".start");
+const startQuiz = document.querySelector(".startQuiz");
 const playerName = document.getElementById("playerName"); // не используется
 const finish = document.querySelector(".finish");
 const playerResult = document.querySelector(".playerResult");
@@ -255,13 +255,13 @@ buttons.forEach((button) => {
 });
 
 // При клике на кнопку "Начать":
-// убирается начаьная панель class="start"
+// убирается начаьная панель class="startQuiz"
 // добавляется контейнер с карточкой викторины
 startButton.addEventListener("click", function (evt) {
   // evt.preventDefault();
   userName = nameId.value;
   if (submitButton.style.backgroundColor == "lightgreen") {
-    start.classList.add("hide");
+    startQuiz.classList.add("hide");
     nextButton.classList.add("hide");
     chooseTopic.classList.remove("hide");
     exitNext.classList.remove("hide");
@@ -366,7 +366,7 @@ quitQuiz.addEventListener("click", function (evt) {
   firstWriteAnswer.value = "";
   secondWriteAnswer.value = "";
   thirdWriteAnswer.value = "";
-  start.classList.remove("hide");
+  startQuiz.classList.remove("hide");
   nextButton.classList.remove("hide");
   launchButton.classList.add("hide");
   endButton.classList.add("hide");
@@ -476,7 +476,7 @@ nextButton.addEventListener("click", (evt) => {
 
 backButton.addEventListener("click", (evt) => {
   chooseScoreTopic.classList.add("hide");
-  start.classList.remove("hide");
+  startQuiz.classList.remove("hide");
   // console.log(1);
   // header.classList.add("hide");
   // main.classList.add("hide");
@@ -516,7 +516,7 @@ backButtonHistory.addEventListener("click", (evt) => {
 });
 
 menuButton.addEventListener("click", (evt) => {
-  start.classList.remove("hide");
+  startQuiz.classList.remove("hide");
   header.classList.add("hide");
   main.classList.add("hide");
   footer.classList.add("hide");
@@ -737,12 +737,12 @@ document.addEventListener("submit", function (evt) {
 });
 
 // При клике на кнопку "Результаты":
-// убирается начальная панель class="start"
+// убирается начальная панель class="startQuiz"
 // добавляется таблица с результатами
 scoreButton.addEventListener("click", function (evt) {
   evt.preventDefault();
   finish.classList.add("hide");
-  start.classList.add("hide");
+  startQuiz.classList.add("hide");
   chooseScoreTopic.classList.remove("hide");
 });
 

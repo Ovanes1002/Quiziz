@@ -1,0 +1,21 @@
+.startPage {
+	text-align: center;
+	line-height: normal;
+	p {
+		font-size: 32px;
+		margin-bottom: 20px;
+	}
+	button {
+		margin-top: 40px;
+		width: 150px;
+		height: 75px;
+		background-color: #002fff;
+		color: #fff;
+		font-size: 28px;
+		border-radius: 15px;
+		&:hover {
+			cursor: pointer;
+			background-color: #001c97;
+		}
+	}
+}
