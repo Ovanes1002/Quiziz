@@ -3,6 +3,8 @@ const browserSync  = require('browser-sync');
 const sass         = require('gulp-sass')(require('sass'));
 const cleanCSS     = require('gulp-clean-css');
 const autoprefixer = require('gulp-autoprefixer');
+const terser       = require('gulp-terser');
+const concat       = require('gulp-concat');
 const rename       = require("gulp-rename");
 const imagemin     = require('gulp-imagemin');
 const htmlmin      = require('gulp-htmlmin');
@@ -40,7 +42,9 @@ gulp.task('html', function () {
 });
 
 gulp.task('scripts', function () {
-    return gulp.src("src/js/**/*.js")
+    return gulp.src("src/js/*.js")
+        .pipe(concat('quiz.min.js'))
+        .pipe(terser())
         .pipe(gulp.dest("dist/js"));
 });
 
