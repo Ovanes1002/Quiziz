@@ -6,7 +6,7 @@ backButton.addEventListener("click", (evt) => {
   // main.classList.add("hide");
   // footer.classList.add("hide");
   // exitNext.classList.add("hide");
-  // finish.classList.add("hide");
+  // finishQuiz.classList.add("hide");
   // console.log(2);
 
   // scoreSport.classList.add("hide"); // работает

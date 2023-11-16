@@ -28,6 +28,12 @@ window.addEventListener("click", function (evt) {
   }
 });
 
+
+playButton.addEventListener("click", function (evt) {
+  startPage.classList.add("hide");
+  startQuiz.classList.remove("hide");
+});
+
 // При клике на кнопку "Начать":
 // убирается начаьная панель class="startQuiz"
 // добавляется контейнер с карточкой викторины

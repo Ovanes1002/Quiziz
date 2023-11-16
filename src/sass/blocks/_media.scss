@@ -1,7 +1,29 @@
-@media (max-width: 767px) {
-	body {
+@media screen and (max-width: 1199px) {
+    body {
         font-size: calc(0.7em + 1.5vw);
 	}
+
+    .topic-buttons {
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .button,
+    .topic,
+    .score_topic {
+        width: 34%;
+        font-size: 3vw;
+    }
+
+    .button:nth-child(-n + 2),
+    .topic:nth-child(-n + 2),
+    .score_topic:nth-child(-n + 2) {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+
     a {
         padding: 10px 5px;
     }
@@ -17,27 +39,39 @@
 			font-size: 24px;
 			margin-bottom: 20px;
 		}
-		button {
+		a {
 			margin-top: 20px;
 			width: 120px;
 			height: 60px;
 			font-size: 24px;
 		}
 	}
-    .startMenu {
-        min-height: 190px;
+
+    .button,
+    .topic,
+    .score_topic {
+        width: 45%;
+        // font-size: 3.5vw;
     }
 
-    .button {
-        img {
-            height: calc(12em + 1.5vw);
+    .topic,
+    .score_topic {
+        height: calc(12em + 1.5vw);
+        padding-bottom: 0;
+    }
+    
+    input {
+        &.submit {
+            min-width: 50%;
+            margin-top: 20px;
+            padding: 5px 10px;
         }
     }
-
-    .button:nth-child(-n + 2),
-    .topic:nth-child(-n + 2),
-    .score_topic:nth-child(-n + 2) {
-        margin-bottom: 15px;
+    .startMenu {
+        min-height: 110px;
+        a {
+            width: 70%;
+        }
     }
     audio {
         width: 90%;

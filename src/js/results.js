@@ -4,7 +4,7 @@ menuButton.addEventListener("click", (evt) => {
   main.classList.add("hide");
   footer.classList.add("hide");
   exitNext.classList.add("hide");
-  finish.classList.add("hide");
+  finishQuiz.classList.add("hide");
 });
 
 // При клике на кнопку "Результаты":
@@ -12,7 +12,7 @@ menuButton.addEventListener("click", (evt) => {
 // добавляется таблица с результатами
 scoreButton.addEventListener("click", function (evt) {
   evt.preventDefault();
-  finish.classList.add("hide");
+  finishQuiz.classList.add("hide");
   startQuiz.classList.add("hide");
   chooseScoreTopic.classList.remove("hide");
 });

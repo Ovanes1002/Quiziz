@@ -50,7 +50,7 @@ endButton.addEventListener("click", (evt) => {
   footer.classList.add("hide");
   exitNext.classList.add("hide");
   nextButton.classList.add("hide");
-  finish.classList.remove("hide");
+  finishQuiz.classList.remove("hide");
   playerResult.innerText = userName + ", Ваш результат:" + " " + result;
 
   const newRow = document.createElement("tr");

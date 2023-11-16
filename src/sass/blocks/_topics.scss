@@ -2,21 +2,19 @@
 	margin: 0 auto;
 	width: 100%;
 	min-height: 350px;
-	padding: 15px;
+	// padding: 15px;
 	line-height: 27px;
 	// background-color: #0a133d;
 }
 
 .topic-buttons {
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	justify-content: space-evenly;
-	margin: 40px auto;
+	margin: 20px auto;
+	margin-top: 40px;
 }
 
-.topic-buttons {
-	margin-top: 20px;
-}
 
 .topic,
 .score_topic {
@@ -24,30 +22,22 @@
 	width: 20%;
 	color: white;
 	font-size: 2vw;
-	padding: 10px;
-	background-color: #172048;
-	border: 3px #3153b1 solid;
-	border-radius: 5px;
+	// padding: 10px;
+	// background-color: #00082d;
+	// border: 3px #3153b1 solid;
+	// border-radius: 15px;
+	background: none;
 }
+
+// .topic_name {
+// 	margin-bottom: 15px;
+// }
 
 .button:hover,
 .topic:hover,
 .score_topic:hover {
 	cursor: pointer;
 	background-color: #030c2f;
-}
-
-.button,
-.topic,
-.score_topic {
-	width: 45%;
-	font-size: 3.5vw;
-}
-
-.topic,
-.score_topic {
-	height: calc(12em + 1.5vw);
-	padding-bottom: 0;
 }
 
 .button img,
