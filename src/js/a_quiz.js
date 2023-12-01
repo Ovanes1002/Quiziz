@@ -47,7 +47,8 @@ const startButton     = document.querySelector(".startButton"),
   playerName          = document.getElementById("playerName"), // не используется
   nameInput           = document.querySelector(".nameInput"), // не используется
   nameId              = document.getElementById("name"),
-  submitButton        = document.querySelector(".submit"),
+
+  inputButton        = document.querySelector(".inputButton"),
 
   // table
   tableSport          = document.querySelector(".tableSport"),

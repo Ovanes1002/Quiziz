@@ -1,16 +1,17 @@
 // При изменении поля ввода, менять текст кнопки submitButton
 nameId.addEventListener("input", function (evt) {
-  submitButton.style.backgroundColor = "white";
-  submitButton.value = "Сохранить";
+  // submitButton.style.backgroundColor = "white";
+  inputButton.innerHTML = "СОХРАНИТЬ";
 });
+
+
 
 // При нажатии на input type="submit", менять текст и цвет элемента
 document.addEventListener("submit", function (evt) {
   evt.preventDefault();
   userName = nameId.value;
   if (userName.trim().length >= 1) {
-    submitButton.value = "Сохранено";
-    submitButton.style.backgroundColor = "lightgreen";
+    inputButton.innerHTML = "СОХРАНЕНО!";
   } else {
     modalWindowBack.classList.remove("hide");
   }
@@ -40,7 +41,7 @@ playButton.addEventListener("click", function (evt) {
 startButton.addEventListener("click", function (evt) {
   // evt.preventDefault();
   userName = nameId.value;
-  if (submitButton.style.backgroundColor == "lightgreen") {
+  if (inputButton.innerHTML == "СОХРАНЕНО!") {
     startQuiz.classList.add("hide");
     nextButton.classList.add("hide");
     chooseTopic.classList.remove("hide");
