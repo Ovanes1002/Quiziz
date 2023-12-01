@@ -1,18 +1,19 @@
 .choose_topic {
-	margin: 0 auto;
+	margin: 0 auto 20px;
 	width: 100%;
 	min-height: 350px;
 	// padding: 15px;
 	line-height: 27px;
 	// background-color: #0a133d;
+
 }
 
 .topic-buttons {
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-evenly;
-	margin: 20px auto;
-	margin-top: 40px;
+	// margin: 20px auto;
+	// margin-top: 40px;
 }
 
 
@@ -20,7 +21,7 @@
 .score_topic {
 	position: relative;
 	width: 20%;
-	color: white;
+	color: #cacaca;
 	font-size: 2vw;
 	// padding: 10px;
 	// background-color: #00082d;
@@ -29,9 +30,7 @@
 	background: none;
 }
 
-// .topic_name {
-// 	margin-bottom: 15px;
-// }
+
 
 .button:hover,
 .topic:hover,
@@ -50,7 +49,7 @@
 }
 .topic img,
 .score_topic img {
-	height: 80%;
+	height: 90%;
 }
 
 .backButton,

@@ -3,6 +3,14 @@
         font-size: calc(0.7em + 1.5vw);
 	}
 
+    // .exitNext a {
+    //     width: 30%;
+    // }
+
+    .topic_name {
+    	font-size: 25px;
+    }
+
     .topic-buttons {
         flex-wrap: wrap;
         margin-top: 20px;
@@ -12,7 +20,12 @@
     .topic,
     .score_topic {
         width: 34%;
-        font-size: 3vw;
+        // font-size: 3vw;
+    }
+
+    .topic img,
+    .score_topic img {
+        height: 85%;
     }
 
     .button:nth-child(-n + 2),
@@ -54,19 +67,23 @@
         // font-size: 3.5vw;
     }
 
+    .button {
+        font-size: 16px;
+    }
+
     .topic,
     .score_topic {
         height: calc(12em + 1.5vw);
         padding-bottom: 0;
     }
     
-    input {
-        &.submit {
-            min-width: 50%;
-            margin-top: 20px;
-            padding: 5px 10px;
-        }
-    }
+    // input {
+    //     &.submit {
+    //         min-width: 50%;
+    //         margin-top: 20px;
+    //         padding: 5px 10px;
+    //     }
+    // }
     .startMenu {
         min-height: 110px;
         a {

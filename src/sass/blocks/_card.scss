@@ -1,3 +1,7 @@
+.container {
+	padding-top: 30px;
+}
+
 header {
 	display: flex;
 	justify-content: space-around;
@@ -94,6 +98,7 @@ audio {
 
 footer {
 	width: 100%;
+	margin-bottom: 20px;
 	padding: 10px;
 	background-color: #172048;
 }
@@ -120,6 +125,6 @@ footer {
 .nextButton,
 .endButton,
 .launchButton {
-	margin: 20px 0 0 0;
+	// margin: 20px 0 0 0;
 	text-align: center;
 }
