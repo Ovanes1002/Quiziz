@@ -8,8 +8,37 @@
 	text-align: center;
 	margin: 0 auto 20px auto;
 	line-height: 40px;
-	label {
+	input#name {
+		width: 100%;
+		color: #cacaca;
+		max-width: 350px;
 		font-size: 20px;
+		padding: 5px;
+		border: none;
+		outline: none;
+		border-bottom: 2px #cacaca solid;
+		background: transparent;
+		+ label {
+			transition: all 0.2s ease-in;
+		}
+		&:focus,
+		&.active {
+			+ label {
+				font-size: 20px;
+				transform: translateY(-30px);
+			}
+		}
+	}
+
+}
+
+.input-group {
+	position: relative;
+	label {
+		left: 0;
+		top: 0;
+		position: absolute;
+		pointer-events: none;
 	}
 }
 
@@ -43,20 +72,6 @@
     outline: none;
 }
 
-
-// input {
-// 	&.submit {
-// 		min-width: 40%;
-// 		margin-top: 20px;
-// 		padding: 5px 25px;
-// 		cursor: pointer;
-// 		border: 2px solid #000000;
-// 		border-radius: 5px;
-// 		word-wrap: break-word;
-// 		font-size: 0.9em;
-// 		background-color: white;
-// 	}
-// }
 
 form {
 	display: flex;

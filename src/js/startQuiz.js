@@ -4,13 +4,19 @@ nameId.addEventListener("input", function (evt) {
   inputButton.innerHTML = "СОХРАНИТЬ";
 });
 
+let checkInput = function (input) {
+	if (input.value.trim().length > 0) {
+		input.className = 'active';
+	} else {
+		input.className = '';
+	}
+};
 
-
-// При нажатии на input type="submit", менять текст и цвет элемента
-document.addEventListener("submit", function (evt) {
+// При нажатии на кнопку "СОХРАНИТЬ", менять текст и цвет элемента
+inputButton.addEventListener("click", function (evt) {
   evt.preventDefault();
   userName = nameId.value;
-  if (userName.trim().length >= 1) {
+  if (userName.trim().length > 0) {
     inputButton.innerHTML = "СОХРАНЕНО!";
   } else {
     modalWindowBack.classList.remove("hide");
