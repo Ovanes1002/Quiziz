@@ -38,7 +38,7 @@
 @media (max-width: 767px) {
 
     a {
-        padding: 10px 5px;
+        padding: 15px 10px;
     }
 	.headerSite {
 		height: 70px;
@@ -77,17 +77,29 @@
         padding-bottom: 0;
     }
     
-    // input {
-    //     &.submit {
-    //         min-width: 50%;
-    //         margin-top: 20px;
-    //         padding: 5px 10px;
-    //     }
-    // }
+    .nameInput {
+        input#name {
+            &:focus,
+            &.active {
+                + label {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .inputButton {
+        padding: 15px;
+        width: 100%;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 15px auto;
+    }
+
     .startMenu {
-        min-height: 110px;
+        min-height: 140px;
         a {
-            width: 70%;
+            width: 50%;
         }
     }
     audio {

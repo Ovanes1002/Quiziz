@@ -8,7 +8,8 @@
 	text-align: center;
 	margin: 0 auto 20px auto;
 	line-height: 40px;
-	input#name {
+	
+input#name {
 		width: 100%;
 		color: #cacaca;
 		max-width: 350px;
@@ -29,7 +30,6 @@
 			}
 		}
 	}
-
 }
 
 .input-group {
@@ -43,14 +43,17 @@
 }
 
 .inputButton {
-    width: 200px;
+	display: block;
+    width: 50%;
     font-size: 16px;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
-    margin: 20px;
-    height: 55px;
+    margin: 20px auto;
+	padding: 20px;
+    // height: 55px;
     text-align:center;
+	word-wrap: break-word;
     border: none;
     background-size: 300% 100%;
 	background-image: linear-gradient(to right, #0022bb, #184696, #0022bb,#0022bb, #184696, #0022bb);
@@ -113,7 +116,7 @@ form {
 }
 
 .startMenu {
-	min-height: 160px;
+	min-height: 180px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
