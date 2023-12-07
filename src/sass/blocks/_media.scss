@@ -1,4 +1,4 @@
-@media screen and (max-width: 1199px) {
+@media only screen and (max-width: 1199px) {
     body {
         font-size: calc(0.7em + 1.5vw);
 	}
@@ -20,7 +20,6 @@
     .topic,
     .score_topic {
         width: 34%;
-        // font-size: 3vw;
     }
 
     .topic img,
@@ -35,7 +34,7 @@
     }
 }
 
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
 
     a {
         padding: 15px 10px;
@@ -108,7 +107,7 @@
     }
 }
 
-@media screen and (max-width: 576px) {
+@media only screen and (max-width: 576px) {
     a {
         padding: 10px;
     }
@@ -132,9 +131,24 @@
         }
     }
 
+    .topic-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button:nth-child(-n+2), .score_topic:nth-child(-n+2), .topic:nth-child(-n+2) {
+        margin-bottom: 0;
+    }
+
+    .button:nth-child(n), .score_topic:nth-child(n), .topic:nth-child(n) {
+        margin-bottom: 25px;
+    }
+
+
     .inputButton {
         width: 100%;
         padding: 10px;
         transform-origin: center bottom;
     }
 }
+

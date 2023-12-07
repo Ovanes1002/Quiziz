@@ -29,7 +29,7 @@ body {
 	// background: -moz-linear-gradient(top left, #2d53ff, #31b1a2);
 	// background: linear-gradient(to bottom right, #2d53ff, #31b1a2);
 	background-attachment: fixed;
-	background: url('../images/quiz_bg.jpeg') center (center/cover) no-repeat;
+	background: url('../images/quiz_bg.jpeg') center (center/cover) repeat;
 }
 
 h1 {
@@ -90,6 +90,7 @@ a {
 .exitNext {
 	display: flex;
 	justify-content: space-evenly;
+	padding-bottom: 20px;
 }
 
 .hide {
@@ -102,3 +103,4 @@ a {
 @import 'blocks/results';
 @import 'blocks/topics';
 @import 'blocks/media';
+@import 'blocks/mediaLandscape';
