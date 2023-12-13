@@ -73,7 +73,7 @@ a {
 .container {
 	margin: 0 auto;
 	width: 80%;
-	padding: 20px 0 0 0;
+	padding: 30px 0;
 }
 
 .headerSite {
@@ -103,4 +103,3 @@ a {
 @import 'blocks/results';
 @import 'blocks/topics';
 @import 'blocks/media';
-@import 'blocks/mediaLandscape';
