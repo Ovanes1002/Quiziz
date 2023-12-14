@@ -12,6 +12,7 @@ let checkInput = function (input) {
 	}
 };
 
+
 // При нажатии на кнопку "СОХРАНИТЬ", менять текст и цвет элемента
 inputButton.addEventListener("click", function (evt) {
   evt.preventDefault();
