@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const launchButton = document.querySelector(".launchButton");
 
 // кнопка "Начать"
@@ -15,6 +16,8 @@ launchButton.addEventListener("click", function (evt) {
 
 });
 
+=======
+>>>>>>> 2188815121513854e4976749cedda3429ded239c
 topics.forEach((topic) => {
   topic.addEventListener("click", (evt) => {
     // удаляем тень у каждой кнопки с классом "buttons"

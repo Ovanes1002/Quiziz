@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 const launchButton = document.querySelector(".launchButton");
 
+=======
+>>>>>>> 2188815121513854e4976749cedda3429ded239c
 quitQuiz.addEventListener("click", function (evt) {
   if (lastClickedTopic != null) lastClickedTopic.style.boxShadow = "none";
 
@@ -10,7 +13,11 @@ quitQuiz.addEventListener("click", function (evt) {
   firstWriteAnswer.value = "";
   secondWriteAnswer.value = "";
   thirdWriteAnswer.value = "";
+<<<<<<< HEAD
   startPage.classList.remove("hide");
+=======
+  startQuiz.classList.remove("hide");
+>>>>>>> 2188815121513854e4976749cedda3429ded239c
   nextButton.classList.remove("hide");
   launchButton.classList.add("hide");
   endButton.classList.add("hide");

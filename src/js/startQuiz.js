@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const nameId            = document.getElementById("name"),
       closeModalWindow  = document.querySelector(".close"),
       inputButton       = document.querySelector(".inputButton"),
@@ -11,6 +12,8 @@ const nameId            = document.getElementById("name"),
       // стартовая страница
       startPage         = document.querySelector(".startPage");
 
+=======
+>>>>>>> 2188815121513854e4976749cedda3429ded239c
 // При изменении поля ввода, менять текст кнопки submitButton
 nameId.addEventListener("input", function (evt) {
   // submitButton.style.backgroundColor = "white";
@@ -50,14 +53,28 @@ window.addEventListener("click", function (evt) {
 });
 
 
+<<<<<<< HEAD
 // При клике на кнопку "Начать":
 // убирается начаьная панель class="startPage"
+=======
+playButton.addEventListener("click", function (evt) {
+  startPage.classList.add("hide");
+  startQuiz.classList.remove("hide");
+});
+
+// При клике на кнопку "Начать":
+// убирается начаьная панель class="startQuiz"
+>>>>>>> 2188815121513854e4976749cedda3429ded239c
 // добавляется контейнер с карточкой викторины
 startButton.addEventListener("click", function (evt) {
   // evt.preventDefault();
   userName = nameId.value;
   if (inputButton.innerHTML == "СОХРАНЕНО!") {
+<<<<<<< HEAD
     startPage.classList.add("hide");
+=======
+    startQuiz.classList.add("hide");
+>>>>>>> 2188815121513854e4976749cedda3429ded239c
     nextButton.classList.add("hide");
     chooseTopic.classList.remove("hide");
     exitNext.classList.remove("hide");
@@ -66,4 +83,22 @@ startButton.addEventListener("click", function (evt) {
   }
 });
 
+<<<<<<< HEAD
 
+=======
+// кнопка "Начать"
+// после нажатия начинается викторина
+launchButton.addEventListener("click", function (evt) {
+  chooseTopic.classList.add("hide");
+  launchButton.classList.add("hide");
+  header.classList.remove("hide");
+  main.classList.remove("hide");
+  footer.classList.remove("hide");
+  lastClickedTopic.style.boxShadow = "none";
+  console.log(lastClickedTopic);
+  buttons.forEach((button) => {
+    button.classList.remove("hide");
+  });
+  setQuestion();
+});
+>>>>>>> 2188815121513854e4976749cedda3429ded239c

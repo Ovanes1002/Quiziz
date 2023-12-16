@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 setQuestion();
 
+=======
+>>>>>>> 2188815121513854e4976749cedda3429ded239c
 // Установка вопроса
 function setQuestion() {
   showQuestion(quizList[currentQuestionIndex]);

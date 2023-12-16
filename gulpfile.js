@@ -48,6 +48,13 @@ gulp.task('php', function () {
 });
 
 
+// gulp.task('scripts', function () {
+//     return gulp.src("src/js/*.js")
+//         // .pipe(concat('quiz.min.js'))
+//         // .pipe(phpmin({ collapseWhitespace: true }))
+//         .pipe(gulp.dest('dist'));
+// });
+
 gulp.task('scripts', function () {
     return gulp.src("src/js/*.js")
         // .pipe(concat('quiz.min.js'))

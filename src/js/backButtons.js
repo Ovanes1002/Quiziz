@@ -1,6 +1,10 @@
 backButton.addEventListener("click", (evt) => {
   chooseScoreTopic.classList.add("hide");
+<<<<<<< HEAD
   startPage.classList.remove("hide");
+=======
+  startQuiz.classList.remove("hide");
+>>>>>>> 2188815121513854e4976749cedda3429ded239c
   // console.log(1);
   // header.classList.add("hide");
   // main.classList.add("hide");
