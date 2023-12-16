@@ -1,3 +1,5 @@
+const launchButton = document.querySelector(".launchButton");
+
 quitQuiz.addEventListener("click", function (evt) {
   if (lastClickedTopic != null) lastClickedTopic.style.boxShadow = "none";
 
@@ -8,7 +10,7 @@ quitQuiz.addEventListener("click", function (evt) {
   firstWriteAnswer.value = "";
   secondWriteAnswer.value = "";
   thirdWriteAnswer.value = "";
-  startQuiz.classList.remove("hide");
+  startPage.classList.remove("hide");
   nextButton.classList.remove("hide");
   launchButton.classList.add("hide");
   endButton.classList.add("hide");

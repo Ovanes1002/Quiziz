@@ -1,3 +1,16 @@
+const nameId            = document.getElementById("name"),
+      closeModalWindow  = document.querySelector(".close"),
+      inputButton       = document.querySelector(".inputButton"),
+      startButton       = document.querySelector(".startButton"),
+      launchButton      = document.querySelector(".launchButton"),
+
+     // модальное окно
+      modalWindowBack   = document.querySelector(".modalWindowBack"),
+      modalWindowFront  = document.querySelector(".modalWindowFront"), // не используется
+
+      // стартовая страница
+      startPage         = document.querySelector(".startPage");
+
 // При изменении поля ввода, менять текст кнопки submitButton
 nameId.addEventListener("input", function (evt) {
   // submitButton.style.backgroundColor = "white";
@@ -37,19 +50,14 @@ window.addEventListener("click", function (evt) {
 });
 
 
-playButton.addEventListener("click", function (evt) {
-  startPage.classList.add("hide");
-  startQuiz.classList.remove("hide");
-});
-
 // При клике на кнопку "Начать":
-// убирается начаьная панель class="startQuiz"
+// убирается начаьная панель class="startPage"
 // добавляется контейнер с карточкой викторины
 startButton.addEventListener("click", function (evt) {
   // evt.preventDefault();
   userName = nameId.value;
   if (inputButton.innerHTML == "СОХРАНЕНО!") {
-    startQuiz.classList.add("hide");
+    startPage.classList.add("hide");
     nextButton.classList.add("hide");
     chooseTopic.classList.remove("hide");
     exitNext.classList.remove("hide");
@@ -58,18 +66,4 @@ startButton.addEventListener("click", function (evt) {
   }
 });
 
-// кнопка "Начать"
-// после нажатия начинается викторина
-launchButton.addEventListener("click", function (evt) {
-  chooseTopic.classList.add("hide");
-  launchButton.classList.add("hide");
-  header.classList.remove("hide");
-  main.classList.remove("hide");
-  footer.classList.remove("hide");
-  lastClickedTopic.style.boxShadow = "none";
-  console.log(lastClickedTopic);
-  buttons.forEach((button) => {
-    button.classList.remove("hide");
-  });
-  setQuestion();
-});
+

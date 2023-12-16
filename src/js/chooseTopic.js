@@ -1,3 +1,20 @@
+const launchButton = document.querySelector(".launchButton");
+
+// кнопка "Начать"
+// после нажатия начинается викторина
+launchButton.addEventListener("click", function (evt) {
+  // chooseTopic.classList.add("hide");
+  // launchButton.classList.add("hide");
+  // header.classList.remove("hide");
+  // main.classList.remove("hide");
+  // footer.classList.remove("hide");
+  lastClickedTopic.style.boxShadow = "none";
+  buttons.forEach((button) => {
+    button.classList.remove("hide");
+  });
+
+});
+
 topics.forEach((topic) => {
   topic.addEventListener("click", (evt) => {
     // удаляем тень у каждой кнопки с классом "buttons"

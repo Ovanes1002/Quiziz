@@ -1,5 +1,5 @@
   // buttons
-const startButton     = document.querySelector(".startButton"),
+const 
   nextButton          = document.querySelector(".nextButton"),
   backButton          = document.querySelector(".backButton"),
   backButtonSport     = document.querySelector(".backButtonSport"),
@@ -41,14 +41,13 @@ const startButton     = document.querySelector(".startButton"),
   scoreHistory        = document.querySelector(".score__history"),
 
   // start
-  playButton          = document.querySelector(".playButton"),
   startPage           = document.querySelector(".startPage"),
-  startQuiz           = document.querySelector(".startQuiz"),
+  // startQuiz           = document.querySelector(".startQuiz"),
   playerName          = document.getElementById("playerName"), // не используется
   nameInput           = document.querySelector(".nameInput"), // не используется
-  nameId              = document.getElementById("name"),
 
-  inputButton        = document.querySelector(".inputButton"),
+
+
 
   // table
   tableSport          = document.querySelector(".tableSport"),
@@ -56,10 +55,7 @@ const startButton     = document.querySelector(".startButton"),
   tableArt            = document.querySelector(".tableArt"),
   tableHistory        = document.querySelector(".tableHistory"),
 
-  // modal window
-  modalWindowBack     = document.querySelector(".modalWindowBack"),
-  modalWindowFront    = document.querySelector(".modalWindowFront"), // не используется
-  closeModalWindow    = document.querySelector(".close"),
+
 
   // topics
   chooseScoreTopic    = document.querySelector(".choose_score_topic"),

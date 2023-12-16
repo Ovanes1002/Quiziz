@@ -1,3 +1,5 @@
+setQuestion();
+
 // Установка вопроса
 function setQuestion() {
   showQuestion(quizList[currentQuestionIndex]);

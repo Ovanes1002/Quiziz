@@ -43,13 +43,14 @@ gulp.task('watch', function() {
 
 gulp.task('php', function () {
     return gulp.src('src/*.php')
-        // .pipe(phpmin({ collapseWhitespace: true }))
+        // .pipe(concat('index.php'))
         .pipe(gulp.dest('dist'));
 });
 
+
 gulp.task('scripts', function () {
     return gulp.src("src/js/*.js")
-        .pipe(concat('quiz.min.js'))
+        // .pipe(concat('quiz.min.js'))
         .pipe(terser())
         .pipe(gulp.dest("dist/js"));
 });
