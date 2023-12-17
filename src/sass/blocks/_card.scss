@@ -1,0 +1,126 @@
+header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	padding: 10px;
+	color: #fff;
+	background-color: #172048;
+}
+
+.card {
+	width: 100%;
+	min-height: 250px;
+	padding: 15px;
+	line-height: 27px;
+	background-color: #0a133d;
+}
+
+.question {
+	padding: 10px;
+	text-align: center;
+	line-height: 1.5;
+}
+
+.card .answer-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin: 40px auto;
+}
+
+
+.questionNumber {
+	width: 30%;
+	height: 30px;
+	padding-top: 5px;
+	text-align: center;
+	background-color: #0a133d;
+	border-radius: 5px;
+}
+
+.points {
+	width: 50%;
+	height: 30px;
+	padding: 5px;
+	text-align: center;
+	background-color: #0a133d;
+	border-radius: 5px;
+}
+
+.button {
+	position: relative;
+	width: 20%;
+	color: white;
+	font-size: 2vw;
+	padding: 10px;
+	background-color: #172048;
+	border: 3px #3153b1 solid;
+	border-radius: 5px;
+}
+
+input.firstWriteAnswer,
+input.secondWriteAnswer,
+input.thirdWriteAnswer,
+audio {
+	width: 100%;
+	max-width: 350px;
+	font-size: 20px;
+	padding: 5px;
+	border-radius: 15px;
+}
+
+input.firstWriteAnswer,
+input.secondWriteAnswer,
+input.thirdWriteAnswer,
+audio {
+	width: 60%;
+	text-align: center;
+	height: 40px;
+}
+audio {
+	width: 90%;
+	margin-bottom: 20px;
+}
+
+#progressBar {
+	width: 0%;
+	height: 20px;
+	border-radius: 10px;
+	border: 3px #3153b1 solid;
+	background-color: #20a724;
+	transition: width 0.5s ease-in-out;
+}
+
+footer {
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 10px;
+	background-color: #172048;
+}
+
+
+
+.finish {
+	width: 100%;
+	position: absolute;
+	top: 28%;
+	left: 50%;
+	margin-right: -50%;
+      /* Правило 'margin-right: -50%' необходимо для компенсации 'left: 50%'.
+    Правило 'left' уменьшает доступную для элемента ширину на 50%.
+    Поэтому визуализатор постарается сделать линии длиною не более половины ширины контейнера.
+    Указав на то, что правое поле элемента находится правее на ту же самую величину, отметим,
+    что максимальная длина линии снова равняется ширине контейнера. */
+	transform: translate(-50%, -50%);
+	text-align: center;
+	line-height: 1.5;
+}
+
+.quitQuiz,
+.nextButton,
+.endButton,
+.launchButton {
+	// margin: 20px 0 0 0;
+	text-align: center;
+}

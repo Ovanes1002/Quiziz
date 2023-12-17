@@ -1,0 +1,44 @@
+.score__sport,
+.score__music,
+.score__art,
+.score__history {
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 30px;
+	letter-spacing: 1px;
+	line-height: 33px;
+}
+
+table {
+	width: 100%;
+	margin: 0 auto;
+	border-collapse: collapse;
+	border: 2px solid rgb(200, 200, 200);
+}
+td,
+th {
+	border: 1px solid rgb(190, 190, 190);
+	padding: 10px 20px;
+}
+th {
+	background-color: #0a133d;
+}
+td {
+	text-align: center;
+}
+tr {
+	&:nth-child(even) {
+		td {
+			background-color: #172048;
+		}
+	}
+	&:nth-child(odd) {
+		td {
+			background-color: #1e2957;
+		}
+	}
+}
+caption {
+	padding-bottom: 15px;
+	font-size: 30px;
+}
