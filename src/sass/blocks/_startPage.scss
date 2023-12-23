@@ -12,9 +12,6 @@
 		font-size: 24px;
 		border-radius: 15px;
 		line-height: 35px;
-		&.startButton {
-			margin-top: 40px;
-		}	
 	}
 
 }
@@ -95,7 +92,7 @@ input#name {
 form {
 	display: flex;
 	flex-direction: column;
-	flex-wrap: wrap;
+	// flex-wrap: wrap;
 	align-items: center;
 }
 
@@ -132,10 +129,11 @@ form {
 }
 
 .startMenu {
-	min-height: 180px;
+	min-height: 210px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	margin-top: 40px;
 	a {
 		width: 33%;
 	}

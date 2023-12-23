@@ -55,9 +55,6 @@
 			width: 120px;
 			min-height: 60px;
 			font-size: 24px;
-            &.startButton {
-                margin-top: 60px;
-            }	
 		}
 	}
 
@@ -98,7 +95,8 @@
     }
 
     .startMenu {
-        min-height: 140px;
+        min-height: 170px;
+        margin-top: 60px;
         a {
             width: 50%;
         }
@@ -127,7 +125,7 @@
 	}
 
     .startMenu {
-        min-height: 115px;
+        min-height: 150px;
         a {
             width: 66%;
         }
