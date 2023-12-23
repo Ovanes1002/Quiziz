@@ -52,10 +52,12 @@
 			margin-bottom: 20px;
 		}
 		a {
-			margin-top: 60px;
 			width: 120px;
 			min-height: 60px;
 			font-size: 24px;
+            &.startButton {
+                margin-top: 60px;
+            }	
 		}
 	}
 

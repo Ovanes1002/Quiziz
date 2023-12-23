@@ -31,7 +31,7 @@
       </div>
     </div>
   </body>
-  <script defer src="js/startQuiz.js"></script>
+  <script defer src="js/startPage.js"></script>
 </html>
 
 <!-- + 1.Добавить модальное окно, при количестве символов меньше 2 в вводе имени
