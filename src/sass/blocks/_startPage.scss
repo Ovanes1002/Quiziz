@@ -69,7 +69,7 @@ input#name {
 	word-wrap: break-word;
     border: none;
     background-size: 300% 100%;
-	background-image: linear-gradient(to right, #0022bb, #184696, #0022bb,#0022bb, #184696, #0022bb);
+	background-image: linear-gradient(to right, #0022bb, #184696, #0022bb,#00bb6a, #01d87b, #00bb6a);
     box-shadow: 0 4px 15px 0 rgba(0, 45, 112, 0.75);
     border-radius: 50px;
     -o-transition: all .4s ease-in-out;
@@ -96,14 +96,7 @@ form {
 	align-items: center;
 }
 
-.modalWindowBack {
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-}
+
 .modalWindowFront {
 	color: #000000;
 	background-color: #ffd2d2;

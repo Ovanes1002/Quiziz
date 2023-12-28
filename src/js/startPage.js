@@ -4,10 +4,6 @@ const nameId            = document.getElementById("name"),
       startButton       = document.querySelector(".startButton"),
       launchButton      = document.querySelector(".launchButton"),
 
-     // модальное окно
-      modalWindowBack   = document.querySelector(".modalWindowBack"),
-      modalWindowFront  = document.querySelector(".modalWindowFront"), // не используется
-
       // стартовая страница
       startPage         = document.querySelector(".startPage");
 
@@ -32,20 +28,6 @@ inputButton.addEventListener("click", function (evt) {
   userName = nameId.value;
   if (userName.trim().length > 0) {
     inputButton.innerHTML = "СОХРАНЕНО!";
-  } else {
-    modalWindowBack.classList.remove("hide");
-  }
-});
-
-// При нажатии на <span> (x), закрыть модальное окно
-closeModalWindow.addEventListener("click", function () {
-  modalWindowBack.classList.add("hide");
-});
-
-// При нажатии за пределами модального окна, закрыть его
-window.addEventListener("click", function (evt) {
-  if (evt.target == modalWindowBack) {
-    modalWindowBack.classList.add("hide");
   }
 });
 
@@ -61,8 +43,6 @@ startButton.addEventListener("click", function (evt) {
     nextButton.classList.add("hide");
     chooseTopic.classList.remove("hide");
     exitNext.classList.remove("hide");
-  } else {
-    modalWindowBack.classList.remove("hide");
   }
 });
 
