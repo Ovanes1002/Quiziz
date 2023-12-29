@@ -2,32 +2,48 @@
   <body>
     <div class="headerSite">Quiziz</div>
     <div class="container">
-      <div class="startPage">
-        <h1>Проверьте свои знания с Quiziz</h1>
-        <p>Испытайте свою сноровку и повеселитесь в нашей викторине!</p>
+     <div class="startPage">
+        <!-- <h1>Проверьте свои знания с Quiziz</h1>
+        <p>Испытайте свою сноровку и повеселитесь в нашей викторине!</p> -->
         <div class="nameInput">
           <form action="" method="">
+          <h2>Вход</h2>
+
             <div class="input-group">
-              <input type="text" id="name" autocomplete="off" required minlength="1" maxlength="70" onblur="checkInput(this)"/>
-              <label id="playerName" for="name"> Ваше имя: </label>
-              <input type="password" id="password" autocomplete="off" required minlength="8" maxlength="20" onblur="checkInput(this)"/>
-              <label id="playerPassword" for="password"> Ваш пароль: </label>
+              <div class="group1 playerName">
+				  <input 
+					  type="text" 
+					  id="name" 
+					  autocomplete="off" 
+					  required 
+					  minlength="1" 
+					  maxlength="70" 
+					  onblur="checkInput(this)"
+				  />
+				  <label for="name"> Ваше имя: </label>
+                </div>
+              
+				<div class="group2 playerPassword">
+					<input 
+					type="password" 
+					id="password" 
+					autocomplete="off" 
+					required 
+					minlength="8" 
+					maxlength="20" 
+					onblur="checkInput(this)"
+					/>
+					<label for="password"> Ваш пароль: </label>
+				</div>
+
+
             </div>
-            <button class="inputButton">СОХРАНИТЬ</button>
+            <button class="inputButton">ПРОДОЛЖИТЬ</button>
+            <a href="./register.php">Регистрация</a>
             <!-- <input type="submit" value="Сохранить" class="submit" /> -->
           </form>
         </div>
-        <div class="modalWindowBack hide">
-          <div class="modalWindowFront">
-            <span class="close">&times;</span>
-            <p>Сначала заполните строку с именем и сохраните!</p>
-          </div>
-        </div>
-        <div class="startMenu">
-          <a class="startButton">Старт</a>
-          <a class="score__button">Результаты</a>
-          <!-- <a href="../../index.html">Назад</a> -->
-        </div>
+
       </div>
     </div>
   </body>

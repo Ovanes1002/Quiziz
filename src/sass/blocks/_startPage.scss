@@ -21,38 +21,48 @@
 	text-align: center;
 	margin: 0 auto 20px auto;
 	line-height: 40px;
-	
-input#name {
-		width: 100%;
-		color: #cacaca;
-		max-width: 350px;
-		font-size: 20px;
-		padding: 5px;
-		border: none;
-		outline: none;
-		border-bottom: 2px #cacaca solid;
-		background: transparent;
-		+ label {
-			transition: all 0.2s ease-in;
-		}
-		&:focus,
-		&.active {
-			+ label {
-				font-size: 20px;
-				transform: translateY(-30px);
-			}
-		}
-	}
+	background-color: rgba(5, 7, 13, 0.9);
+	border-radius: 50px;
+	padding: 20px;
 }
 
 .input-group {
 	position: relative;
-	label {
-		left: 0;
-		top: 0;
-		position: absolute;
-		pointer-events: none;
+	max-width: 300px;
+	.group1, .group2 {
+		margin-bottom: 50px;
+		position: relative;
+		input {
+			width: 100%;
+			color: #cacaca;
+			// margin-top: 30px;
+			// max-width: 350px;
+			font-size: 20px;
+			padding: 5px;
+			border: none;
+			outline: none;
+			border-bottom: 2px #cacaca solid;
+			background: transparent;
+			+ label {
+				transition: all 0.2s ease-in;
+			}
+			&:focus,
+			&.active {
+				+ label {
+					font-size: 20px;
+					transform: translateY(-30px);
+				}
+			}
+		}
+		label {
+			position: absolute;
+			left: 0;
+			top: 0;
+			pointer-events: none;
+		}
 	}
+
+
 }
 
 .inputButton {
@@ -69,8 +79,8 @@ input#name {
 	word-wrap: break-word;
     border: none;
     background-size: 300% 100%;
-	background-image: linear-gradient(to right, #0022bb, #184696, #0022bb,#00bb6a, #01d87b, #00bb6a);
-    box-shadow: 0 4px 15px 0 rgba(0, 45, 112, 0.75);
+	background-image: linear-gradient(to right, #0022bb, #184696, #0022bb,#001055, #183a74, #001055);
+    // box-shadow: 0 4px 15px 0 rgba(0, 45, 112, 0.75);
     border-radius: 50px;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
@@ -94,32 +104,13 @@ form {
 	flex-direction: column;
 	// flex-wrap: wrap;
 	align-items: center;
+	h2 {
+		margin-bottom: 50px;
+	}
 }
 
 
-.modalWindowFront {
-	color: #000000;
-	background-color: #ffd2d2;
-	margin: 15vh auto 0;
-	padding: 20px;
-	border: 3px outset #ff0000;
-	border-radius: 15px;
-	width: 50%;
-	line-height: 28px;
-	text-align: center;
-}
 
-.close {
-	color: #888888;
-	float: right;
-	font-size: 30px;
-	font-weight: bold;
-}
-.close:hover,
-.close:focus {
-	color: #000000;
-	cursor: pointer;
-}
 
 .startMenu {
 	min-height: 210px;

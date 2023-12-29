@@ -76,11 +76,18 @@
     }
     
     .nameInput {
-        input#name {
-            &:focus,
-            &.active {
-                + label {
-                    font-size: 16px;
+        width: 75%;
+    }
+
+    .input-group {
+        .group1, .group2 {
+            margin-bottom: 40px;
+            input {
+                &:focus,
+                &.active {
+                    + label {
+                        font-size: 16px;
+                    }
                 }
             }
         }
