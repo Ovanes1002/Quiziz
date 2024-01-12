@@ -3,6 +3,10 @@
         font-size: calc(0.7em + 1.5vw);
 	}
 
+    .nameInput {
+        width: 70%;
+    }
+
     // .exitNext a {
     //     width: 30%;
     // }
@@ -80,7 +84,7 @@
     }
 
     .input-group {
-        .group1, .group2 {
+        .playerName, .playerEmail, .playerPassword, .confirmPlayerPassword {
             margin-bottom: 40px;
             input {
                 &:focus,

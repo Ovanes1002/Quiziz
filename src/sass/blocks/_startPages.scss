@@ -3,9 +3,6 @@
 	padding-top: 100px;
 	text-align: center;
 	line-height: normal;
-	p {
-		font-size: 32px;
-	}
 	a {
 		width: 150px;
 		min-height: 75px;
@@ -29,7 +26,7 @@
 .input-group {
 	position: relative;
 	max-width: 300px;
-	.group1, .group2 {
+	.playerName, .playerEmail, .playerPassword, .confirmPlayerPassword {
 		margin-bottom: 50px;
 		position: relative;
 		input {
@@ -67,12 +64,12 @@
 
 .inputButton {
 	display: block;
-    width: 50%;
+    width: 40%;
     font-size: 16px;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
-    margin: 20px auto;
+    margin: 0 auto 20px;
 	padding: 20px;
     // height: 55px;
     text-align:center;
@@ -109,16 +106,21 @@ form {
 	}
 }
 
-
-
-
-.startMenu {
-	min-height: 210px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	margin-top: 40px;
-	a {
-		width: 33%;
+p {
+	font-size: 24px;
+	a.registerLink, a.inputLink {
+		display: inline;
+		color: rgb(0, 89, 255);
+		border: none;
+		background: none;
+		box-shadow: none;
+		text-transform: none;
+		&:hover {
+			color: rgb(56, 139, 255);
+			text-decoration-line: underline;
+		}
 	}
 }
+
+
+

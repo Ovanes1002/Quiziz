@@ -1,0 +1,10 @@
+.startMenu {
+	min-height: 210px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-top: 40px;
+	a {
+		width: 33%;
+	}
+}

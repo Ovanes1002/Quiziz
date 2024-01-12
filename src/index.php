@@ -10,20 +10,20 @@
           <h2>Вход</h2>
 
             <div class="input-group">
-              <div class="group1 playerName">
-				  <input 
-					  type="text" 
-					  id="name" 
-					  autocomplete="off" 
-					  required 
-					  minlength="1" 
-					  maxlength="70" 
-					  onblur="checkInput(this)"
-				  />
-				  <label for="name"> Ваше имя: </label>
-                </div>
+              <div class="playerName">
+                <input 
+                  type="text" 
+                  id="name" 
+                  autocomplete="off" 
+                  required 
+                  minlength="1" 
+                  maxlength="70" 
+                  onblur="checkInput(this)"
+                />
+                <label for="name"> Ваше имя: </label>
+              </div>
               
-				<div class="group2 playerPassword">
+				<div class="playerPassword">
 					<input 
 					type="password" 
 					id="password" 
@@ -38,8 +38,10 @@
 
 
             </div>
-            <button class="inputButton">ПРОДОЛЖИТЬ</button>
-            <a href="./register.php">Регистрация</a>
+            <button class="inputButton">ВОЙТИ</button>
+            <div>
+				<p>Ещё нет аккаунта? <a class="registerLink" href="./register.php">Регистрация</a></p>
+            </div>
             <!-- <input type="submit" value="Сохранить" class="submit" /> -->
           </form>
         </div>

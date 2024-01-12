@@ -9,45 +9,70 @@
           <form class="registerForm" action="" method="">
             <h2>Регистрация</h2>
               <div class="input-group">
-                <label id="playerName" for="name">
-                  Ваше имя: 
-                </label>
-                <input 
-                      type="text" 
-                      id="name" 
-                      name="name" 
-                      autocomplete="off" 
-                      required 
-                      minlength="1" 
-                      maxlength="70" 
-                      onblur="checkInput(this)"
-                  />
-                <label for="email">
-                  Электронная почта:
-                </label>
-                <input 
-                    type="text" 
-                    id="email" 
-                    name="email"
-                    autocomplete="off" 
-                    required 
-                    onblur="checkInput(this)"
-                />     
-                <label id="playerPassword" for="password">
-                  Ваш пароль: 
-                </label>
-                <input 
-                      type="password" 
-                      id="password" 
-                      autocomplete="off" 
-                      required 
-                      minlength="8" 
-                      maxlength="20" 
-                      onblur="checkInput(this)"
-                  />
+                <div class="playerName">
+					<input 
+						type="text" 
+						id="name" 
+						name="name" 
+						autocomplete="off" 
+						required 
+						minlength="1" 
+						maxlength="70" 
+						onblur="checkInput(this)"
+					/>
+					<label id="playerName" for="name">
+						Имя: 
+					</label>
+                </div>
+
+				<div class="playerEmail">
+					<input 
+						type="text" 
+						id="email" 
+						name="email"
+						autocomplete="off" 
+						required 
+						onblur="checkInput(this)"
+					/>
+					<label id="playerEmail"  for="email">
+						Эл. почта:
+					</label> 
+				</div>
+
+				<div class="playerPassword">
+					<input 
+						type="password" 
+						id="password" 
+						autocomplete="off" 
+						required 
+						minlength="8" 
+						maxlength="20" 
+						onblur="checkInput(this)"
+					/>
+					<label id="playerPassword" for="password">
+						Пароль: 
+					</label>
+				</div>
+
+				<div class="confirmPlayerPassword">
+					<input 
+						type="password" 
+						id="confirmPassword" 
+						autocomplete="off" 
+						required 
+						minlength="8" 
+						maxlength="20" 
+						onblur="checkInput(this)"
+					/>
+					<label id="confirmPlayerPassword" for="confirmPassword">
+						Подтвердите пароль: 
+					</label>
+				</div>
               </div>
               <button class="inputButton">СОХРАНИТЬ</button>
-              <a href="./index.php">Назад</a>
+              <div>
+			  	<p>Уже есть аккаунт? <a class="inputLink" href="./index.php">Войти</a></p>
+			  </div>
               <!-- <input type="submit" value="Сохранить" class="submit" /> -->
           </form>
         </div>

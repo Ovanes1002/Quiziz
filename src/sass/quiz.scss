@@ -64,6 +64,7 @@ a {
 		background-color: #001989;
 		box-shadow: inset 0 0 5px 1px black;
 	}
+
 }
 
 .exitNext a {
@@ -97,7 +98,8 @@ a {
 	display: none;
 }
 
-@import 'blocks/startPage';
+@import 'blocks/startPages';
+@import 'blocks/startQuiz';
 @import 'blocks/card';
 @import 'blocks/results';
 @import 'blocks/topics';
