@@ -23,13 +23,13 @@ let checkInput = function (input) {
 
 
 // При нажатии на кнопку "СОХРАНИТЬ", менять текст и цвет элемента
-inputButton.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  userName = nameId.value;
-  if (userName.trim().length > 0) {
-    inputButton.innerHTML = "СОХРАНЕНО!";
-  }
-});
+// inputButton.addEventListener("click", function (evt) {
+//   evt.preventDefault();
+//   userName = nameId.value;
+//   if (userName.trim().length > 0) {
+//     inputButton.innerHTML = "СОХРАНЕНО!";
+//   }
+// });
 
 
 // При клике на кнопку "Начать":

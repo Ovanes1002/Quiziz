@@ -87,12 +87,19 @@
         .playerName, .playerEmail, .playerPassword, .confirmPlayerPassword {
             margin-bottom: 40px;
             input {
+                + label {
+                    transition: all 0.2s ease-in;
+                    font-size: 20px;
+                }
                 &:focus,
                 &.active {
                     + label {
                         font-size: 16px;
                     }
                 }
+            }
+            label {
+                padding-top: 0;
             }
         }
     }

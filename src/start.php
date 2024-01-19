@@ -1,4 +1,4 @@
-<?php include_once "header.php"; ?>
+<?php include_once "head.php"; ?>
 <body>
     <div class="headerSite">Quiziz</div>
     <div class="container">

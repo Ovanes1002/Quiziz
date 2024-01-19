@@ -29,6 +29,9 @@
 	.playerName, .playerEmail, .playerPassword, .confirmPlayerPassword {
 		margin-bottom: 50px;
 		position: relative;
+		small {
+			color: rgb(225, 39, 11);
+		}
 		input {
 			width: 100%;
 			color: #cacaca;
@@ -42,13 +45,22 @@
 			background: transparent;
 			+ label {
 				transition: all 0.2s ease-in;
+				font-size: 24px;
 			}
-			&:focus,
-			&.active {
-				+ label {
+			&:focus + label,
+			&.active + label {
+				font-size: 20px;
+				transform: translateY(-30px);
+			}
+			&[aria-invalid="true"] {
+				border: none;
+				box-shadow: 0px 0px 10px 5px red;
+				border-radius: 20px;
+				&:focus + label {
 					font-size: 20px;
-					transform: translateY(-30px);
+					transform: translateY(-40px);
 				}
+
 			}
 		}
 		label {
@@ -56,6 +68,8 @@
 			left: 0;
 			top: 0;
 			pointer-events: none;
+			padding-top: 3px;
+			padding-left: 10px;
 		}
 	}
 
@@ -82,14 +96,17 @@
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
+	&:disabled {
+		background-image: none;
+	}
 }
 
-.inputButton:hover {
-    background-position: 100% 0;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-}
+// .inputButton:hover {
+//     background-position: 100% 0;
+//     -o-transition: all .4s ease-in-out;
+//     -webkit-transition: all .4s ease-in-out;
+//     transition: all .4s ease-in-out;
+// }
 
 .inputButton:focus {
     outline: none;
