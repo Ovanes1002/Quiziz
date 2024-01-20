@@ -18,14 +18,13 @@ require_once __DIR__ . '/helpers.php';
             <h2>Регистрация</h2>
               <div class="input-group">
 
-
-
                 <div class="playerName">
 					<input 
 						type="text" 
 						id="name" 
 						name="name" 
 						autocomplete="off"
+						placeholder="Иван"
 						value="<?php echo old(key: 'name') ?>"
 						<?php validationErrorAttr(fieldName: 'name') ?>
 						minlength="1" 
@@ -49,6 +48,7 @@ require_once __DIR__ . '/helpers.php';
 						id="email" 
 						name="email"
 						autocomplete="off"
+						placeholder="example@gmail.com"
 						value="<?php echo old(key: 'email') ?>"
 						<?php validationErrorAttr(fieldName: 'email') ?>
 						minlength="1" 
@@ -71,6 +71,7 @@ require_once __DIR__ . '/helpers.php';
 							id="password" 
 							name="password"
 							autocomplete="off" 
+							placeholder="********"
 							<?php validationErrorAttr(fieldName: 'password') ?>
 							minlength="8" 
 							maxlength="20" 
@@ -91,6 +92,7 @@ require_once __DIR__ . '/helpers.php';
 						id="confirmPassword"
 						name="confirmPassword"
 						autocomplete="off" 
+						placeholder="********"
 						<?php validationErrorAttr(fieldName: 'confirmPassword') ?>
 						minlength="8" 
 						maxlength="20" 
@@ -122,7 +124,6 @@ require_once __DIR__ . '/helpers.php';
               <!-- <input type="submit" value="Сохранить" class="submit" /> -->
           </form>
         </div>
-		<?php var_dump($_SESSION['validation']);   ?>
       </div>
     </div>
   </body>

@@ -80,7 +80,7 @@
     }
     
     .nameInput {
-        width: 75%;
+        width: 85%;
     }
 
     .input-group {
@@ -89,43 +89,32 @@
         .playerPassword,
         .confirmPlayerPassword {
             margin-bottom: 40px;
-            input {
-                + label {
-                    transition: all 0.2s ease-in;
-                    font-size: 20px;
-                }
-                &:focus,
-                &.active {
-                    + label {
-                        font-size: 16px;
-                    }
-                }
-            }
-            label {
+            input + label {
+                font-size: 20px;
                 padding-top: 0;
+        }
+    }
+
+        .inputButton {
+            padding: 15px;
+            width: 75%;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 15px auto;
+        }
+
+        .startMenu {
+            min-height: 170px;
+            margin-top: 60px;
+            a {
+                width: 50%;
             }
         }
-    }
-
-    .inputButton {
-        padding: 15px;
-        width: 75%;
-        font-size: 14px;
-        font-weight: 600;
-        margin: 15px auto;
-    }
-
-    .startMenu {
-        min-height: 170px;
-        margin-top: 60px;
-        a {
-            width: 50%;
+        audio {
+            width: 90%;
+            margin-bottom: 10px;
         }
-    }
-    audio {
-        width: 90%;
-        margin-bottom: 10px;
-    }
+    }   
 }
 
 @media only screen and (max-width: 576px) {
