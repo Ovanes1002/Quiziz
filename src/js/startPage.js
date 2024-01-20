@@ -1,4 +1,5 @@
 const nameId            = document.getElementById("name"),
+      emailId           = document.getElementById("email"),
       closeModalWindow  = document.querySelector(".close"),
       inputButton       = document.querySelector(".inputButton"),
       startButton       = document.querySelector(".startButton"),
@@ -22,13 +23,22 @@ let checkInput = function (input) {
 };
 
 
-// При нажатии на кнопку "СОХРАНИТЬ", менять текст и цвет элемента
+// При нажатии на кнопку "СОХРАНИТЬ", добавление полю .active если оно не пустое
+
 // inputButton.addEventListener("click", function (evt) {
-//   evt.preventDefault();
-//   userName = nameId.value;
-//   if (userName.trim().length > 0) {
-//     inputButton.innerHTML = "СОХРАНЕНО!";
-//   }
+// 	evt.preventDefault();
+// 	userName = nameId.value;
+// 	userEmail = emailId.value;
+// 	if (userName.trim().length > 0) {
+// 		nameId.classList.add = 'active';
+// 	} else {
+// 		nameId.classList.remove = 'active';
+// 	}
+// 	if (userEmail.trim().length > 0) {
+// 		emailId.classList.add = 'active';
+// 	} else {
+// 		emailId.classList.remove = 'active';
+// 	}
 // });
 
 
@@ -36,13 +46,13 @@ let checkInput = function (input) {
 // убирается начаьная панель class="startPage"
 // добавляется контейнер с карточкой викторины
 startButton.addEventListener("click", function (evt) {
-  // evt.preventDefault();
-  userName = nameId.value;
-  if (inputButton.innerHTML == "СОХРАНЕНО!") {
-    startPage.classList.add("hide");
-    nextButton.classList.add("hide");
-    chooseTopic.classList.remove("hide");
-    exitNext.classList.remove("hide");
-  }
+	// evt.preventDefault();
+	userName = nameId.value;
+	if (inputButton.innerHTML == "СОХРАНЕНО!") {
+		startPage.classList.add("hide");
+		nextButton.classList.add("hide");
+		chooseTopic.classList.remove("hide");
+		exitNext.classList.remove("hide");
+	}
 });
 

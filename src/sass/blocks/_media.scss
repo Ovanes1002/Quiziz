@@ -84,7 +84,10 @@
     }
 
     .input-group {
-        .playerName, .playerEmail, .playerPassword, .confirmPlayerPassword {
+        .playerName,
+        .playerEmail,
+        .playerPassword,
+        .confirmPlayerPassword {
             margin-bottom: 40px;
             input {
                 + label {

@@ -26,7 +26,10 @@
 .input-group {
 	position: relative;
 	max-width: 300px;
-	.playerName, .playerEmail, .playerPassword, .confirmPlayerPassword {
+	.playerName,
+	.playerEmail,
+	.playerPassword,
+	.confirmPlayerPassword {
 		margin-bottom: 50px;
 		position: relative;
 		small {
@@ -72,8 +75,6 @@
 			padding-left: 10px;
 		}
 	}
-
-
 }
 
 .inputButton {

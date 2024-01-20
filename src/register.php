@@ -17,12 +17,16 @@ require_once __DIR__ . '/helpers.php';
           <form class="registerForm" action="/actions/register.php" method="post" enctype="multipart/form-data">
             <h2>Регистрация</h2>
               <div class="input-group">
+
+
+
                 <div class="playerName">
 					<input 
 						type="text" 
 						id="name" 
 						name="name" 
-						autocomplete="off" 
+						autocomplete="off"
+						value="<?php echo old(key: 'name') ?>"
 						<?php validationErrorAttr(fieldName: 'name') ?>
 						minlength="1" 
 						maxlength="70" 
@@ -44,29 +48,41 @@ require_once __DIR__ . '/helpers.php';
 						type="text" 
 						id="email" 
 						name="email"
-						autocomplete="off" 
-						 
+						autocomplete="off"
+						value="<?php echo old(key: 'email') ?>"
+						<?php validationErrorAttr(fieldName: 'email') ?>
+						minlength="1" 
+						maxlength="70" 
 						onblur="checkInput(this)"
 					/>
 					<label id="playerEmail"  for="email">
 						Эл. почта:
-					</label> 
+					</label>
+
+					<?php if(hasValidationError(fieldName: 'email')): ?>
+						<small><?php validationErrorMessage(fieldName: 'email') ?></small>
+					<?php endif; ?>
 				</div>
 
 				<div class="playerPassword">
-					<input 
-						type="password" 
-						id="password" 
-						name="password"
-						autocomplete="off" 
-						 
-						minlength="8" 
-						maxlength="20" 
-						onblur="checkInput(this)"
-					/>
-					<label id="playerPassword" for="password">
-						Пароль: 
-					</label>
+
+						<input 
+							type="password" 
+							id="password" 
+							name="password"
+							autocomplete="off" 
+							<?php validationErrorAttr(fieldName: 'password') ?>
+							minlength="8" 
+							maxlength="20" 
+							onblur="checkInput(this)"
+						/>
+						<label id="playerPassword" for="password">
+							Пароль: 
+						</label>
+
+						<?php if(hasValidationError(fieldName: 'password')): ?>
+							<small><?php validationErrorMessage(fieldName: 'password') ?></small>
+						<?php endif; ?>
 				</div>
 
 				<div class="confirmPlayerPassword">
@@ -75,7 +91,7 @@ require_once __DIR__ . '/helpers.php';
 						id="confirmPassword"
 						name="confirmPassword"
 						autocomplete="off" 
-						 
+						<?php validationErrorAttr(fieldName: 'confirmPassword') ?>
 						minlength="8" 
 						maxlength="20" 
 						onblur="checkInput(this)"
@@ -83,6 +99,10 @@ require_once __DIR__ . '/helpers.php';
 					<label id="confirmPlayerPassword" for="confirmPassword">
 						Подтвердите: 
 					</label>
+
+					<?php if(hasValidationError(fieldName: 'confirmPassword')): ?>
+						<small><?php validationErrorMessage(fieldName: 'confirmPassword') ?></small>
+					<?php endif; ?>
 				</div>
               </div>
 			  <fieldset>
@@ -102,7 +122,7 @@ require_once __DIR__ . '/helpers.php';
               <!-- <input type="submit" value="Сохранить" class="submit" /> -->
           </form>
         </div>
-
+		<?php var_dump($_SESSION['validation']);   ?>
       </div>
     </div>
   </body>

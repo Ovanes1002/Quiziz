@@ -18,6 +18,10 @@ gulp.task('server', function() {
     gulp.watch("src/*.php").on('change', function () {
         browserSync.reload();
       });
+
+    // gulp.watch("src/actions/*.php").on('change', function () {
+    //     browserSync.reload();
+    // });
 });
 
 gulp.task('styles', function() {
@@ -39,6 +43,17 @@ gulp.task('watch', function() {
 //     return gulp.src('src/*.html')
 //         .pipe(htmlmin({ collapseWhitespace: true }))
 //         .pipe(gulp.dest('dist'));
+// });
+
+
+// не работает
+// gulp.task('phpActions', function () {
+//     console.log('Start copying PHP files...');
+//     return gulp.src("src/actions/*.php")
+//         .pipe(gulp.dest("dist/actions"))
+//         .on('end', function () {
+//             console.log('PHP files copied successfully.');
+//         });
 // });
 
 gulp.task('php', function () {
@@ -83,4 +98,4 @@ gulp.task('images', function () {
         .pipe(gulp.dest("dist/images"));
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'php', 'scripts', 'fonts', 'icons', 'mailer', 'images'));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles',  'php', 'scripts', 'fonts', 'icons', 'mailer', 'images'));
