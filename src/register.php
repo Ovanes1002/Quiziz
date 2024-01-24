@@ -19,6 +19,11 @@ require_once __DIR__ . '/helpers.php';
               <div class="input-group">
 
                 <div class="playerName">
+					
+					<label id="playerName" for="name">
+						Имя: 
+					</label>
+
 					<input 
 						type="text" 
 						id="name" 
@@ -32,10 +37,6 @@ require_once __DIR__ . '/helpers.php';
 						onblur="checkInput(this)"
 					/>
 
-					<label id="playerName" for="name">
-						Имя: 
-					</label>
-
 					<!-- если ключ массива $_SESSION['validation']['name'] не пустой, то отображаем под инпутом с именем ошибку с текстом  -->
 					<?php if(hasValidationError(fieldName: 'name')): ?>
 						<small><?php validationErrorMessage(fieldName: 'name') ?></small>
@@ -43,6 +44,10 @@ require_once __DIR__ . '/helpers.php';
                 </div>
 
 				<div class="playerEmail">
+					<label id="playerEmail"  for="email">
+						Эл. почта:
+					</label>
+
 					<input 
 						type="text" 
 						id="email" 
@@ -55,16 +60,36 @@ require_once __DIR__ . '/helpers.php';
 						maxlength="70" 
 						onblur="checkInput(this)"
 					/>
-					<label id="playerEmail"  for="email">
-						Эл. почта:
-					</label>
 
 					<?php if(hasValidationError(fieldName: 'email')): ?>
 						<small><?php validationErrorMessage(fieldName: 'email') ?></small>
 					<?php endif; ?>
 				</div>
+				
+				<div class="playerAvatar">
 
-				<div class="playerPassword">
+					<label id="playerAvatar" for="avatar">
+						Изображение профиля
+					</label>
+
+					<input
+						type="file"
+						id="avatar"
+						name="avatar"
+						<?php echo validationErrorAttr('avatar'); ?>
+					/>
+
+					<?php if(hasValidationError('avatar')): ?>
+						<small><?php echo validationErrorMessage('avatar'); ?></small>
+					<?php endif; ?>
+				</div>
+
+				<div class="flexPassword">
+					<div class="playerPassword">
+
+						<label id="playerPassword" for="password">
+							Пароль: 
+						</label>
 
 						<input 
 							type="password" 
@@ -77,34 +102,35 @@ require_once __DIR__ . '/helpers.php';
 							maxlength="20" 
 							onblur="checkInput(this)"
 						/>
-						<label id="playerPassword" for="password">
-							Пароль: 
-						</label>
+
 
 						<?php if(hasValidationError(fieldName: 'password')): ?>
 							<small><?php validationErrorMessage(fieldName: 'password') ?></small>
 						<?php endif; ?>
-				</div>
+					</div>
 
-				<div class="confirmPlayerPassword">
-					<input 
-						type="password" 
-						id="confirmPassword"
-						name="confirmPassword"
-						autocomplete="off" 
-						placeholder="********"
-						<?php validationErrorAttr(fieldName: 'confirmPassword') ?>
-						minlength="8" 
-						maxlength="20" 
-						onblur="checkInput(this)"
-					/>
-					<label id="confirmPlayerPassword" for="confirmPassword">
-						Подтвердите: 
-					</label>
+					<div class="confirmPlayerPassword">
 
-					<?php if(hasValidationError(fieldName: 'confirmPassword')): ?>
-						<small><?php validationErrorMessage(fieldName: 'confirmPassword') ?></small>
-					<?php endif; ?>
+						<label id="confirmPlayerPassword" for="confirmPassword">
+							Подтвердите: 
+						</label>
+
+						<input 
+							type="password" 
+							id="confirmPassword"
+							name="confirmPassword"
+							autocomplete="off" 
+							placeholder="********"
+							<?php validationErrorAttr(fieldName: 'confirmPassword') ?>
+							minlength="8" 
+							maxlength="20" 
+							onblur="checkInput(this)"
+						/>
+
+						<?php if(hasValidationError(fieldName: 'confirmPassword')): ?>
+							<small><?php validationErrorMessage(fieldName: 'confirmPassword') ?></small>
+						<?php endif; ?>
+					</div>
 				</div>
               </div>
 			  <fieldset>

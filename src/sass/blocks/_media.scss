@@ -4,7 +4,7 @@
 	}
 
     .nameInput {
-        width: 70%;
+        width: 80%;
     }
 
     // .exitNext a {
@@ -52,7 +52,7 @@
 			font-size: 32px;
 		}
 		p {
-			font-size: 24px;
+			font-size: 20px;
 			margin-bottom: 20px;
 		}
 		a {
@@ -86,35 +86,44 @@
     .input-group {
         .playerName,
         .playerEmail,
+        .playerAvatar,
         .playerPassword,
         .confirmPlayerPassword {
-            margin-bottom: 40px;
-            input + label {
+            input {
+                font-size: 16px;
+            }
+            label {
                 font-size: 20px;
                 padding-top: 0;
-        }
-    }
-
-        .inputButton {
-            padding: 15px;
-            width: 75%;
-            font-size: 14px;
-            font-weight: 600;
-            margin: 15px auto;
-        }
-
-        .startMenu {
-            min-height: 170px;
-            margin-top: 60px;
-            a {
-                width: 50%;
             }
         }
-        audio {
-            width: 90%;
-            margin-bottom: 10px;
+
+        .flexPassword {
+            display: block;
+            .playerPassword,
+            .confirmPlayerPassword{
+                width: 100%;
+            }
         }
-    }   
+    }
+    .inputButton {
+        padding: 15px;
+        width: 75%;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 15px auto;
+    }
+    .startMenu {
+        min-height: 170px;
+        margin-top: 60px;
+        a {
+            width: 50%;
+        }
+    } 
+    audio {
+        width: 90%;
+        margin-bottom: 10px;
+    }
 }
 
 @media only screen and (max-width: 576px) {
@@ -126,7 +135,7 @@
 			font-size: 26px;
 		}
 		p {
-			font-size: 22px;
+			font-size: 18px;
 		}
 		a {
 			font-size: 20px;
@@ -154,6 +163,26 @@
         margin-bottom: 25px;
     }
 
+
+    .input-group {
+        .playerName,
+        .playerEmail,
+        .playerAvatar,
+        .playerPassword,
+        .confirmPlayerPassword {
+            input {
+                font-size: 14px;
+            }
+            label {
+                font-size: 18px;
+                padding-bottom: 0;
+            }
+        }
+        .playerAvatar input#file-upload-button {
+            border-radius: 20px;
+        }
+
+    }
 
     .inputButton {
         width: 100%;

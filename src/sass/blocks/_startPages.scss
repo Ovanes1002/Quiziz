@@ -25,21 +25,21 @@
 
 .input-group {
 	position: relative;
-	max-width: 300px;
+	width: 75%;
+	// max-width: 300px;
 	.playerName,
 	.playerEmail,
+	.playerAvatar,
 	.playerPassword,
 	.confirmPlayerPassword {
-		margin-bottom: 50px;
-		position: relative;
+		margin-bottom: 20px;
+		// position: relative;
 		small {
 			color: rgb(225, 39, 11);
 		}
 		input {
 			width: 100%;
 			color: #cacaca;
-			// margin-top: 30px;
-			// max-width: 350px;
 			font-size: 20px;
 			padding: 7px 13px;
 			border: none;
@@ -47,33 +47,36 @@
 			border: none;
 			box-shadow: 0px 0px 10px 5px #001884;
 			border-radius: 20px;
-			background: transparent;
-			+ label {
-				font-size: 24px;
-			}
-			// &:focus + label,
-			// &.active + label {
-			// 	font-size: 20px;
-			// 	transform: translateY(-30px);
-			// }
+			background: transparent;	
 			&[aria-invalid="true"] {
 				border: none;
 				box-shadow: 0px 0px 10px 5px red;
 				border-radius: 20px;
-				// &:focus + label {
-				// 	font-size: 20px;
-				// 	transform: translateY(-40px);
-				// }
-
 			}
 		}
 		label {
-			position: absolute;
-			left: 10px;
-			top: -40px;
+			display: block;
+			text-align: start;
+			font-size: 24px;
 			pointer-events: none;
-			// padding-top: 3px;
-			// padding-left: 10px;
+			padding-left: 10px;
+			padding-bottom: 5px;
+		}
+	}
+	.playerAvatar input {
+		box-shadow: none;
+		border-radius: 20px;
+		&[aria-invalid="true"] {
+			box-shadow: none;
+		}
+	}
+	.flexPassword {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		.playerPassword,
+		.confirmPlayerPassword{
+			width: 45%;
 		}
 	}
 }
@@ -85,7 +88,7 @@
     font-weight: 600;
     color: #fff;
     cursor: pointer;
-    margin: 0 auto 20px;
+    margin: 20px auto ;
 	padding: 20px;
     // height: 55px;
     text-align:center;
