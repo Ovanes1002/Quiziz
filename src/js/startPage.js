@@ -14,13 +14,13 @@ nameId.addEventListener("input", function (evt) {
   inputButton.innerHTML = "СОХРАНИТЬ";
 });
 
-let checkInput = function (input) {
-	if (input.value.trim().length > 0) {
-		input.className = 'active';
-	} else {
-		input.className = '';
-	}
-};
+// let checkInput = function (input) {
+// 	if (input.value.trim().length > 0) {
+// 		input.className = 'active';
+// 	} else {
+// 		input.className = '';
+// 	}
+// };
 
 
 // При нажатии на кнопку "СОХРАНИТЬ", добавление полю .active если оно не пустое

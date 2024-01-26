@@ -2,8 +2,9 @@
 
 require_once __DIR__ . '/helpers.php';
 
-// $_SESSION['validation'] = [];
+checkGuest();
 
+// $_SESSION['validation'] = [];
 ?>
 
 <?php include_once "head.php"; ?>
@@ -30,11 +31,10 @@ require_once __DIR__ . '/helpers.php';
 						name="name" 
 						autocomplete="off"
 						placeholder="Иван"
-						value="<?php echo old(key: 'name') ?>"
+						value="<?php echo getOldValue(key: 'name') ?>"
 						<?php validationErrorAttr(fieldName: 'name') ?>
 						minlength="1" 
 						maxlength="70" 
-						onblur="checkInput(this)"
 					/>
 
 					<!-- если ключ массива $_SESSION['validation']['name'] не пустой, то отображаем под инпутом с именем ошибку с текстом  -->
@@ -54,11 +54,10 @@ require_once __DIR__ . '/helpers.php';
 						name="email"
 						autocomplete="off"
 						placeholder="example@gmail.com"
-						value="<?php echo old(key: 'email') ?>"
+						value="<?php echo getOldValue(key: 'email') ?>"
 						<?php validationErrorAttr(fieldName: 'email') ?>
-						minlength="1" 
+						minlength="6" 
 						maxlength="70" 
-						onblur="checkInput(this)"
 					/>
 
 					<?php if(hasValidationError(fieldName: 'email')): ?>
@@ -100,7 +99,6 @@ require_once __DIR__ . '/helpers.php';
 							<?php validationErrorAttr(fieldName: 'password') ?>
 							minlength="8" 
 							maxlength="20" 
-							onblur="checkInput(this)"
 						/>
 
 
@@ -124,7 +122,6 @@ require_once __DIR__ . '/helpers.php';
 							<?php validationErrorAttr(fieldName: 'confirmPassword') ?>
 							minlength="8" 
 							maxlength="20" 
-							onblur="checkInput(this)"
 						/>
 
 						<?php if(hasValidationError(fieldName: 'confirmPassword')): ?>

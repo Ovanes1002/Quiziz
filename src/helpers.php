@@ -11,7 +11,7 @@ function redirect(string $path)
 }
 
 // присваивание полю ошибки
-function addValidationError (string $fieldName, string $message) 
+function setValidationError (string $fieldName, string $message) 
 {
     $_SESSION['validation'][$fieldName] = $message;
 }
@@ -37,12 +37,12 @@ function validationErrorMessage(string $fieldName)
     echo $message; 
 }
 
-function addOldValue (string $key, mixed $value) 
+function setOldValue (string $key, mixed $value) 
 {
     $_SESSION['old'][$key] = $value;
 }
 
-function old (string $key) 
+function getOldValue (string $key) 
 {
     $value = $_SESSION['old'][$key] ?? '';
     unset($_SESSION['old'][$key]);
@@ -52,7 +52,7 @@ function old (string $key)
 function uploadFile (array $file, string $prefix = ''):string 
 {
 
-    $uploadPath = __DIR__ . '/../uploads';
+    $uploadPath = __DIR__ . '/uploads';
 
     if (!is_dir($uploadPath)) {
         mkdir($uploadPath, permissions: 0777, recursive: true);
@@ -68,6 +68,23 @@ function uploadFile (array $file, string $prefix = ''):string
     return "uploads/$fileName";
 }
 
+function setMessage (string $key, string $message): void 
+{
+    $_SESSION['message'][$key] = $message; 
+}
+
+function hasMessage (string $key): bool
+{
+    return isset($_SESSION['message'][$key]);
+}
+
+function getMessage (string $key): string
+{
+    $message = $_SESSION['message'][$key] ?? '';
+    unset($_SESSION['message'][$key]);
+    return $message;
+}
+
 function getPDO (): PDO 
 {
     try {
@@ -76,6 +93,50 @@ function getPDO (): PDO
         die("Connection error: {$e->getMessage()}");
     }
 
+}
+
+function findUser(string $email): array|bool
+{
+    $pdo = getPDO();
+
+    $stmt = $pdo->prepare(query:"SELECT * FROM users WHERE email = :email");
+    $stmt->execute(['email' => $email]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function currentUser(): array|bool
+{
+    $pdo = getPDO();
+
+    if(!isset($_SESSION['user'])) {
+        return false;
+    }
+
+    $userId = $_SESSION['user']['id'] ?? null;
+
+    $stmt = $pdo->prepare(query:"SELECT * FROM users WHERE id = :id");
+    $stmt->execute(['id' => $userId]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function logout (): void
+{
+    unset($_SESSION['user']['id']);
+    redirect(path: '/');
+}
+
+function checkAuth(): void
+{
+    if(!isset($_SESSION['user']['id'])) {
+        redirect(path: '/');
+    }
+}
+
+function checkGuest(): void
+{
+    if(isset($_SESSION['user']['id'])) {
+        redirect(path: '/profile.php');
+    }
 }
 
 ?>
