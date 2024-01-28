@@ -1,3 +1,5 @@
+const endButton           = document.querySelector(".endButton");
+
 // в зависимости от того какая кнопка "Завершить" нажата та таблица и будет изменяться
 // добавить 4 разных класса кнопке завершить
 endButton.addEventListener("click", (evt) => {
@@ -162,10 +164,7 @@ endButton.addEventListener("click", (evt) => {
   points.innerText = "1 балл";
   progress.style.width = `${current}%`;
   endButton.classList.add("hide");
-<<<<<<< HEAD
-=======
   // nameId.value = "";
->>>>>>> 2188815121513854e4976749cedda3429ded239c
   firstWriteAnswer.value = "";
   secondWriteAnswer.value = "";
   thirdWriteAnswer.value = "";

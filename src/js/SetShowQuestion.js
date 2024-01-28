@@ -1,3 +1,5 @@
+const   endButton           = document.querySelector(".endButton");
+
 setQuestion();
 
 // Установка вопроса

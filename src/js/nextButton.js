@@ -1,3 +1,5 @@
+const   endButton           = document.querySelector(".endButton");
+
 nextButton.addEventListener("click", (evt) => {
   // удаляем тень у каждой кнопки с классом "buttons"
   buttons.forEach((button) => {

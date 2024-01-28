@@ -3,12 +3,20 @@
         font-size: calc(0.7em + 1.5vw);
 	}
 
+    .startPage {
+		h1 {
+			font-size: 44px;
+		}
+    }
     .nameInput {
         width: 80%;
     }
 
-    .startMenu a {
-        width: 47%;
+    .startMenu {
+        a, form {
+            width: 47%;
+        }
+
     }
     // .exitNext a {
     //     width: 30%;
@@ -111,7 +119,7 @@
     }
     .inputButton {
         padding: 15px;
-        width: 75%;
+        width: 50%;
         font-size: 14px;
         font-weight: 600;
         margin: 15px auto;
@@ -119,8 +127,11 @@
     .startMenu {
         min-height: 170px;
         margin-top: 60px;
-        a {
+        a, form {
             width: 50%;
+        }
+        form button {
+            padding: 15px 10px;
         }
     } 
     audio {
@@ -148,8 +159,12 @@
 
     .startMenu {
         min-height: 150px;
-        a {
+        a, form {
             width: 66%;
+        }
+        form button {
+            font-size: 20px;
+            padding: 10px;
         }
     }
 
@@ -188,7 +203,7 @@
     }
 
     .inputButton {
-        width: 100%;
+        width: 75%;
         padding: 10px;
         transform-origin: center bottom;
     }

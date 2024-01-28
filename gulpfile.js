@@ -18,7 +18,10 @@ gulp.task('server', function() {
     gulp.watch("src/*.php").on('change', function () {
         browserSync.reload();
       });
-
+    
+    // gulp.watch("src/js/*.js").on('change', function () {
+    //     browserSync.reload();
+    // });
     // gulp.watch("src/actions/*.php").on('change', function () {
     //     browserSync.reload();
     // });

@@ -9,7 +9,7 @@ const
   menuButton          = document.querySelector(".menuButton"),
   launchButton        = document.querySelector(".launchButton"),
   quitQuiz            = document.querySelector(".quitQuiz"),
-  endButton           = document.querySelector(".endButton"),
+
   finishQuiz          = document.querySelector(".finishQuiz"),
   playerResult        = document.querySelector(".playerResult"),
 
@@ -59,7 +59,7 @@ const
   // topics
   chooseScoreTopic    = document.querySelector(".choose_score_topic"),
   chooseTopic         = document.querySelector(".choose_topic"),
-  topics              = document.querySelectorAll(".topic"),
+
   scoreTopics         = document.querySelectorAll(".score_topic"),
   sportTopic          = document.querySelector(".score_sport_topic"), // не используется
   musicTopic          = document.querySelector(".score_music_topic"), // не используется

@@ -11,8 +11,7 @@ checkGuest();
 	<div class="headerSite">Quiziz</div>
 		<div class="container">
 			<div class="startPage">
-			<!-- <h1>Проверьте свои знания с Quiziz</h1>
-			<p>Испытайте свою сноровку и повеселитесь в нашей викторине!</p> -->
+			<h1>Добро пожаловать в викторину Quiziz!</h1>
 			<div class="nameInput">
 				<form class="loginForm" action="/actions/login.php" method="post">
 					<h2>Вход</h2>

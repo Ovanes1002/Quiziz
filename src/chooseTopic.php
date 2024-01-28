@@ -2,7 +2,7 @@
 <body>
     <div class="headerSite">Quiziz</div>
     <div class="container">
-        <div class="choose_topic hide">
+        <div class="choose_topic">
             <h1>Выберите тему</h1>
             <div class="topic-buttons">
             <button class="topic sport_topic" style="box-shadow: none">
@@ -23,7 +23,7 @@
             </button>
             </div>
         </div>
-        <div class="exitNext hide">
+        <div class="exitNext">
             <a class="quitQuiz" href="#">← Выйти</a>
             <!-- <a class="nextButton hide" href="#">Далее →</a>
             <a class="endButton hide" href="#">Завершить</a> -->
