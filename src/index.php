@@ -76,7 +76,7 @@ checkGuest();
 			</div>
 		</div>
 	</body>
-	<script defer src="js/startPage.js"></script>
+	<script defer src="js/quizVariables.js"></script>
 </html>
 
 <!-- + 1.Добавить модальное окно, при количестве символов меньше 2 в вводе имени

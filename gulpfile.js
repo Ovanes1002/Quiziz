@@ -5,6 +5,8 @@ const cleanCSS     = require('gulp-clean-css');
 const autoprefixer = require('gulp-autoprefixer');
 // const terser       = require('gulp-terser');
 const concat       = require('gulp-concat');
+const babel        = require("gulp-babel");
+const uglify       = require('gulp-uglify');
 const rename       = require("gulp-rename");
 const imagemin     = require('gulp-imagemin');
 // const htmlmin      = require('gulp-htmlmin');
@@ -19,9 +21,9 @@ gulp.task('server', function() {
         browserSync.reload();
       });
     
-    // gulp.watch("src/js/*.js").on('change', function () {
-    //     browserSync.reload();
-    // });
+    gulp.watch("src/js/*.js").on('change', function () {
+        browserSync.reload();
+    });
     // gulp.watch("src/actions/*.php").on('change', function () {
     //     browserSync.reload();
     // });
@@ -40,6 +42,7 @@ gulp.task('styles', function() {
 gulp.task('watch', function() {
     gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));
     gulp.watch("src/*.php").on('change', gulp.parallel('php'));
+    gulp.watch('src/js/*.js').on('change', gulp.parallel('scripts'));
 });
 
 // gulp.task('html', function () {
@@ -80,8 +83,12 @@ gulp.task('php', function () {
 
 gulp.task('scripts', function () {
     return gulp.src("src/js/*.js")
+        .pipe(babel())
         // .pipe(concat('quiz.min.js'))
-        // .pipe(terser())
+        .pipe(uglify())
+        .on('error', function(err) {
+            console.error('Error in concatenating or transpiling:', err.toString());
+        })
         .pipe(gulp.dest("dist/js"));
 });
 

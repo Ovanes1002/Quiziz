@@ -1,6 +1,3 @@
-const launchButton = document.querySelector(".launchButton"),
-      endButton    = document.querySelector(".endButton"),
-      topics       = document.querySelectorAll(".topic");
 
 // кнопка "Начать"
 // после нажатия начинается викторина

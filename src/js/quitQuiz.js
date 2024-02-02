@@ -1,7 +1,3 @@
-const  
-  endButton           = document.querySelector(".endButton"), 
-  launchButton = document.querySelector(".launchButton");
-
 quitQuiz.addEventListener("click", function (evt) {
   if (lastClickedTopic != null) lastClickedTopic.style.boxShadow = "none";
 

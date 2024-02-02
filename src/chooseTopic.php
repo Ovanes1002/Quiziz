@@ -1,3 +1,12 @@
+<?php 
+
+require_once __DIR__ . '/helpers.php';
+
+checkAuth();
+
+$user = currentUser();
+
+?>
 <?php include_once "head.php"; ?>
 <body>
     <div class="headerSite">Quiziz</div>
@@ -24,12 +33,13 @@
             </div>
         </div>
         <div class="exitNext">
-            <a class="quitQuiz" href="#">← Выйти</a>
-            <!-- <a class="nextButton hide" href="#">Далее →</a>
-            <a class="endButton hide" href="#">Завершить</a> -->
-            <a class="launchButton hide" href="./card.php">Начать</a>
+            <a class="quitQuiz" href="/profile.php">← Выйти</a>
+            <!-- <a class="nextButton hide" href="#">Далее →</a> -->
+            <a class="endButton hide" href="#">Завершить</a>
+            <a class="launchButton hide" href="/card.php">Начать</a>
         </div>
     </div>
   </body>
+  <script defer src="js/quizVariables.js"></script>
   <script defer src="js/chooseTopic.js"></script>
 </html>

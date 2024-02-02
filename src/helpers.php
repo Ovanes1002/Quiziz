@@ -125,6 +125,8 @@ function logout (): void
     redirect(path: '/');
 }
 
+// проверка авторизации
+// если пользователь не авторизован, то редирект на главную страницу
 function checkAuth(): void
 {
     if(!isset($_SESSION['user']['id'])) {
@@ -132,6 +134,8 @@ function checkAuth(): void
     }
 }
 
+// проверка гостя
+// если пользователь авторизован, то редирект на профиль
 function checkGuest(): void
 {
     if(isset($_SESSION['user']['id'])) {

@@ -1,12 +1,3 @@
-const nameId            = document.getElementById("name"),
-      emailId           = document.getElementById("email"),
-      closeModalWindow  = document.querySelector(".close"),
-      inputButton       = document.querySelector(".inputButton"),
-      startButton       = document.querySelector(".startButton"),
-      launchButton      = document.querySelector(".launchButton"),
-
-      // стартовая страница
-      startPage         = document.querySelector(".startPage");
 
 // При изменении поля ввода, менять текст кнопки submitButton
 nameId.addEventListener("input", function (evt) {
