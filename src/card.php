@@ -6,6 +6,32 @@ checkAuth();
 
 $user = currentUser();
 
+// if (isset($_SESSION['topic'])) {
+//     $topic = $_SESSION['topic'];
+//     // Теперь у вас есть значение $topic, которое можно использовать в вашей викторине
+// } else {
+//     // Если значение не установлено, можете принять решение по умолчанию или перенаправить пользователя
+//     header('Location: index.php'); // Например, перенаправляем пользователя на страницу выбора темы
+//     exit();
+// }
+if(isset($_POST['lastClickedTopic'])) {
+
+	$_SESSION['lastClickedTopic'] = $_POST['lastClickedTopic'];
+  
+	// check session variable is set
+	if(isset($_SESSION['lastClickedTopic'])) {
+	  $lastClickedTopic = $_SESSION['lastClickedTopic'];
+	} else {
+	  $lastClickedTopic = 'No data'; 
+	}
+  
+	echo "Тема викторины: $lastClickedTopic";
+  
+  } else {
+	echo "Topic not set in POST";
+  }
+  
+
 ?>
 <?php include_once "head.php"; ?>
 <body>
@@ -90,9 +116,9 @@ $user = currentUser();
         </div>
     </div>
   </body>
-  <script defer src="js/quizVariables.js"></script>
-  <script defer src="js/questions.js"></script>
-  <script defer src="js/chooseTopic.js"></script>
-  <script defer src="js/SetShowQuestion.js"></script>
-  <script defer src="js/chooseAnswer.js"></script>
+  <script src="js/quizVariables.js" defer></script>
+  <script src="js/questions.js" defer></script>
+  <script src="js/chooseTopic.js" defer></script>
+  <script src="js/SetShowQuestion.js" defer></script>
+  <script src="js/chooseAnswer.js" defer></script>
 </html>

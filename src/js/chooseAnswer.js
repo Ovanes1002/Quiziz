@@ -1,3 +1,10 @@
+const nextButton = document.querySelector(".nextButton");
+// endButton           = document.querySelector(".endButton"),
+// buttons             = document.querySelectorAll(".button"),
+// firstWriteAnswer    = document.querySelector(".firstWriteAnswer"),
+// secondWriteAnswer   = document.querySelector(".secondWriteAnswer"),
+// thirdWriteAnswer    = document.querySelector(".thirdWriteAnswer");
+
 buttons.forEach((button) => {
   button.addEventListener("click", (evt) => {
     // удаляем тень у каждой кнопки с классом "buttons"

@@ -1,4 +1,9 @@
-
+const launchButton = document.querySelector(".launchButton"),
+endButton           = document.querySelector(".endButton"),
+buttons             = document.querySelectorAll(".button"),
+topics              = document.querySelectorAll(".topic");
+let currentQuestionIndex,
+    lastClickedTopic  = null;
 // кнопка "Начать"
 // после нажатия начинается викторина
 launchButton.addEventListener("click", function (evt) {
@@ -11,7 +16,7 @@ launchButton.addEventListener("click", function (evt) {
   buttons.forEach((button) => {
     button.classList.remove("hide");
   });
-
+  console.log(lastClickedTopic);
 });
 
 topics.forEach((topic) => {

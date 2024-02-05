@@ -1,3 +1,23 @@
+const nextButton = document.querySelector(".nextButton")
+      launchButton = document.querySelector(".launchButton"),
+      quitQuiz = document.querySelector(".quitQuiz"),
+      endButton           = document.querySelector(".endButton"),
+      header              = document.getElementById("header"),
+      footer              = document.getElementById("footer"),
+      exitNext            = document.querySelector(".exitNext"),
+      main                = document.querySelector(".card"),
+      answerButtons       = document.querySelector(".answer-buttons"),
+      firstWriteAnswer    = document.querySelector(".firstWriteAnswer"),
+      secondWriteAnswer   = document.querySelector(".secondWriteAnswer"),
+      thirdWriteAnswer    = document.querySelector(".thirdWriteAnswer"),
+      audioSport          = document.querySelector(".audioSport"),
+      audioMusic          = document.querySelector(".audioMusic"),
+      audioArt            = document.querySelector(".audioArt"),
+      audioHistory        = document.querySelector(".audioHistory"),
+      startPage           = document.querySelector(".startPage"),
+      chooseScoreTopic    = document.querySelector(".choose_score_topic");
+
+
 quitQuiz.addEventListener("click", function (evt) {
   if (lastClickedTopic != null) lastClickedTopic.style.boxShadow = "none";
 

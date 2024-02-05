@@ -1,3 +1,21 @@
+const 
+// endButton = document.querySelector(".endButton"),
+main                = document.querySelector(".card"),
+questionElement     = document.querySelector(".question"),
+answerButtons       = document.querySelector(".answer-buttons"),
+// buttons             = document.querySelectorAll(".button"),
+count               = document.querySelector(".questionNumber"),
+points              = document.querySelector(".points"),
+progress            = document.getElementById("progressBar"),
+max                 = 100,
+firstWriteAnswer    = document.querySelector(".firstWriteAnswer"),
+secondWriteAnswer   = document.querySelector(".secondWriteAnswer"),
+thirdWriteAnswer    = document.querySelector(".thirdWriteAnswer"),
+audioSport          = document.querySelector(".audioSport"),
+audioMusic          = document.querySelector(".audioMusic"),
+audioArt            = document.querySelector(".audioArt"),
+audioHistory        = document.querySelector(".audioHistory");
+
 setQuestion();
 
 // Установка вопроса

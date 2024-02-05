@@ -1,3 +1,10 @@
+const
+scoreSport          = document.querySelector(".score__sport"),
+scoreMusic          = document.querySelector(".score__music"),
+scoreArt            = document.querySelector(".score__art"),
+scoreHistory        = document.querySelector(".score__history"),
+chooseScoreTopic    = document.querySelector(".choose_score_topic"),
+scoreTopics         = document.querySelectorAll(".score_topic");
 scoreTopics.forEach((scoreTopic) => {
   scoreTopic.addEventListener("click", (evt) => {
     clck = evt.currentTarget;

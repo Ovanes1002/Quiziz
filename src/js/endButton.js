@@ -1,3 +1,26 @@
+const nextButton = document.querySelector(".nextButton"),
+endButton           = document.querySelector(".endButton"),
+finishQuiz          = document.querySelector(".finishQuiz"),
+playerResult        = document.querySelector(".playerResult"),
+header              = document.getElementById("header"),
+footer              = document.getElementById("footer"),
+exitNext            = document.querySelector(".exitNext"),
+main                = document.querySelector(".card"),
+answerButtons       = document.querySelector(".answer-buttons"),
+buttons             = document.querySelectorAll(".button"),
+points              = document.querySelector(".points"),
+progress            = document.getElementById("progressBar"),
+firstWriteAnswer    = document.querySelector(".firstWriteAnswer"),
+secondWriteAnswer   = document.querySelector(".secondWriteAnswer"),
+thirdWriteAnswer    = document.querySelector(".thirdWriteAnswer"),
+audioSport          = document.querySelector(".audioSport"),
+audioMusic          = document.querySelector(".audioMusic"),
+audioArt            = document.querySelector(".audioArt"),
+audioHistory        = document.querySelector(".audioHistory"),
+tableSport          = document.querySelector(".tableSport"),
+tableMusic          = document.querySelector(".tableMusic"),
+tableArt            = document.querySelector(".tableArt"),
+tableHistory        = document.querySelector(".tableHistory");
 
 
 // в зависимости от того какая кнопка "Завершить" нажата та таблица и будет изменяться
