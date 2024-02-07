@@ -143,4 +143,37 @@ function checkGuest(): void
     }
 }
 
+function setTopic()
+{
+    if(isset($_POST['lastClickedTopic'])) {
+
+        $_SESSION['lastClickedTopic'] = $_POST['lastClickedTopic'];
+        // return $_SESSION['lastClickedTopic'];
+        unset($_POST['lastClickedTopic']);
+        return $_SESSION['lastClickedTopic'];
+      
+    } else {
+        echo "Topic not set in POST";
+      }
+
+}
+
+// function setTopic (string $key, mixed $lastClickedTopic): void 
+// {
+//     $_SESSION['topic'][$key] = $lastClickedTopic; 
+// }
+
+function topicIndex($topic)
+{
+    if($topic == 'спорт') {
+        $currentIndex = 0;
+    } elseif ($topic == 'музыка') {
+        $currentIndex = 10;
+    } elseif ($topic == 'искусство') {
+        $currentIndex = 20;
+    } else {
+        $currentIndex = 30;
+    }
+    return $currentIndex;
+}
 ?>

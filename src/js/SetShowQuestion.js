@@ -15,6 +15,8 @@ audioSport          = document.querySelector(".audioSport"),
 audioMusic          = document.querySelector(".audioMusic"),
 audioArt            = document.querySelector(".audioArt"),
 audioHistory        = document.querySelector(".audioHistory");
+const currentIndex = document.querySelector(".currentIndex");
+  currentQuestionIndex = currentIndex.innerText;
 
 setQuestion();
 
@@ -22,6 +24,7 @@ setQuestion();
 function setQuestion() {
   showQuestion(quizList[currentQuestionIndex]);
 }
+
 
 //  Показ вопроса с выбором ответов
 function showQuestion(question) {

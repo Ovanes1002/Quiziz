@@ -14,31 +14,22 @@ $user = currentUser();
 //     header('Location: index.php'); // Например, перенаправляем пользователя на страницу выбора темы
 //     exit();
 // }
-if(isset($_POST['lastClickedTopic'])) {
 
-	$_SESSION['lastClickedTopic'] = $_POST['lastClickedTopic'];
-  
-	// check session variable is set
-	if(isset($_SESSION['lastClickedTopic'])) {
-	  $lastClickedTopic = $_SESSION['lastClickedTopic'];
-	} else {
-	  $lastClickedTopic = 'No data'; 
-	}
-  
-	echo "Тема викторины: $lastClickedTopic";
-  
-  } else {
-	echo "Topic not set in POST";
-  }
-  
+
 
 ?>
 <?php include_once "head.php"; ?>
 <body>
     <div class="headerSite">Quiziz</div>
+
+
     <div class="container">
-		<header id="header" class="hide">
-        	<div class="questionNumber">1 / 6</div>
+		<h1>Тема:<?php echo setTopic();?></h1>
+		<span class="currentIndex">
+			<?php echo topicIndex($_SESSION['lastClickedTopic']);?>
+		</span>
+		<header id="header">
+        	<div class="questionNumber"></div>
         	<div class="points">1 балл</div>
       	</header>
 		<main class="card">
@@ -105,14 +96,14 @@ if(isset($_POST['lastClickedTopic'])) {
 			/>
 			</div>
 		</main>
-		<footer id="footer" class="hide">
+		<footer id="footer">
         	<div id="progressBar"></div>
       	</footer>
 		<div class="exitNext">
             <a class="quitQuiz" href="/profile.php">← Выйти</a>
             <a class="nextButton hide" href="#">Далее →</a>
             <a class="endButton hide" href="#">Завершить</a>
-            <a class="launchButton hide" href="/card.php">Начать</a>
+            <!-- <a class="launchButton hide" href="/card.php">Начать</a> -->
         </div>
     </div>
   </body>
@@ -121,4 +112,5 @@ if(isset($_POST['lastClickedTopic'])) {
   <script src="js/chooseTopic.js" defer></script>
   <script src="js/SetShowQuestion.js" defer></script>
   <script src="js/chooseAnswer.js" defer></script>
+  <script src="js/nextButton.js" defer></script>
 </html>

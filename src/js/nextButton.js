@@ -1,10 +1,11 @@
-const nextButton = document.querySelector(".nextButton"),
-endButton           = document.querySelector(".endButton"),
-buttons             = document.querySelectorAll(".button"),
-points              = document.querySelector(".points"),
-firstWriteAnswer    = document.querySelector(".firstWriteAnswer"),
-secondWriteAnswer   = document.querySelector(".secondWriteAnswer"),
-thirdWriteAnswer    = document.querySelector(".thirdWriteAnswer");
+// const 
+// nextButton = document.querySelector(".nextButton"),
+// endButton           = document.querySelector(".endButton"),
+// buttons             = document.querySelectorAll(".button"),
+// points              = document.querySelector(".points"),
+// firstWriteAnswer    = document.querySelector(".firstWriteAnswer"),
+// secondWriteAnswer   = document.querySelector(".secondWriteAnswer"),
+// thirdWriteAnswer    = document.querySelector(".thirdWriteAnswer");
 
 nextButton.addEventListener("click", (evt) => {
   // удаляем тень у каждой кнопки с классом "buttons"
@@ -51,12 +52,12 @@ nextButton.addEventListener("click", (evt) => {
   secondWriteAnswer.value = "";
   thirdWriteAnswer.value = "";
 
-  if (currentQuestionIndex % 10 != 9) {
-    nextButton.classList.remove("hide");
-  } else {
-    updateProgress(10);
-    endButton.classList.remove("hide");
-  }
+  // if (currentQuestionIndex % 10 != 9) {
+  //   nextButton.classList.remove("hide");
+  // } else {
+  //   updateProgress(10);
+  //   endButton.classList.remove("hide");
+  // }
 
   // if (quizList.length === currentQuestionIndex + 2) {
   //   nextButton.classList.add("hide");
