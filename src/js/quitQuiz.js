@@ -48,10 +48,7 @@ quitQuiz.addEventListener("click", function (evt) {
   audioArt.classList.add("hide");
   audioHistory.classList.add("hide");
 
-  if (endButton.classList.contains("endButtonSport")) endButton.classList.remove("endButtonSport");
-  else if (endButton.classList.contains("endButtonMusic")) endButton.classList.remove("endButtonMusic");
-  else if (endButton.classList.contains("endButtonArt")) endButton.classList.remove("endButtonArt");
-  else if (endButton.classList.contains("endButtonHistory")) endButton.classList.remove("endButtonHistory");
+
 
   main.style.height = "";
   answerButtons.style.margin = "40px auto";

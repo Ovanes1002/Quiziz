@@ -24,7 +24,7 @@ $user = currentUser();
 
 
     <div class="container">
-		<h1>Тема:<?php echo setTopic();?></h1>
+		<h1>Тема: <span class="currentTopic"><?php echo setTopic();?></span></h1>
 		<span class="currentIndex">
 			<?php echo topicIndex($_SESSION['lastClickedTopic']);?>
 		</span>
@@ -35,65 +35,65 @@ $user = currentUser();
 		<main class="card">
 			<p class="question"></p>
 			<div class="answer-buttons">
-			<button class="button" id="btn1"></button>
-			<button class="button" id="btn2"></button>
-			<button class="button" id="btn3"></button>
-			<button class="button" id="btn4"></button>
-			<input
-				type="text"
-				class="firstWriteAnswer hide"
-				autofocus
-				autocomplete="off"
-				placeholder="Ответ..."
-				required
-				maxlength="5"
-			/>
-			<input
-				type="text"
-				class="secondWriteAnswer hide"
-				autofocus
-				autocomplete="off"
-				placeholder="Ответ..."
-				required
-				maxlength="30"
-			/>
-			<audio class="audioSport hide" controls>
-				<source src="quizAudio/LeoMessi/messi.opus" type="audio/ogg; codecs=opus" />
-				<source src="quizAudio/LeoMessi/messi.ogg" type="audio/ogg; codecs=vorbis" />
-				<source src="quizAudio/LeoMessi/messi.mp3" type="audio/mpeg" />
-				Ваш браузер не поддерживает встроенные аудио. Попробуйте
-				<a href="quizAudio/LeoMessi/messi.mp3" download>скачать</a> файл.
-			</audio>
-			<audio class="audioMusic hide" controls>
-				<source src="quizAudio/BobMarley/marley.opus" type="audio/ogg; codecs=opus" />
-				<source src="quizAudio/BobMarley/marley.ogg" type="audio/ogg; codecs=vorbis" />
-				<source src="quizAudio/BobMarley/marley.mp3" type="audio/mpeg" />
-				Ваш браузер не поддерживает встроенные аудио. Попробуйте
-				<a href="quizAudio/BobMarley/marley.mp3" download>скачать</a> файл.
-			</audio>
-			<audio class="audioArt hide" controls>
-				<source src="quizAudio/Interstellar/Zimmer.opus" type="audio/ogg; codecs=opus" />
-				<source src="quizAudio/Interstellar/Zimmer.ogg" type="audio/ogg; codecs=vorbis" />
-				<source src="quizAudio/Interstellar/Zimmer.mp3" type="audio/mpeg" />
-				Ваш браузер не поддерживает встроенные аудио. Попробуйте
-				<a href="quizAudio/Interstellar/Zimmer.mp3" download>скачать</a> файл.
-			</audio>
-			<audio class="audioHistory hide" controls>
-				<source src="quizAudio/БорисЕльцин/ельцин.opus" type="audio/ogg; codecs=opus" />
-				<source src="quizAudio/БорисЕльцин/ельцин.ogg" type="audio/ogg; codecs=vorbis" />
-				<source src="quizAudio/БорисЕльцин/ельцин.mp3" type="audio/mpeg" />
-				Ваш браузер не поддерживает встроенные аудио. Попробуйте
-				<a href="quizAudio/БорисЕльцин/ельцин.mp3" download>скачать</a> файл.
-			</audio>
-			<input
-				type="text"
-				class="thirdWriteAnswer hide"
-				autofocus
-				autocomplete="off"
-				placeholder="Ответ..."
-				required
-				maxlength="35"
-			/>
+				<button class="button" id="btn1"></button>
+				<button class="button" id="btn2"></button>
+				<button class="button" id="btn3"></button>
+				<button class="button" id="btn4"></button>
+				<input
+					type="text"
+					class="firstWriteAnswer hide"
+					autofocus
+					autocomplete="off"
+					placeholder="Ответ..."
+					required
+					maxlength="5"
+				/>
+				<input
+					type="text"
+					class="secondWriteAnswer hide"
+					autofocus
+					autocomplete="off"
+					placeholder="Ответ..."
+					required
+					maxlength="30"
+				/>
+				<audio class="audioSport hide" controls>
+					<source src="quizAudio/LeoMessi/messi.opus" type="audio/ogg; codecs=opus" />
+					<source src="quizAudio/LeoMessi/messi.ogg" type="audio/ogg; codecs=vorbis" />
+					<source src="quizAudio/LeoMessi/messi.mp3" type="audio/mpeg" />
+					Ваш браузер не поддерживает встроенные аудио. Попробуйте
+					<a href="quizAudio/LeoMessi/messi.mp3" download>скачать</a> файл.
+				</audio>
+				<audio class="audioMusic hide" controls>
+					<source src="quizAudio/BobMarley/marley.opus" type="audio/ogg; codecs=opus" />
+					<source src="quizAudio/BobMarley/marley.ogg" type="audio/ogg; codecs=vorbis" />
+					<source src="quizAudio/BobMarley/marley.mp3" type="audio/mpeg" />
+					Ваш браузер не поддерживает встроенные аудио. Попробуйте
+					<a href="quizAudio/BobMarley/marley.mp3" download>скачать</a> файл.
+				</audio>
+				<audio class="audioArt hide" controls>
+					<source src="quizAudio/Interstellar/Zimmer.opus" type="audio/ogg; codecs=opus" />
+					<source src="quizAudio/Interstellar/Zimmer.ogg" type="audio/ogg; codecs=vorbis" />
+					<source src="quizAudio/Interstellar/Zimmer.mp3" type="audio/mpeg" />
+					Ваш браузер не поддерживает встроенные аудио. Попробуйте
+					<a href="quizAudio/Interstellar/Zimmer.mp3" download>скачать</a> файл.
+				</audio>
+				<audio class="audioHistory hide" controls>
+					<source src="quizAudio/БорисЕльцин/ельцин.opus" type="audio/ogg; codecs=opus" />
+					<source src="quizAudio/БорисЕльцин/ельцин.ogg" type="audio/ogg; codecs=vorbis" />
+					<source src="quizAudio/БорисЕльцин/ельцин.mp3" type="audio/mpeg" />
+					Ваш браузер не поддерживает встроенные аудио. Попробуйте
+					<a href="quizAudio/БорисЕльцин/ельцин.mp3" download>скачать</a> файл.
+				</audio>
+				<input
+					type="text"
+					class="thirdWriteAnswer hide"
+					autofocus
+					autocomplete="off"
+					placeholder="Ответ..."
+					required
+					maxlength="35"
+				/>
 			</div>
 		</main>
 		<footer id="footer">
@@ -113,4 +113,5 @@ $user = currentUser();
   <script src="js/SetShowQuestion.js" defer></script>
   <script src="js/chooseAnswer.js" defer></script>
   <script src="js/nextButton.js" defer></script>
+  <script src="js/endButton.js" defer></script>
 </html>

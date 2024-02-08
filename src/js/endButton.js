@@ -1,22 +1,23 @@
-const nextButton = document.querySelector(".nextButton"),
-endButton           = document.querySelector(".endButton"),
+const 
+// nextButton = document.querySelector(".nextButton"),
+// endButton           = document.querySelector(".endButton"),
 finishQuiz          = document.querySelector(".finishQuiz"),
 playerResult        = document.querySelector(".playerResult"),
 header              = document.getElementById("header"),
 footer              = document.getElementById("footer"),
 exitNext            = document.querySelector(".exitNext"),
-main                = document.querySelector(".card"),
-answerButtons       = document.querySelector(".answer-buttons"),
-buttons             = document.querySelectorAll(".button"),
-points              = document.querySelector(".points"),
-progress            = document.getElementById("progressBar"),
-firstWriteAnswer    = document.querySelector(".firstWriteAnswer"),
-secondWriteAnswer   = document.querySelector(".secondWriteAnswer"),
-thirdWriteAnswer    = document.querySelector(".thirdWriteAnswer"),
-audioSport          = document.querySelector(".audioSport"),
-audioMusic          = document.querySelector(".audioMusic"),
-audioArt            = document.querySelector(".audioArt"),
-audioHistory        = document.querySelector(".audioHistory"),
+// main                = document.querySelector(".card"),
+// answerButtons       = document.querySelector(".answer-buttons"),
+// buttons             = document.querySelectorAll(".button"),
+// points              = document.querySelector(".points"),
+// progress            = document.getElementById("progressBar"),
+// firstWriteAnswer    = document.querySelector(".firstWriteAnswer"),
+// secondWriteAnswer   = document.querySelector(".secondWriteAnswer"),
+// thirdWriteAnswer    = document.querySelector(".thirdWriteAnswer"),
+// audioSport          = document.querySelector(".audioSport"),
+// audioMusic          = document.querySelector(".audioMusic"),
+// audioArt            = document.querySelector(".audioArt"),
+// audioHistory        = document.querySelector(".audioHistory"),
 tableSport          = document.querySelector(".tableSport"),
 tableMusic          = document.querySelector(".tableMusic"),
 tableArt            = document.querySelector(".tableArt"),
@@ -42,12 +43,12 @@ endButton.addEventListener("click", (evt) => {
   // }
   if (
     (thirdWriteAnswer.value.toUpperCase() === "МЕССИ" || thirdWriteAnswer.value.toUpperCase() === "МЭССИ") &&
-    endButton.classList.contains("endButtonSport")
+    lastClickedTopic == 'спорт'
   ) {
     result += 4;
   } else if (
     (thirdWriteAnswer.value.toUpperCase() === "РЕГГИ" || thirdWriteAnswer.value.toUpperCase() === "РЭГГИ") &&
-    endButton.classList.contains("endButtonMusic")
+    lastClickedTopic == 'музыка'
   ) {
     result += 4;
   } else if (
@@ -55,13 +56,13 @@ endButton.addEventListener("click", (evt) => {
       thirdWriteAnswer.value.toUpperCase() === "ИНТЕРСТЕЛАР" ||
       thirdWriteAnswer.value.toUpperCase() === "ИНТЕРСТЭЛАР" ||
       thirdWriteAnswer.value.toUpperCase() === "ИНТЕРСТЭЛЛАР") &&
-    endButton.classList.contains("endButtonArt")
+      lastClickedTopic == 'искусство'
   ) {
     result += 4;
   } else if (
     (thirdWriteAnswer.value.toUpperCase() === "ЕЛЬЦИН" ||
       thirdWriteAnswer.value.toUpperCase() === "ЕЛЬЦЫН") &&
-    endButton.classList.contains("endButtonHistory")
+      lastClickedTopic == 'история'
   ) {
     result += 4;
   }
@@ -86,7 +87,7 @@ endButton.addEventListener("click", (evt) => {
   newRow.appendChild(nameCell);
   newRow.appendChild(resultCell);
 
-  if (endButton.classList.contains("endButtonSport")) {
+  if (lastClickedTopic == 'спорт') {
     tableSport.appendChild(newRow);
     // Сохраняем данные таблицы tableSport в localStorage
     localStorage.setItem("tableSportData", tableSport.innerHTML);
@@ -109,7 +110,7 @@ endButton.addEventListener("click", (evt) => {
     rowsArray.forEach((row) => {
       tableSport.appendChild(row);
     });
-  } else if (endButton.classList.contains("endButtonMusic")) {
+  } else if (lastClickedTopic == 'музыка') {
     tableMusic.appendChild(newRow);
     // Сохраняем данные таблицы tableMusic в localStorage
     localStorage.setItem("tableMusicData", tableMusic.innerHTML);
@@ -132,7 +133,7 @@ endButton.addEventListener("click", (evt) => {
     rowsArray.forEach((row) => {
       tableMusic.appendChild(row);
     });
-  } else if (endButton.classList.contains("endButtonArt")) {
+  } else if (lastClickedTopic == 'искусство') {
     tableArt.appendChild(newRow);
     // Сохраняем данные таблицы tableArt в localStorage
     localStorage.setItem("tableArtData", tableArt.innerHTML);
@@ -155,7 +156,7 @@ endButton.addEventListener("click", (evt) => {
     rowsArray.forEach((row) => {
       tableArt.appendChild(row);
     });
-  } else if (endButton.classList.contains("endButtonHistory")) {
+  } else if (lastClickedTopic == 'история') {
     tableHistory.appendChild(newRow);
     // Сохраняем данные таблицы tableHistory в localStorage
     localStorage.setItem("tableHistoryData", tableHistory.innerHTML);
@@ -195,15 +196,7 @@ endButton.addEventListener("click", (evt) => {
   secondWriteAnswer.classList.add("hide");
   thirdWriteAnswer.classList.add("hide");
 
-  if (endButton.classList.contains("endButtonSport")) {
-    endButton.classList.remove("endButtonSport");
-  } else if (endButton.classList.contains("endButtonMusic")) {
-    endButton.classList.remove("endButtonMusic");
-  } else if (endButton.classList.contains("endButtonArt")) {
-    endButton.classList.remove("endButtonArt");
-  } else if (endButton.classList.contains("endButtonHistory")) {
-    endButton.classList.remove("endButtonHistory");
-  }
+
 
   // submitButton.value = "Сохранить";
   // submitButton.style.backgroundColor = "white";

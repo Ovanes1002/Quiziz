@@ -29,22 +29,22 @@ nextButton.addEventListener("click", (evt) => {
   }
   console.log(firstWriteAnswer.value);
 
-  if (firstWriteAnswer.value == "5" && endButton.classList.contains("endButtonSport")) result += 3;
-  else if (firstWriteAnswer.value == "18" && endButton.classList.contains("endButtonMusic")) result += 3;
-  else if (firstWriteAnswer.value == "284" && endButton.classList.contains("endButtonArt")) result += 3; //
-  else if (firstWriteAnswer.value == "1961" && endButton.classList.contains("endButtonHistory")) result += 3; // изменить
+  if (firstWriteAnswer.value == "5" && lastClickedTopic == 'спорт') result += 3;
+  else if (firstWriteAnswer.value == "18" && lastClickedTopic == 'музыка') result += 3;
+  else if (firstWriteAnswer.value == "284" && lastClickedTopic == 'искусство') result += 3; //
+  else if (firstWriteAnswer.value == "1961" && lastClickedTopic == 'история') result += 3; // изменить
 
-  if (secondWriteAnswer.value == "245" && endButton.classList.contains("endButtonSport")) result += 3;
+  if (secondWriteAnswer.value == "245" && lastClickedTopic == 'спорт') result += 3;
   else if (
     secondWriteAnswer.value.toUpperCase() === "СКРИПКА" &&
-    endButton.classList.contains("endButtonMusic")
+    lastClickedTopic == 'музыка'
   )
     result += 3;
-  else if (secondWriteAnswer.value.toUpperCase() === "ДАЛИ" && endButton.classList.contains("endButtonArt"))
+  else if (secondWriteAnswer.value.toUpperCase() === "ДАЛИ" && lastClickedTopic == 'искусство')
     result += 3; // изменить
   else if (
     secondWriteAnswer.value.toUpperCase() === "ЯПОНИЯ" &&
-    endButton.classList.contains("endButtonHistory")
+    lastClickedTopic == 'история'
   )
     result += 3; // изменить
 
@@ -63,11 +63,11 @@ nextButton.addEventListener("click", (evt) => {
   //   nextButton.classList.add("hide");
   // }
 
-  if (quizList.length > currentQuestionIndex + 1) {
+  if (quizList.length > +currentQuestionIndex + 1) {
     currentQuestionIndex++;
     setQuestion();
+
   }
   updateProgress(10); // увеличение прогресса на 10%
   nextButton.classList.add("hide");
-  console.log(result);
 });

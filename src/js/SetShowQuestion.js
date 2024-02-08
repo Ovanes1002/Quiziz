@@ -14,9 +14,11 @@ thirdWriteAnswer    = document.querySelector(".thirdWriteAnswer"),
 audioSport          = document.querySelector(".audioSport"),
 audioMusic          = document.querySelector(".audioMusic"),
 audioArt            = document.querySelector(".audioArt"),
-audioHistory        = document.querySelector(".audioHistory");
-const currentIndex = document.querySelector(".currentIndex");
-  currentQuestionIndex = currentIndex.innerText;
+audioHistory        = document.querySelector(".audioHistory"),
+currentIndex        = document.querySelector(".currentIndex"),
+currentTopic        = document.querySelector(".currentTopic");
+currentQuestionIndex = currentIndex.innerText,
+lastClickedTopic    = currentTopic.innerText;
 
 setQuestion();
 
@@ -59,7 +61,7 @@ function showQuestion(question) {
     buttons.forEach((button) => {
       button.classList.add("hide");
     });
-    main.style.height = "220px";
+    // main.style.height = "220px";
     answerButtons.style.margin = "0";
     // answerButtons.style.marginBottom = "-20px";
 
@@ -77,10 +79,10 @@ function showQuestion(question) {
     points.innerText = `4 балла`;
     firstWriteAnswer.classList.add("hide");
     secondWriteAnswer.classList.add("hide");
-    if (endButton.classList.contains("endButtonSport")) audioSport.classList.remove("hide");
-    else if (endButton.classList.contains("endButtonMusic")) audioMusic.classList.remove("hide");
-    else if (endButton.classList.contains("endButtonArt")) audioArt.classList.remove("hide");
-    else if (endButton.classList.contains("endButtonHistory")) audioHistory.classList.remove("hide");
+    if (lastClickedTopic == 'спорт') audioSport.classList.remove("hide");
+    else if (lastClickedTopic == 'музыка') audioMusic.classList.remove("hide");
+    else if (lastClickedTopic == 'искусство') audioArt.classList.remove("hide");
+    else if (lastClickedTopic == 'история') audioHistory.classList.remove("hide");
     thirdWriteAnswer.classList.remove("hide");
     answerButtons.style.flexDirection = "column";
   }
