@@ -1,23 +1,10 @@
 const 
-// nextButton = document.querySelector(".nextButton"),
-// endButton           = document.querySelector(".endButton"),
+
 finishQuiz          = document.querySelector(".finishQuiz"),
 playerResult        = document.querySelector(".playerResult"),
 header              = document.getElementById("header"),
 footer              = document.getElementById("footer"),
 exitNext            = document.querySelector(".exitNext"),
-// main                = document.querySelector(".card"),
-// answerButtons       = document.querySelector(".answer-buttons"),
-// buttons             = document.querySelectorAll(".button"),
-// points              = document.querySelector(".points"),
-// progress            = document.getElementById("progressBar"),
-// firstWriteAnswer    = document.querySelector(".firstWriteAnswer"),
-// secondWriteAnswer   = document.querySelector(".secondWriteAnswer"),
-// thirdWriteAnswer    = document.querySelector(".thirdWriteAnswer"),
-// audioSport          = document.querySelector(".audioSport"),
-// audioMusic          = document.querySelector(".audioMusic"),
-// audioArt            = document.querySelector(".audioArt"),
-// audioHistory        = document.querySelector(".audioHistory"),
 tableSport          = document.querySelector(".tableSport"),
 tableMusic          = document.querySelector(".tableMusic"),
 tableArt            = document.querySelector(".tableArt"),
@@ -27,20 +14,7 @@ tableHistory        = document.querySelector(".tableHistory");
 // в зависимости от того какая кнопка "Завершить" нажата та таблица и будет изменяться
 // добавить 4 разных класса кнопке завершить
 endButton.addEventListener("click", (evt) => {
-  // // проверяем, содержит ли последняя кликнутая кнопка класс "true"
-  // if (
-  //   lastClickedButton !== null &&
-  //   lastClickedButton.classList.contains("true") &&
-  //   points.innerText == "1 балл"
-  // ) {
-  //   result++; // увеличиваем счетчик на 1
-  // } else if (
-  //   lastClickedButton !== null &&
-  //   lastClickedButton.classList.contains("true") &&
-  //   points.innerText == "2 балла"
-  // ) {
-  //   result += 2; // увеличиваем счетчик на 2
-  // }
+
   if (
     (thirdWriteAnswer.value.toUpperCase() === "МЕССИ" || thirdWriteAnswer.value.toUpperCase() === "МЭССИ") &&
     lastClickedTopic == 'спорт'

@@ -5,6 +5,10 @@ const nextButton = document.querySelector(".nextButton");
 // secondWriteAnswer   = document.querySelector(".secondWriteAnswer"),
 // thirdWriteAnswer    = document.querySelector(".thirdWriteAnswer");
 
+// function lastClickedButton () {
+
+// }
+
 buttons.forEach((button) => {
   button.addEventListener("click", (evt) => {
     // удаляем тень у каждой кнопки с классом "buttons"
@@ -13,6 +17,7 @@ buttons.forEach((button) => {
     });
     // сохраняем ссылку на последнюю кликнутую кнопку
     lastClickedButton = evt.currentTarget;
+    console.log(lastClickedButton);
     // Проверка, последний ли следующий вопрос
     if (currentQuestionIndex % 10 != 9) {
       nextButton.classList.remove("hide");

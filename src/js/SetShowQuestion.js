@@ -31,8 +31,8 @@ function setQuestion() {
 //  Показ вопроса с выбором ответов
 function showQuestion(question) {
   count.innerText = `${(currentQuestionIndex % 10) + 1}` + " / 10";
-  console.log(currentQuestionIndex);
-  console.log(lastClickedTopic);
+  // console.log(currentQuestionIndex);
+  // console.log(lastClickedTopic);
   questionElement.innerText = question.question; // установка вопроса карточки
 
   if (currentQuestionIndex % 10 < 7) {

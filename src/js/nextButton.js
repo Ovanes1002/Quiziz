@@ -12,12 +12,14 @@ nextButton.addEventListener("click", (evt) => {
   buttons.forEach((button) => {
     button.style.boxShadow = "none";
   });
-
+  console.log(points.innerText);
+  console.log(lastClickedButton);
   // проверяем, содержит ли последняя кликнутая кнопка класс "true"
   if (
     lastClickedButton !== null &&
     lastClickedButton.classList.contains("true") &&
     points.innerText == "1 балл"
+    
   ) {
     result++; // увеличиваем счетчик на 1
   } else if (
@@ -26,8 +28,10 @@ nextButton.addEventListener("click", (evt) => {
     points.innerText == "2 балла"
   ) {
     result += 2; // увеличиваем счетчик на 2
+
+  } else {
+    console.log('ОШИБКА');
   }
-  console.log(firstWriteAnswer.value);
 
   if (firstWriteAnswer.value == "5" && lastClickedTopic == 'спорт') result += 3;
   else if (firstWriteAnswer.value == "18" && lastClickedTopic == 'музыка') result += 3;
@@ -52,16 +56,6 @@ nextButton.addEventListener("click", (evt) => {
   secondWriteAnswer.value = "";
   thirdWriteAnswer.value = "";
 
-  // if (currentQuestionIndex % 10 != 9) {
-  //   nextButton.classList.remove("hide");
-  // } else {
-  //   updateProgress(10);
-  //   endButton.classList.remove("hide");
-  // }
-
-  // if (quizList.length === currentQuestionIndex + 2) {
-  //   nextButton.classList.add("hide");
-  // }
 
   if (quizList.length > +currentQuestionIndex + 1) {
     currentQuestionIndex++;
