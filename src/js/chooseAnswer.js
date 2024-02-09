@@ -16,10 +16,14 @@ buttons.forEach((button) => {
       button.style.boxShadow = "none";
     });
     // сохраняем ссылку на последнюю кликнутую кнопку
-    lastClickedButton = evt.currentTarget;
+    lastClickedButton = {
+      element: evt.currentTarget,
+      class: evt.currentTarget.classList.contains("true")
+    };
     console.log(lastClickedButton);
+    console.log(lastClickedButton.element.textContent);
     // Проверка, последний ли следующий вопрос
-    if (currentQuestionIndex % 10 != 9) {
+    if (+currentQuestionIndex % 10 != 9) {
       nextButton.classList.remove("hide");
     } else {
       updateProgress(10);
@@ -32,8 +36,8 @@ buttons.forEach((button) => {
       }
     });
 
-    if (lastClickedButton.style.boxShadow == "none" || !lastClickedButton.style.boxShadow) {
-      lastClickedButton.style.boxShadow = "0 0 5px 5px #5ca4ff";
+    if (lastClickedButton.element.style.boxShadow == "none" || !lastClickedButton.style.boxShadow) {
+      lastClickedButton.element.style.boxShadow = "0 0 5px 5px #5ca4ff";
     }
   });
 });

@@ -13,18 +13,20 @@ nextButton.addEventListener("click", (evt) => {
     button.style.boxShadow = "none";
   });
   console.log(points.innerText);
+  console.log(result);
   console.log(lastClickedButton);
+  console.log(lastClickedButton.element.textContent);
   // проверяем, содержит ли последняя кликнутая кнопка класс "true"
   if (
     lastClickedButton !== null &&
-    lastClickedButton.classList.contains("true") &&
+    lastClickedButton.class &&
     points.innerText == "1 балл"
     
   ) {
     result++; // увеличиваем счетчик на 1
   } else if (
     lastClickedButton !== null &&
-    lastClickedButton.classList.contains("true") &&
+    lastClickedButton.class &&
     points.innerText == "2 балла"
   ) {
     result += 2; // увеличиваем счетчик на 2
@@ -32,7 +34,7 @@ nextButton.addEventListener("click", (evt) => {
   } else {
     console.log('ОШИБКА');
   }
-
+  console.log(result);
   if (firstWriteAnswer.value == "5" && lastClickedTopic == 'спорт') result += 3;
   else if (firstWriteAnswer.value == "18" && lastClickedTopic == 'музыка') result += 3;
   else if (firstWriteAnswer.value == "284" && lastClickedTopic == 'искусство') result += 3; //

@@ -30,17 +30,17 @@ function setQuestion() {
 
 //  Показ вопроса с выбором ответов
 function showQuestion(question) {
-  count.innerText = `${(currentQuestionIndex % 10) + 1}` + " / 10";
+  count.innerText = `${(+currentQuestionIndex % 10) + 1}` + " / 10";
   // console.log(currentQuestionIndex);
   // console.log(lastClickedTopic);
   questionElement.innerText = question.question; // установка вопроса карточки
 
-  if (currentQuestionIndex % 10 < 7) {
+  if (+currentQuestionIndex % 10 < 7) {
     question.answers.forEach((answer) => {
-      if (currentQuestionIndex % 10 < 4) {
+      if (+currentQuestionIndex % 10 < 4) {
         // все текстовые вопросы на выбор 1 из 4
         buttons[i].innerText = answer.text;
-      } else if (currentQuestionIndex % 10 < 7) {
+      } else if (+currentQuestionIndex % 10 < 7) {
         points.innerText = `2 балла`;
         buttons[i].innerHTML = `<img src="${answer.text}" alt="фото викторины" />`;
       }
@@ -56,7 +56,7 @@ function showQuestion(question) {
 
       i++;
     });
-  } else if (currentQuestionIndex % 10 < 9) {
+  } else if (+currentQuestionIndex % 10 < 9) {
     points.innerText = `3 балла`;
     buttons.forEach((button) => {
       button.classList.add("hide");
@@ -65,17 +65,17 @@ function showQuestion(question) {
     answerButtons.style.margin = "0";
     // answerButtons.style.marginBottom = "-20px";
 
-    if (currentQuestionIndex % 10 == 7) {
+    if (+currentQuestionIndex % 10 == 7) {
       firstWriteAnswer.classList.remove("hide");
       secondWriteAnswer.classList.add("hide");
       thirdWriteAnswer.classList.add("hide");
-    } else if (currentQuestionIndex % 10 == 8) {
+    } else if (+currentQuestionIndex % 10 == 8) {
       firstWriteAnswer.classList.add("hide");
       secondWriteAnswer.classList.remove("hide");
       thirdWriteAnswer.classList.add("hide");
     }
     answerButtons.style.alignItems = "center";
-  } else if (currentQuestionIndex % 10 == 9) {
+  } else if (+currentQuestionIndex % 10 == 9) {
     points.innerText = `4 балла`;
     firstWriteAnswer.classList.add("hide");
     secondWriteAnswer.classList.add("hide");
