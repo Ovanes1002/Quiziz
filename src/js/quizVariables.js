@@ -5,5 +5,5 @@
     lastClickedButton = null, // переменная для хранения последней кликнутой кнопки
     // lastClickedTopic  = null,
     clck              = null,
-    userName          = "",
+    // userName          = "",
     current           = 0; // текущее значение

@@ -176,4 +176,18 @@ function topicIndex($topic)
     }
     return $currentIndex;
 }
+
+function playerResult() 
+{
+    if(isset($_POST['playerResult'])) {
+
+        $_SESSION['playerResult'] = $_POST['playerResult'];
+        // return $_SESSION['lastClickedTopic'];
+        unset($_POST['playerResult']);
+        return $_SESSION['playerResult'];
+      
+    } else {
+        echo "playerResult not set in POST";
+      }
+}
 ?>

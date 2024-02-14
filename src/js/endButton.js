@@ -1,7 +1,4 @@
 const 
-
-finishQuiz          = document.querySelector(".finishQuiz"),
-playerResult        = document.querySelector(".playerResult"),
 header              = document.getElementById("header"),
 footer              = document.getElementById("footer"),
 exitNext            = document.querySelector(".exitNext"),
@@ -50,7 +47,8 @@ endButton.addEventListener("click", (evt) => {
   footer.classList.add("hide");
   exitNext.classList.add("hide");
   nextButton.classList.add("hide");
-  finishQuiz.classList.remove("hide");
+  endButton.value = result;
+  console.log("result is " + endButton.value);
   playerResult.innerText = userName + ", Ваш результат:" + " " + result;
 
   const newRow = document.createElement("tr");

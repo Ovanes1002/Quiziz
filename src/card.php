@@ -25,15 +25,16 @@ $user = currentUser();
 
     <div class="container">
 		<h1>Тема: <span class="currentTopic"><?php echo setTopic();?></span></h1>
-		<span class="currentIndex">
-			<?php echo topicIndex($_SESSION['lastClickedTopic']);?>
-		</span>
+
 		<header id="header">
         	<div class="questionNumber"></div>
         	<div class="points">1 балл</div>
       	</header>
 		<main class="card">
 			<p class="question"></p>
+			<span class="currentIndex">
+				<?php echo topicIndex($_SESSION['lastClickedTopic']);?>
+			</span>
 			<div class="answer-buttons">
 				<button class="button" id="btn1"></button>
 				<button class="button" id="btn2"></button>
@@ -102,7 +103,9 @@ $user = currentUser();
 		<div class="exitNext">
             <a class="quitQuiz" href="/profile.php">← Выйти</a>
             <a class="nextButton hide" href="#">Далее →</a>
-            <a class="endButton hide" href="#">Завершить</a>
+            <form action="/finishQuiz.php" method="post">
+				<button class="endButton hide" value="" name="playerResult">Завершить</button>
+			</form>
             <!-- <a class="launchButton hide" href="/card.php">Начать</a> -->
         </div>
     </div>
