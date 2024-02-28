@@ -32,7 +32,7 @@ $user = currentUser();
             <div>История</div>
           </button>
         </div>
-        <a class="backButton">← Назад</a>
+        <a class="backButton" href="/profile.php">← Назад</a>
       </div>
     </div>
   </body>
