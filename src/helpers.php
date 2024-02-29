@@ -190,4 +190,36 @@ function playerResult()
         echo "playerResult not set in POST";
       }
 }
+
+function insertValue($user, $result, $lastClickedTopic)
+{
+    // Получаем подключение к базе данных
+    $pdo = getPDO();
+
+    // Вставляем данные пользователя и его результат в таблицу tableSport
+
+    // $user = $_SESSION['user']; // Предположим, что имя пользователя передается в POST-запросе
+    // $result = $_SESSION['playerResult']; // Предположим, что результат передается в POST-запросе
+
+    // Подготавливаем SQL-запрос с использованием подготовленных выражений
+    if($lastClickedTopic == 'спорт') {
+            $sql = "INSERT INTO tableSport (user, result) VALUES (:user, :result)";
+        } elseif ($lastClickedTopic == 'музыка') {
+            $sql = "INSERT INTO tableMusic (user, result) VALUES (:user, :result)";
+        } elseif ($lastClickedTopic == 'искусство') {
+            $sql = "INSERT INTO tableArt (user, result) VALUES (:user, :result)";
+        } else {
+            $sql = "INSERT INTO tableHistory (user, result) VALUES (:user, :result)";
+        }
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':user', $user, PDO::PARAM_STR);
+    $stmt->bindParam(':result', $result, PDO::PARAM_INT);
+
+    if ($stmt->execute()) {
+        echo "Данные успешно добавлены в таблицу";
+    } else {
+        echo "Ошибка при добавлении данных: " . $stmt->errorInfo()[2];
+}
+}
 ?>
