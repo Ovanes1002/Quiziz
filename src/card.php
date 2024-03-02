@@ -103,7 +103,7 @@ $user = currentUser();
 		<div class="exitNext">
             <a class="quitQuiz" href="/profile.php">← Выйти</a>
             <a class="nextButton hide" href="#">Далее →</a>
-            <form action="/finishQuiz.php" method="post">
+            <form class="endButtonForm hide" action="/finishQuiz.php" method="post">
 				<button class="endButton hide" value="" name="playerResult">Завершить</button>
 			</form>
             <!-- <a class="launchButton hide" href="/card.php">Начать</a> -->
