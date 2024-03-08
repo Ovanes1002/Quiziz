@@ -23,7 +23,7 @@ $user = currentUser();
 				<a class="startButton" href="/chooseTopic.php">Старт</a>
 				<a class="score__button" href="/chooseScoreTopic.php">Результаты</a>
 				<form action="/actions/logout.php" method="post">
-					<button role="button">Выйти из аккаунта</button>
+					<button role="button">Выйти</button>
 				</form>
 			</div>
 		</div>

@@ -250,8 +250,9 @@ if ($result->rowCount() > 0) {
         echo "</tr>";
     }
 
-} else {
-    echo "Таблица пуста.";
-}
+} 
+// else {
+//     echo "Таблица пуста.";
+// }
 }
 ?>

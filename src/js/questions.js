@@ -263,7 +263,7 @@ const quizList = [
       { text: "images/history/Александр II.jpg", correct: false },
       { text: "images/history/Николай II.jpg", correct: true },
       { text: "images/history/Александр III.jpg", correct: false },
-      { text: "images/history/Петр 1.jpg", correct: false },
+      { text: "images/history/Петр I.jpg", correct: false },
     ],
   },
   {
