@@ -38,7 +38,7 @@ buttons.forEach((button) => {
     });
 
     if (lastClickedButton.element.style.boxShadow == "none" || !lastClickedButton.style.boxShadow) {
-      lastClickedButton.element.style.boxShadow = "0 0 5px 5px #5ca4ff";
+      lastClickedButton.element.style.boxShadow = "0 0 5px 5px #0019b5";
     }
   });
 });

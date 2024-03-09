@@ -98,6 +98,14 @@
         width: 85%;
     }
 
+    .questionNumber {
+        width: 35%;
+    }
+    
+    .points {
+        width: 35%;
+    }
+
     .input-group {
         .playerName,
         .playerEmail,
@@ -162,6 +170,12 @@
         }
     }
 
+    .button,
+    .topic,
+    .score_topic {
+        width: 80%;
+    }
+
     .startPage {
 		h1 {
 			font-size: 26px;
@@ -196,14 +210,23 @@
         padding: 5px 0;
     }
 
-    .button:nth-child(-n+2), .score_topic:nth-child(-n+2), .topic:nth-child(-n+2) {
+    .button, .score_topic, .topic {
+        margin-bottom: 30px;
+    }
+
+    .button:nth-child(-n + 2),
+    .topic:nth-child(-n + 2),
+    .score_topic:nth-child(-n + 2) {
+        margin-bottom: 30px;
+    }
+
+    .button:nth-child(4), .score_topic.button:nth-child(4), .topi.button:nth-child(4)c {
         margin-bottom: 0;
     }
 
-    .button:nth-child(n), .score_topic:nth-child(n), .topic:nth-child(n) {
-        margin-bottom: 50px;
+    .backButton, .backButtonArt, .backButtonHistory, .backButtonMusic, .backButtonSport {
+        margin-top: 20px;
     }
-
 
     .input-group {
         .playerName,

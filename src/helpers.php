@@ -215,12 +215,12 @@ function insertValue($user, $result, $lastClickedTopic)
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':user', $user, PDO::PARAM_STR);
     $stmt->bindParam(':result', $result, PDO::PARAM_INT);
-
-    if ($stmt->execute()) {
-        echo "Данные успешно добавлены в таблицу";
-    } else {
-        echo "Ошибка при добавлении данных: " . $stmt->errorInfo()[2];
-}
+    $stmt->execute();   
+//     if ($stmt->execute()) {
+//         echo "Данные успешно добавлены в таблицу";
+//     } else {
+//         echo "Ошибка при добавлении данных: " . $stmt->errorInfo()[2];
+// }
 }
 
 function getValue($scoreTopic)
