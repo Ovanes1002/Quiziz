@@ -1,5 +1,5 @@
 .choose_topic {
-	margin: 0 auto 20px;
+	margin: 0 auto 50px;
 	width: 100%;
 	min-height: 350px;
 	// padding: 15px;
@@ -20,7 +20,8 @@
 .topic,
 .score_topic {
 	position: relative;
-	width: 20%;
+	width: 80%;
+	height: 100%;
 	color: #cacaca;
 	font-size: 2vw;
 	// padding: 10px;
@@ -30,26 +31,29 @@
 	background: none;
 }
 
+// form button.topic {
+// 	width: 80%;
+// 	height: 100%;
+// }
 
+.topic_name {
+	background-color: rgba(5, 7, 13, 0.9);
+	padding: 10px 0;
+}
 
 .button:hover,
 .topic:hover,
 .score_topic:hover {
 	cursor: pointer;
-	background-color: #030c2f;
 }
 
 .button img,
 .topic img,
 .score_topic img {
 	width: 100%;
-	height: 100%;
+	height: 300px;
 	object-fit: cover;
 	max-height: 315px;
-}
-.topic img,
-.score_topic img {
-	height: 90%;
 }
 
 .backButton,
@@ -57,6 +61,18 @@
 .backButtonMusic,
 .backButtonArt,
 .backButtonHistory {
-	margin: 20px auto;
+	margin: 70px auto 20px;
 	text-align: center;
+}
+
+.endButtonForm {
+	margin: 0 auto;
+	width: 30%;
+	// align-items: none;
+}
+
+.endButton {
+	width: 100% !important;
+	font-size: inherit;
+	font-family: inherit;
 }

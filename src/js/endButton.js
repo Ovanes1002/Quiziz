@@ -2,6 +2,7 @@ const
 header              = document.getElementById("header"),
 footer              = document.getElementById("footer"),
 exitNext            = document.querySelector(".exitNext"),
+endButtonForm       = document.querySelector(".endButtonForm"),
 tableSport          = document.querySelector(".tableSport"),
 tableMusic          = document.querySelector(".tableMusic"),
 tableArt            = document.querySelector(".tableArt"),
@@ -51,17 +52,11 @@ endButton.addEventListener("click", (evt) => {
   console.log("result is " + endButton.value);
   playerResult.innerText = userName + ", Ваш результат:" + " " + result;
 
-  const newRow = document.createElement("tr");
-  const nameCell = document.createElement("td");
-  nameCell.textContent = userName;
-  const resultCell = document.createElement("td");
-  resultCell.textContent = result;
-  newRow.appendChild(nameCell);
-  newRow.appendChild(resultCell);
   
   current = 0;
   points.innerText = "1 балл";
   progress.style.width = `${current}%`;
+  endButtonForm.classList.add("hide");
   endButton.classList.add("hide");
   // nameId.value = "";
   firstWriteAnswer.value = "";

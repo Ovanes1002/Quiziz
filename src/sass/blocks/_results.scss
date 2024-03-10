@@ -11,34 +11,62 @@
 
 table {
 	width: 100%;
-	margin: 0 auto;
+	margin: 30px auto;
 	border-collapse: collapse;
-	border: 2px solid rgb(200, 200, 200);
+	// border: 2px solid #002eff;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 27px; /* Устанавливаем радиус скругления для всей таблицы */
+    // overflow: hidden;
 }
+
 td,
 th {
-	border: 1px solid rgb(190, 190, 190);
 	padding: 10px 20px;
 }
+
 th {
 	background-color: #0a133d;
 }
+
 td {
 	text-align: center;
 }
+
 tr {
 	&:nth-child(even) {
 		td {
-			background-color: #172048;
+			background-color: #0e1b54;
+			&:first-child {
+				border-right: 2px solid #142368;
+			}
 		}
 	}
 	&:nth-child(odd) {
 		td {
-			background-color: #1e2957;
+			background-color: #142368;
+			&:first-child {
+				border-right: 2px solid #0e1b54;
+			}
 		}
+	}
+	&:nth-last-child(1) td:nth-last-child(1){
+		border-bottom-right-radius: 25px;
+	}
+	&:nth-last-child(1) td:nth-last-child(2){
+		border-bottom-left-radius: 25px;
 	}
 }
 caption {
-	padding-bottom: 15px;
-	font-size: 30px;
+	font-size: 36px;
+	margin-bottom: 30px;
+}
+
+th:nth-child(1) {
+	border-top-left-radius: 25px;
+	border-right: 2px solid #142368;
+}
+
+th:nth-child(2) {
+	border-top-right-radius: 25px;
 }

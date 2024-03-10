@@ -31,6 +31,7 @@ quitQuiz.addEventListener("click", function (evt) {
   startPage.classList.remove("hide");
   nextButton.classList.remove("hide");
   launchButton.classList.add("hide");
+  endButtonForm.classList.add("hide");
   endButton.classList.add("hide");
   chooseTopic.classList.add("hide");
   header.classList.add("hide");

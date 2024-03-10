@@ -27,6 +27,7 @@ buttons.forEach((button) => {
       nextButton.classList.remove("hide");
     } else {
       updateProgress(10);
+      endButtonForm.classList.remove("hide");
       endButton.classList.remove("hide");
     }
 
@@ -37,7 +38,7 @@ buttons.forEach((button) => {
     });
 
     if (lastClickedButton.element.style.boxShadow == "none" || !lastClickedButton.style.boxShadow) {
-      lastClickedButton.element.style.boxShadow = "0 0 5px 5px #5ca4ff";
+      lastClickedButton.element.style.boxShadow = "0 0 5px 5px #0019b5";
     }
   });
 });
@@ -60,11 +61,13 @@ secondWriteAnswer.addEventListener("input", function (evt) {
 
 thirdWriteAnswer.addEventListener("input", function (evt) {
   if (thirdWriteAnswer.value.trim().length !== 0) {
+    endButtonForm.classList.remove("hide");
     endButton.classList.remove("hide");
     updateProgress(10);
   } else {
     current = 100;
     updateProgress(-10);
+    endButtonForm.classList.add("hide");
     endButton.classList.add("hide");
   }
 });

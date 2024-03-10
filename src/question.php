@@ -80,11 +80,11 @@ $user = currentUser();
 					<a href="quizAudio/Interstellar/Zimmer.mp3" download>скачать</a> файл.
 				</audio>
 				<audio class="audioHistory hide" controls>
-					<source src="quizAudio/БорисЕльцин/ельцин.opus" type="audio/ogg; codecs=opus" />
-					<source src="quizAudio/БорисЕльцин/ельцин.ogg" type="audio/ogg; codecs=vorbis" />
-					<source src="quizAudio/БорисЕльцин/ельцин.mp3" type="audio/mpeg" />
+					<source src="quizAudio/BorisYeltsin/Yeltsin.opus" type="audio/ogg; codecs=opus" />
+					<source src="quizAudio/BorisYeltsin/Yeltsin.ogg" type="audio/ogg; codecs=vorbis" />
+					<source src="quizAudio/BorisYeltsin/Yeltsin.mp3" type="audio/mpeg" />
 					Ваш браузер не поддерживает встроенные аудио. Попробуйте
-					<a href="quizAudio/БорисЕльцин/ельцин.mp3" download>скачать</a> файл.
+					<a href="quizAudio/BorisYeltsin/Yeltsin.mp3" download>скачать</a> файл.
 				</audio>
 				<input
 					type="text"
@@ -103,7 +103,7 @@ $user = currentUser();
 		<div class="exitNext">
             <a class="quitQuiz" href="/profile.php">← Выйти</a>
             <a class="nextButton hide" href="#">Далее →</a>
-            <form action="/finishQuiz.php" method="post">
+            <form class="endButtonForm hide" action="/finishQuiz.php" method="post">
 				<button class="endButton hide" value="" name="playerResult">Завершить</button>
 			</form>
             <!-- <a class="launchButton hide" href="/card.php">Начать</a> -->

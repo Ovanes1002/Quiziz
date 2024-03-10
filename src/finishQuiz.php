@@ -12,7 +12,6 @@ $user = currentUser();
 <body>
 	<div class="headerSite">Quiziz</div>
 	<div class="container">
-
 		<div class="finishQuiz">
 			<p class="playerResult"><?php echo $user['name']; ?>, твой результат: <?php echo playerResult(); ?></p>
 			<?php insertValue($user['name'], $_SESSION['playerResult'], $_SESSION['lastClickedTopic']); ?>

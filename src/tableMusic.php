@@ -12,9 +12,9 @@ $user = currentUser();
 <body>
 	<div class="headerSite">Quiziz</div>
 	<div class="container">
-		<table class="tableSport">
+		<table class="tableMusic">
 			<caption>
-            	Рейтинг игроков по теме "Спорт"
+            	Рейтинг игроков по теме "Музыка"
           	</caption>
 			<thead>
 				<tr>
@@ -22,8 +22,8 @@ $user = currentUser();
 					<th>Количество баллов</th>
 				</tr>
 			</thead>
-			<tbody class="tableSportBody">
-				<?php getValue('спорт'); ?>
+			<tbody class="tableMusicBody">
+				<?php getValue('музыка'); ?>
 			</tbody>
 		</table>
 		<a href="/chooseScoreTopic.php"">← Назад</a>

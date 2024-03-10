@@ -215,11 +215,44 @@ function insertValue($user, $result, $lastClickedTopic)
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':user', $user, PDO::PARAM_STR);
     $stmt->bindParam(':result', $result, PDO::PARAM_INT);
-
-    if ($stmt->execute()) {
-        echo "Данные успешно добавлены в таблицу";
-    } else {
-        echo "Ошибка при добавлении данных: " . $stmt->errorInfo()[2];
+    $stmt->execute();   
+//     if ($stmt->execute()) {
+//         echo "Данные успешно добавлены в таблицу";
+//     } else {
+//         echo "Ошибка при добавлении данных: " . $stmt->errorInfo()[2];
+// }
 }
+
+function getValue($scoreTopic)
+{
+    // Получение подключения к базе данных
+$pdo = getPDO();
+
+// Запрос для извлечения данных из таблицы
+if($scoreTopic == 'спорт') {
+    $sql = "SELECT user, result FROM tableSport ORDER BY result DESC";
+} elseif ($scoreTopic == 'музыка') {
+    $sql = "SELECT user, result FROM tableMusic ORDER BY result DESC";
+} elseif ($scoreTopic == 'искусство') {
+    $sql = "SELECT user, result FROM tableArt ORDER BY result DESC";
+} else {
+    $sql = "SELECT user, result FROM tableHistory ORDER BY result DESC";
+}
+
+$result = $pdo->query($sql);
+
+if ($result->rowCount() > 0) {
+    
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        echo "<tr>";
+        echo "<td>".$row["user"]."</td>";
+        echo "<td>".$row["result"]."</td>";
+        echo "</tr>";
+    }
+
+} 
+// else {
+//     echo "Таблица пуста.";
+// }
 }
 ?>

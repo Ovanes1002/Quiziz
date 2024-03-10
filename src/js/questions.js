@@ -38,30 +38,30 @@ const quizList = [
   {
     question: "Кто является обладателем наибольшего количества побед в Гран-при Формулы-1?",
     answers: [
-      { text: "images/sport/Хэмилтон.jpg", correct: true },
-      { text: "images/sport/Феттель.jpeg", correct: false },
-      { text: "images/sport/Сенна.jpg", correct: false },
-      { text: "images/sport/Шумахер.jpg", correct: false },
+      { text: "images/sport/Hamilton.jpg", correct: true },
+      { text: "images/sport/Vettel.jpeg", correct: false },
+      { text: "images/sport/Senna.jpg", correct: false },
+      { text: "images/sport/Schumacher.jpg", correct: false },
     ],
   },
   {
     question:
       "Кто является обладателем наибольшего количества побед на турнирах 'Уимблдон' в мужском одиночном разряде?",
     answers: [
-      { text: "images/sport/Надаль.jpg", correct: false },
-      { text: "images/sport/Джокович.jpg", correct: false },
-      { text: "images/sport/Федерер.jpg", correct: true },
-      { text: "images/sport/Маррей.jpg", correct: false },
+      { text: "images/sport/Nadal.jpg", correct: false },
+      { text: "images/sport/Djokovic.jpg", correct: false },
+      { text: "images/sport/Federer.jpg", correct: true },
+      { text: "images/sport/Murray.jpg", correct: false },
     ],
   },
   {
     question:
       "Какой баскетболист является рекордсменом по наибольшему количеству набранных очков в Национальной баскетбольной ассоциации (НБА)?",
     answers: [
-      { text: "images/sport/Джордан.jpg", correct: false },
-      { text: "images/sport/Джеймс.jpg", correct: false },
-      { text: "images/sport/Абдул-Джаббар.jpg", correct: true },
-      { text: "images/sport/Мэлоун.jpg", correct: false },
+      { text: "images/sport/MichaelJordan.jpg", correct: false },
+      { text: "images/sport/LeBronJames.jpg", correct: false },
+      { text: "images/sport/Abdul-Jabbar.jpg", correct: true },
+      { text: "images/sport/Malone.jpg", correct: false },
     ],
   },
   {
@@ -116,10 +116,10 @@ const quizList = [
   {
     question: "Кто является автором песни 'Imagine'?",
     answers: [
-      { text: "images/music/Боуи.jpg", correct: false },
-      { text: "images/music/Дилан.jpg", correct: false },
-      { text: "images/music/Леннон.jpg", correct: true },
-      { text: "images/music/Меркьюри.jpg", correct: false },
+      { text: "images/music/DavidBowie.jpg", correct: false },
+      { text: "images/music/BobDylan.jpg", correct: false },
+      { text: "images/music/Lennon.jpg", correct: true },
+      { text: "images/music/FreddieMercury.jpg", correct: false },
     ],
   },
   {
@@ -128,16 +128,16 @@ const quizList = [
       { text: "images/music/scorpions.jpg", correct: false },
       { text: "images/music/DeepPurple.jpg", correct: false },
       { text: "images/music/ACDC.jpg", correct: false },
-      { text: "images/music/Парк Горького.jpg", correct: true },
+      { text: "images/music/GorkyPark.jpg", correct: true },
     ],
   },
   {
     question: "Кто является самым награждаемым артистом премии «Грэмми»?",
     answers: [
-      { text: "images/music/бейонсе.jpg", correct: true },
-      { text: "images/music/СтивиУандер.jpg", correct: false },
-      { text: "images/music/МайклДжексон.jpg", correct: false },
-      { text: "images/music/Мадонна.jpg", correct: false },
+      { text: "images/music/Beyonce.jpg", correct: true },
+      { text: "images/music/StevieWonder.jpg", correct: false },
+      { text: "images/music/MichaelJackson.jpg", correct: false },
+      { text: "images/music/Madonna.jpg", correct: false },
     ],
   },
   {
@@ -188,28 +188,28 @@ const quizList = [
   {
     question: "Кто написал картины 'Звездная ночь' и 'Поле пшеницы с кипарисами'?",
     answers: [
-      { text: "images/art/климт.jpg", correct: false },
-      { text: "images/art/мане.jpg", correct: false },
-      { text: "images/art/вангог.jpg", correct: true },
-      { text: "images/art/моне.jpg", correct: false },
+      { text: "images/art/GustavKlimt.jpg", correct: false },
+      { text: "images/art/EdouardManet.jpg", correct: false },
+      { text: "images/art/VincentVanGogh.jpg", correct: true },
+      { text: "images/art/Monet.jpg", correct: false },
     ],
   },
   {
     question: "Кто является автором картины 'Тайная вечеря'?",
     answers: [
-      { text: "images/art/кандинский.jpg", correct: false },
-      { text: "images/art/мунк.jpg", correct: false },
-      { text: "images/art/давинчи.jpg", correct: true },
-      { text: "images/art/рембрандт.jpg", correct: false },
+      { text: "images/art/Kandinsky.jpg", correct: false },
+      { text: "images/art/Munch.jpg", correct: false },
+      { text: "images/art/LeonardoDaVinci.jpg", correct: true },
+      { text: "images/art/Rembrandt.jpg", correct: false },
     ],
   },
   {
     question: "Кто является автором картины 'Танец багровых попугаев'?",
     answers: [
-      { text: "images/art/дали.jpg", correct: false },
-      { text: "images/art/матисс.jpg", correct: false },
-      { text: "images/art/пикассо.jpg", correct: true },
-      { text: "images/art/кало.jpg", correct: false },
+      { text: "images/art/SalvadorDali.jpg", correct: false },
+      { text: "images/art/Matisse.jpg", correct: false },
+      { text: "images/art/Picasso.jpg", correct: true },
+      { text: "images/art/FridaKahlo.jpg", correct: false },
     ],
   },
   {
@@ -260,28 +260,28 @@ const quizList = [
   {
     question: "Кто был последним императором России?",
     answers: [
-      { text: "images/history/Александр II.jpg", correct: false },
-      { text: "images/history/Николай II.jpg", correct: true },
-      { text: "images/history/Александр III.jpg", correct: false },
-      { text: "images/history/Петр 1.jpg", correct: false },
+      { text: "images/history/AlexanderII.jpg", correct: false },
+      { text: "images/history/NikolayII.jpg", correct: true },
+      { text: "images/history/AlexanderIII.jpg", correct: false },
+      { text: "images/history/PeterI.jpg", correct: false },
     ],
   },
   {
     question: "Кто был основателем Советского Союза?",
     answers: [
-      { text: "images/history/Сталин.jpg", correct: false },
-      { text: "images/history/колчак.jpg", correct: false },
-      { text: "images/history/ленин.jpg", correct: true },
-      { text: "images/history/микоян.jpg", correct: false },
+      { text: "images/history/Stalin.jpg", correct: false },
+      { text: "images/history/Kolchak.jpg", correct: false },
+      { text: "images/history/Lenin.jpg", correct: true },
+      { text: "images/history/Mikoyan.jpg", correct: false },
     ],
   },
   {
     question: "Кто был лидером Кубинской революции?",
     answers: [
-      { text: "images/history/батиста.jpg", correct: false },
-      { text: "images/history/чавес.jpeg", correct: false },
-      { text: "images/history/чегевара.jpg", correct: false },
-      { text: "images/history/кастро.jpg", correct: true },
+      { text: "images/history/Batista.jpg", correct: false },
+      { text: "images/history/Chavez.jpeg", correct: false },
+      { text: "images/history/CheGuevara.jpg", correct: false },
+      { text: "images/history/Castro.jpg", correct: true },
     ],
   },
   {
