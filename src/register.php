@@ -77,7 +77,7 @@ checkGuest();
 						name="avatar"
 						<?php echo validationErrorAttr('avatar'); ?>
 					/>
-
+						
 					<?php if(hasValidationError('avatar')): ?>
 						<small><?php echo validationErrorMessage('avatar'); ?></small>
 					<?php endif; ?>

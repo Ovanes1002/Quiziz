@@ -58,14 +58,27 @@ function uploadFile (array $file, string $prefix = ''):string
         mkdir($uploadPath, permissions: 0777, recursive: true);
     }
 
-    $avatarExtension = pathinfo($file['name'], flags: PATHINFO_EXTENSION);
-    $fileName = $prefix . time() . ".$avatarExtension";
+    if ($file !== null && $file['error'] === UPLOAD_ERR_OK) {
 
-    if(!move_uploaded_file($file['tmp_name'], "$uploadPath/$fileName")) {
-        die('Ошибка загрузки файла на сервер');
+        $avatarExtension = pathinfo($file['name'], flags: PATHINFO_EXTENSION);
+        $fileName = $prefix . time() . ".$avatarExtension";
+
+        if(!move_uploaded_file($file['tmp_name'], "$uploadPath/$fileName")) {
+            die('Ошибка загрузки файла на сервер');
+        }
+        return "uploads/$fileName";
+    } else {
+        // Файл не был загружен, используем иконку по умолчанию
+        $defaultIconPath = __DIR__ . '/uploads/icon-user-default.png';
+        $newFileName = $prefix . time() . ".png";
+
+        // Переименовываем иконку по умолчанию
+        if (!copy($defaultIconPath, "$uploadPath/$newFileName")) {
+            die('Ошибка копирования файла на сервер');
+        }
+
+        return "uploads/$newFileName";
     }
-
-    return "uploads/$fileName";
 }
 
 function setMessage (string $key, string $message): void 

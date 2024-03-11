@@ -30,8 +30,6 @@ if ($password !== $password_confirm) {
     setValidationError(fieldName: 'password', message: 'Пароли не совпадают');
 }
 
-
-
 if (!empty($avatar)) {
     $types = ['image/png', 'image/jpeg'];
 
@@ -39,8 +37,8 @@ if (!empty($avatar)) {
         setValidationError(fieldName: 'avatar', message: 'Изображение профиля имеет неверный тип');
     }
 
-    if (($avatar['size'] / 1000000) >= 1) {
-        setValidationError(fieldName: 'avatar', message: 'Изображение профиля должно быть не больше 1 МБ');
+    if (($avatar['size'] / 1000000) >= 2) {
+        setValidationError(fieldName: 'avatar', message: 'Изображение профиля должно быть не больше 2 МБ');
     }
 }
 
@@ -76,6 +74,6 @@ try {
     die($e->getMessage());
 }
 
-redirect(path: '/index.php');
+redirect(path: '/register.php');
 
 ?>
