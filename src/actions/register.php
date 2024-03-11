@@ -30,7 +30,10 @@ if ($password !== $password_confirm) {
     setValidationError(fieldName: 'password', message: 'Пароли не совпадают');
 }
 
-if (!empty($avatar)) {
+
+
+if ($avatar !== null && $avatar['error'] === UPLOAD_ERR_OK) {
+
     $types = ['image/png', 'image/jpeg'];
 
     if (!in_array($avatar['type'], $types)) {
@@ -54,6 +57,7 @@ if (!empty($avatar)) {
     $avatarPath = uploadFile(file: $avatar, prefix: 'avatar_');
 }
 
+
 // Создаем пользователя
 $pdo = getPDO();
 
@@ -74,6 +78,6 @@ try {
     die($e->getMessage());
 }
 
-redirect(path: '/register.php');
+redirect(path: '/index.php');
 
 ?>
