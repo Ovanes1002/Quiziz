@@ -31,6 +31,7 @@ th {
 
 td {
 	text-align: center;
+	word-wrap: break-word;
 }
 
 tr {
@@ -39,7 +40,9 @@ tr {
 		td {
 			background-color: #0e1b54;
 			&:first-child {
+				width: 70%;
 				border-right: 2px solid #142368;
+				padding-left: 50px;
 			}
 		}
 	}
@@ -47,7 +50,9 @@ tr {
 		td {
 			background-color: #142368;
 			&:first-child {
+				width: 70%;
 				border-right: 2px solid #0e1b54;
+				padding-left: 50px;
 			}
 		}
 	}
@@ -62,21 +67,20 @@ tr {
 tbody tr {
 	&:nth-child(1) td:nth-child(1) {
 		background-image: url(../../images/1st-place.png);
-		background-position: 25% center;
-		background-size: 32px 32px;
-		background-repeat: no-repeat;
 	} 
 	&:nth-child(2) td:nth-child(1) {
 		background-image: url(../../images/2nd-place.png);
-		background-position: 25% center;
-		background-size: 32px 32px;
-		background-repeat: no-repeat;
 	}
 	&:nth-child(3) td:nth-child(1) {
 		background-image: url(../../images/3rd-place.png);
-		background-position: 25% center;
+	}
+	&:nth-child(1) td:nth-child(1),
+	&:nth-child(2) td:nth-child(1),
+	&:nth-child(3) td:nth-child(1) {
+		background-position: 10px center;
 		background-size: 32px 32px;
 		background-repeat: no-repeat;
+		word-break: break-all;
 	}
 }
 caption {
