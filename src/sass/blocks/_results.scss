@@ -34,6 +34,7 @@ td {
 }
 
 tr {
+
 	&:nth-child(even) {
 		td {
 			background-color: #0e1b54;
@@ -55,6 +56,27 @@ tr {
 	}
 	&:nth-last-child(1) td:nth-last-child(2){
 		border-bottom-left-radius: 25px;
+	}
+}
+
+tbody tr {
+	&:nth-child(1) td:nth-child(1) {
+		background-image: url(../../images/1st-place.png);
+		background-position: 25% center;
+		background-size: 32px 32px;
+		background-repeat: no-repeat;
+	} 
+	&:nth-child(2) td:nth-child(1) {
+		background-image: url(../../images/2nd-place.png);
+		background-position: 25% center;
+		background-size: 32px 32px;
+		background-repeat: no-repeat;
+	}
+	&:nth-child(3) td:nth-child(1) {
+		background-image: url(../../images/3rd-place.png);
+		background-position: 25% center;
+		background-size: 32px 32px;
+		background-repeat: no-repeat;
 	}
 }
 caption {
