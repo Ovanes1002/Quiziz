@@ -1,272 +1,313 @@
 @media only screen and (max-width: 1199px) {
-    body {
-        font-size: calc(0.7em + 1.5vw);
-	}
-    
-    .startPage {
-		h1 {
-			font-size: 44px;
-		}
+  body {
+    font-size: calc(0.7em + 1.5vw);
+  }
+
+  .startPage {
+    h1 {
+      font-size: 44px;
     }
-    .nameInput {
+  }
+  .nameInput {
+    width: 80%;
+  }
+
+  .startMenu {
+    a,
+    form {
+      width: 47%;
+    }
+  }
+
+  .topic_name {
+    font-size: 25px;
+  }
+
+  .topic-buttons {
+    flex-wrap: wrap;
+    margin-top: 20px;
+    form {
+      width: 45%;
+      button {
         width: 80%;
+      }
     }
+  }
 
-    .startMenu {
-        a, form {
-            width: 47%;
-        }
+  .button,
+  .topic,
+  .score_topic {
+    width: 34%;
+  }
 
-    }
+  .topic img,
+  .score_topic img {
+    height: 85%;
+  }
 
-    .topic_name {
-    	font-size: 25px;
-    }
-
-    .topic-buttons {
-        flex-wrap: wrap;
-        margin-top: 20px;
-        form {
-            width: 45%;
-            button {
-                width: 80%;
-            }
-        }
-    }
-
-    .button,
-    .topic,
-    .score_topic {
-        width: 34%;
-    }
-
-    .topic img,
-    .score_topic img {
-        height: 85%;
-    }
-
-    .button:nth-child(-n + 2),
-    .topic:nth-child(-n + 2),
-    .score_topic:nth-child(-n + 2) {
-        margin-bottom: 40px;
-    }
+  .button:nth-child(-n + 2),
+  .topic:nth-child(-n + 2),
+  .score_topic:nth-child(-n + 2) {
+    margin-bottom: 40px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
-
-    a, .endButton {
-        padding: 15px 10px;
+  a,
+  .endButton {
+    padding: 15px 10px;
+  }
+  .headerSite {
+    height: 70px;
+    font-size: 28px;
+  }
+  .startPage {
+    padding-top: 0;
+    h1 {
+      font-size: 32px;
     }
-	.headerSite {
-		height: 70px;
-		font-size: 28px;
-	}
-	.startPage {
-        padding-top: 0;
-		h1 {
-			font-size: 32px;
-		}
-		p {
-			font-size: 20px;
-			margin-bottom: 20px;
-		}
-		a, .endButton {
-			width: 120px;
-			min-height: 60px;
-			font-size: 24px;
-		}
-	}
-
-    .button,
-    .topic,
-    .score_topic {
-        width: 45%;
-        // font-size: 3.5vw;
+    p {
+      font-size: 20px;
+      margin-bottom: 20px;
     }
+    a,
+    .endButton {
+      width: 120px;
+      min-height: 60px;
+      font-size: 24px;
+    }
+  }
 
-    .button {
+  .button,
+  .topic,
+  .score_topic {
+    width: 45%;
+    // font-size: 3.5vw;
+  }
+
+  .button {
+    font-size: 16px;
+  }
+
+  .topic,
+  .score_topic {
+    height: calc(12em + 1.5vw);
+    padding-bottom: 0;
+  }
+
+  .nameInput {
+    width: 85%;
+  }
+
+  .questionNumber {
+    width: 35%;
+  }
+
+  .points {
+    width: 35%;
+  }
+
+  .input-group {
+    .playerName,
+    .playerEmail,
+    .playerAvatar,
+    .playerPassword,
+    .confirmPlayerPassword {
+      input {
         font-size: 16px;
+      }
+      label {
+        font-size: 20px;
+        padding-top: 0;
+      }
     }
 
-    .topic,
-    .score_topic {
-        height: calc(12em + 1.5vw);
-        padding-bottom: 0;
+    .flexPassword {
+      display: block;
+      .playerPassword,
+      .confirmPlayerPassword {
+        width: 100%;
+      }
     }
-    
-    .nameInput {
-        width: 85%;
+  }
+  .inputButton {
+    padding: 15px;
+    width: 50%;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 15px auto;
+  }
+  .startMenu {
+    min-height: 170px;
+    a,
+    form {
+      width: 50%;
     }
+    form button {
+      padding: 15px 10px;
+    }
+  }
+  audio {
+    width: 90%;
+    margin-bottom: 10px;
+  }
 
-    .questionNumber {
-        width: 35%;
-    }
-    
-    .points {
-        width: 35%;
-    }
-
-    .input-group {
-        .playerName,
-        .playerEmail,
-        .playerAvatar,
-        .playerPassword,
-        .confirmPlayerPassword {
-            input {
-                font-size: 16px;
-            }
-            label {
-                font-size: 20px;
-                padding-top: 0;
-            }
-        }
-
-        .flexPassword {
-            display: block;
-            .playerPassword,
-            .confirmPlayerPassword{
-                width: 100%;
-            }
-        }
-    }
-    .inputButton {
-        padding: 15px;
-        width: 50%;
-        font-size: 14px;
-        font-weight: 600;
-        margin: 15px auto;
-    }
-    .startMenu {
-        min-height: 170px;
-        a, form {
-            width: 50%;
-        }
-        form button {
-            padding: 15px 10px;
-
-        }
-    } 
-    audio {
-        width: 90%;
-        margin-bottom: 10px;
-    }
-
-    caption {
-        font-size: 30px;
-    }
+  caption {
+    font-size: 30px;
+  }
 }
 
 @media only screen and (max-width: 576px) {
-    a, .endButton {
-        padding: 10px;
+  a,
+  .endButton {
+    padding: 10px;
+  }
+
+  .topic-buttons {
+    form {
+      width: 60%;
+      button {
+        width: 100%;
+      }
     }
+  }
 
-    .topic-buttons {
-        form {
-            width: 60%;
-            button {
-                width: 100%;
-            }
-        }
+  .button,
+  .topic,
+  .score_topic {
+    width: 80%;
+  }
+
+  .startPage {
+    h1 {
+      font-size: 26px;
     }
-
-    .button,
-    .topic,
-    .score_topic {
-        width: 80%;
+    p {
+      font-size: 18px;
     }
-
-    .startPage {
-		h1 {
-			font-size: 26px;
-		}
-		p {
-			font-size: 18px;
-		}
-		a, .endButton {
-			font-size: 20px;
-
-		}
-	}
-
-    .startMenu {
-        min-height: 150px;
-        a, form {
-            width: 66%;
-        }
-        form button {
-            font-size: 20px;
-            padding: 10px;
-        }
+    a,
+    .endButton {
+      font-size: 20px;
     }
+  }
 
-    .topic-buttons {
-        flex-direction: column;
-        align-items: center;
+  .startMenu {
+    min-height: 150px;
+    a,
+    form {
+      width: 66%;
     }
-
-    .topic_name {
-    	font-size: 16px;
-        padding: 5px 0;
+    form button {
+      font-size: 20px;
+      padding: 10px;
     }
+  }
 
-    .button, .score_topic, .topic {
-        margin-bottom: 30px;
+  .topic-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .topic_name {
+    font-size: 16px;
+    padding: 5px 0;
+  }
+
+  .button,
+  .score_topic,
+  .topic {
+    margin-bottom: 30px;
+  }
+
+  .button:nth-child(-n + 2),
+  .topic:nth-child(-n + 2),
+  .score_topic:nth-child(-n + 2) {
+    margin-bottom: 30px;
+  }
+
+  .button:nth-child(4),
+  .score_topic.button:nth-child(4),
+  .topi.button:nth-child(4)c {
+    margin-bottom: 0;
+  }
+
+  .backButton,
+  .backButtonArt,
+  .backButtonHistory,
+  .backButtonMusic,
+  .backButtonSport {
+    margin-top: 20px;
+  }
+
+  .input-group {
+    .playerName,
+    .playerEmail,
+    .playerAvatar,
+    .playerPassword,
+    .confirmPlayerPassword {
+      input {
+        font-size: 14px;
+      }
+      label {
+        font-size: 18px;
+        padding-bottom: 0;
+      }
     }
-
-    .button:nth-child(-n + 2),
-    .topic:nth-child(-n + 2),
-    .score_topic:nth-child(-n + 2) {
-        margin-bottom: 30px;
+    .playerAvatar input#file-upload-button {
+      border-radius: 20px;
     }
+  }
 
-    .button:nth-child(4), .score_topic.button:nth-child(4), .topi.button:nth-child(4)c {
-        margin-bottom: 0;
+  .inputButton {
+    width: 75%;
+    padding: 10px;
+    transform-origin: center bottom;
+  }
+
+  .exitNext a,
+  .endButtonForm {
+    width: 44%;
+  }
+
+  .playerResult {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  caption {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  td,
+  th {
+    padding: 20px 20px;
+  }
+
+  td {
+    line-height: 28px;
+    font-size: 24px;
+  }
+
+  tbody tr {
+    &:nth-child(1) td:nth-child(1),
+    &:nth-child(2) td:nth-child(1),
+    &:nth-child(3) td:nth-child(1) {
+      background-position: 15px center;
+      background-size: 32px 32px;
+      background-repeat: no-repeat;
+      word-break: break-all;
     }
-
-    .backButton, .backButtonArt, .backButtonHistory, .backButtonMusic, .backButtonSport {
-        margin-top: 20px;
+    &:nth-child(even),
+    &:nth-child(odd) {
+      td:first-child {
+        width: 50%;
+        padding-left: 60px;
+      }
     }
+  }
 
-    .input-group {
-        .playerName,
-        .playerEmail,
-        .playerAvatar,
-        .playerPassword,
-        .confirmPlayerPassword {
-            input {
-                font-size: 14px;
-            }
-            label {
-                font-size: 18px;
-                padding-bottom: 0;
-            }
-        }
-        .playerAvatar input#file-upload-button {
-            border-radius: 20px;
-        }
-
-    }
-
-    .inputButton {
-        width: 75%;
-        padding: 10px;
-        transform-origin: center bottom;
-    }
-
-    .exitNext a,
-    .endButtonForm {
-        width: 44%;
-    }
-
-    .playerResult {
-        font-size: 30px;
-        line-height: 30px;
-    }
-
-    caption {
-        font-size: 24px;
-        line-height: 28px;
-    }
+  th:nth-child(1) {
+    padding-left: 60px;
+  }
 }
-

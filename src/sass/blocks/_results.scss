@@ -2,97 +2,105 @@
 .score__music,
 .score__art,
 .score__history {
-	width: 100%;
-	margin: 0 auto;
-	padding-top: 30px;
-	letter-spacing: 1px;
-	line-height: 33px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 30px;
+  letter-spacing: 1px;
+  line-height: 33px;
 }
 
 table {
-	width: 100%;
-	margin: 30px auto;
-	border-collapse: collapse;
-	// border: 2px solid #002eff;
-    border-collapse: separate;
-    border-spacing: 0;
-    border-radius: 27px; /* Устанавливаем радиус скругления для всей таблицы */
-    // overflow: hidden;
+  width: 100%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  // border: 2px solid #002eff;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 27px; /* Устанавливаем радиус скругления для всей таблицы */
+  // overflow: hidden;
 }
 
 td,
 th {
-	padding: 10px 20px;
+  padding: 25px 20px;
 }
 
 th {
-	background-color: #0a133d;
+  background-color: #0a133d;
 }
 
 td {
-	text-align: center;
-	word-wrap: break-word;
+  text-align: center;
+  word-wrap: break-word;
 }
 
 tr {
-
-	&:nth-child(even) {
-		td {
-			background-color: #0e1b54;
-			&:first-child {
-				width: 70%;
-				border-right: 2px solid #142368;
-				padding-left: 50px;
-			}
-		}
-	}
-	&:nth-child(odd) {
-		td {
-			background-color: #142368;
-			&:first-child {
-				width: 70%;
-				border-right: 2px solid #0e1b54;
-				padding-left: 50px;
-			}
-		}
-	}
-	&:nth-last-child(1) td:nth-last-child(1){
-		border-bottom-right-radius: 25px;
-	}
-	&:nth-last-child(1) td:nth-last-child(2){
-		border-bottom-left-radius: 25px;
-	}
+  &:nth-child(even) {
+    td {
+      background-color: #0e1b54;
+      &:first-child {
+        width: 70%;
+        border-right: 2px solid #142368;
+        padding-left: 75px;
+      }
+    }
+  }
+  &:nth-child(odd) {
+    td {
+      background-color: #142368;
+      &:first-child {
+        width: 70%;
+        border-right: 2px solid #0e1b54;
+        padding-left: 75px;
+      }
+    }
+  }
+  &:nth-last-child(1) td:nth-last-child(1) {
+    border-bottom-right-radius: 25px;
+  }
+  &:nth-last-child(1) td:nth-last-child(2) {
+    border-bottom-left-radius: 25px;
+  }
 }
 
 tbody tr {
-	&:nth-child(1) td:nth-child(1) {
-		background-image: url(../../images/1st-place.png);
-	} 
-	&:nth-child(2) td:nth-child(1) {
-		background-image: url(../../images/2nd-place.png);
-	}
-	&:nth-child(3) td:nth-child(1) {
-		background-image: url(../../images/3rd-place.png);
-	}
-	&:nth-child(1) td:nth-child(1),
-	&:nth-child(2) td:nth-child(1),
-	&:nth-child(3) td:nth-child(1) {
-		background-position: 10px center;
-		background-size: 32px 32px;
-		background-repeat: no-repeat;
-		word-break: break-all;
-	}
+  &:nth-child(1) td:nth-child(1) {
+    background-image: url(../../images/1st-place.png);
+  }
+  &:nth-child(2) td:nth-child(1) {
+    background-image: url(../../images/2nd-place.png);
+  }
+  &:nth-child(3) td:nth-child(1) {
+    background-image: url(../../images/3rd-place.png);
+  }
+  &:nth-child(1) td:nth-child(1),
+  &:nth-child(2) td:nth-child(1),
+  &:nth-child(3) td:nth-child(1) {
+    background-position: 20px center;
+    background-size: 44px 44px;
+    background-repeat: no-repeat;
+    word-break: break-all;
+  }
+  &:nth-child(even),
+  &:nth-child(odd) {
+    td:first-child {
+      width: 70%;
+      padding-left: 75px;
+      line-height: 36px;
+    }
+  }
 }
 caption {
-	font-size: 36px;
-	margin-bottom: 30px;
+  font-size: 36px;
+  margin-bottom: 30px;
 }
 
 th:nth-child(1) {
-	border-top-left-radius: 25px;
-	border-right: 2px solid #142368;
+  border-top-left-radius: 25px;
+  border-right: 2px solid #142368;
+  padding-left: 75px;
 }
 
 th:nth-child(2) {
-	border-top-right-radius: 25px;
+  border-top-right-radius: 25px;
 }
