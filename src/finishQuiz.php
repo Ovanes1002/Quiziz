@@ -15,6 +15,7 @@ $user = currentUser();
 		<div class="finishQuiz">
 			<p class="playerResult"><?php echo $user['name']; ?>, твой результат: <?php echo playerResult(); ?></p>
 			<?php insertValue($user['name'], $_SESSION['playerResult'], $_SESSION['lastClickedTopic']); ?>
+			
 			<a class="menuButton" href="/profile.php">Главное меню</a>
 		</div>
 	</div>

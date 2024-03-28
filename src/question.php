@@ -36,10 +36,10 @@ $user = currentUser();
 				<?php echo topicIndex($_SESSION['lastClickedTopic']);?>
 			</span>
 			<div class="answer-buttons">
-				<button class="button" id="btn1"></button>
-				<button class="button" id="btn2"></button>
-				<button class="button" id="btn3"></button>
-				<button class="button" id="btn4"></button>
+				<button class="button" data-button-id="1"></button>
+				<button class="button" data-button-id="2"></button>
+				<button class="button" data-button-id="3"></button>
+				<button class="button" data-button-id="4"></button>
 				<input
 					type="text"
 					class="firstWriteAnswer hide"

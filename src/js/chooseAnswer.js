@@ -18,7 +18,7 @@ buttons.forEach((button) => {
     // сохраняем ссылку на последнюю кликнутую кнопку
     lastClickedButton = {
       element: evt.currentTarget,
-      class: evt.currentTarget.classList.contains("true")
+      class: evt.currentTarget.classList.contains("true"),
     };
     console.log(lastClickedButton);
     console.log(lastClickedButton.element.textContent);

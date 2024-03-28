@@ -1,24 +1,22 @@
-const 
-// endButton = document.querySelector(".endButton"),
-main                = document.querySelector(".card"),
-questionElement     = document.querySelector(".question"),
-answerButtons       = document.querySelector(".answer-buttons"),
-// buttons             = document.querySelectorAll(".button"),
-count               = document.querySelector(".questionNumber"),
-points              = document.querySelector(".points"),
-progress            = document.getElementById("progressBar"),
-max                 = 100,
-firstWriteAnswer    = document.querySelector(".firstWriteAnswer"),
-secondWriteAnswer   = document.querySelector(".secondWriteAnswer"),
-thirdWriteAnswer    = document.querySelector(".thirdWriteAnswer"),
-audioSport          = document.querySelector(".audioSport"),
-audioMusic          = document.querySelector(".audioMusic"),
-audioArt            = document.querySelector(".audioArt"),
-audioHistory        = document.querySelector(".audioHistory"),
-currentIndex        = document.querySelector(".currentIndex"),
-currentTopic        = document.querySelector(".currentTopic");
-currentQuestionIndex = currentIndex.innerText,
-lastClickedTopic    = currentTopic.innerText;
+const // endButton = document.querySelector(".endButton"),
+  main = document.querySelector(".card"),
+  questionElement = document.querySelector(".question"),
+  answerButtons = document.querySelector(".answer-buttons"),
+  // buttons             = document.querySelectorAll(".button"),
+  count = document.querySelector(".questionNumber"),
+  points = document.querySelector(".points"),
+  progress = document.getElementById("progressBar"),
+  max = 100,
+  firstWriteAnswer = document.querySelector(".firstWriteAnswer"),
+  secondWriteAnswer = document.querySelector(".secondWriteAnswer"),
+  thirdWriteAnswer = document.querySelector(".thirdWriteAnswer"),
+  audioSport = document.querySelector(".audioSport"),
+  audioMusic = document.querySelector(".audioMusic"),
+  audioArt = document.querySelector(".audioArt"),
+  audioHistory = document.querySelector(".audioHistory"),
+  currentIndex = document.querySelector(".currentIndex"),
+  currentTopic = document.querySelector(".currentTopic");
+(currentQuestionIndex = currentIndex.innerText), (lastClickedTopic = currentTopic.innerText);
 
 setQuestion();
 
@@ -26,7 +24,6 @@ setQuestion();
 function setQuestion() {
   showQuestion(quizList[currentQuestionIndex]);
 }
-
 
 //  Показ вопроса с выбором ответов
 function showQuestion(question) {
@@ -79,18 +76,16 @@ function showQuestion(question) {
     points.innerText = `4 балла`;
     firstWriteAnswer.classList.add("hide");
     secondWriteAnswer.classList.add("hide");
-    if (lastClickedTopic == 'спорт') audioSport.classList.remove("hide");
-    else if (lastClickedTopic == 'музыка') audioMusic.classList.remove("hide");
-    else if (lastClickedTopic == 'искусство') audioArt.classList.remove("hide");
-    else if (lastClickedTopic == 'история') audioHistory.classList.remove("hide");
+    if (lastClickedTopic == "спорт") audioSport.classList.remove("hide");
+    else if (lastClickedTopic == "музыка") audioMusic.classList.remove("hide");
+    else if (lastClickedTopic == "искусство") audioArt.classList.remove("hide");
+    else if (lastClickedTopic == "история") audioHistory.classList.remove("hide");
     thirdWriteAnswer.classList.remove("hide");
     answerButtons.style.flexDirection = "column";
   }
 
   i = 0;
 }
-
-
 
 function updateProgress(value) {
   current += value;
