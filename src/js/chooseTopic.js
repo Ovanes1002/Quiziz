@@ -1,9 +1,8 @@
-const
-endButton           = document.querySelector(".endButton"),
-buttons             = document.querySelectorAll(".button"),
-topics              = document.querySelectorAll(".topic");
+const endButton = document.querySelector(".endButton"),
+  buttons = document.querySelectorAll(".button"),
+  topics = document.querySelectorAll(".topic");
 let currentQuestionIndex,
-    lastClickedTopic  = null;
+  lastClickedTopic = null;
 // кнопка "Начать"
 // после нажатия начинается викторина
 // launchButton.addEventListener("click", function (evt) {
@@ -31,6 +30,5 @@ topics.forEach((topic) => {
         otherTopic.style.boxShadow = "none";
       }
     });
-
   });
 });

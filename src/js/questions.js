@@ -12,7 +12,7 @@ const quizList = [
     question: "Какая страна является рекордсменом по количеству побед на Летних Олимпийских играх?",
     answers: [
       { text: "Россия", correct: false },
-      { text: "США", correct: true },
+      { text: "США", correct: true, isUserCorrect: false },
       { text: "Китай", correct: false },
       { text: "Великобритания", correct: false },
     ],

@@ -15,12 +15,18 @@ $user = currentUser();
 		<div class="finishQuiz">
 			<p class="playerResult"><?php echo $user['name']; ?>, твой результат: <?php echo playerResult(); ?></p>
 			<?php insertValue($user['name'], $_SESSION['playerResult'], $_SESSION['lastClickedTopic']); ?>
-			
+			<span class="currentIndex">
+				<?php echo topicIndex($_SESSION['lastClickedTopic']);?>
+			</span>
+			<div class="finishAnswers"></div>
 			<a class="menuButton" href="/profile.php">Главное меню</a>
 		</div>
 	</div>
 </body>
-
+	
+<script defer src="js/quizVariables.js"></script>
+<script defer src="js/questions.js"></script>
+<script defer src="js/SetShowQuestion.js"></script>
 <script defer src="js/finishQuiz.js"></script>
 
 </html>
