@@ -18,6 +18,8 @@ const // endButton = document.querySelector(".endButton"),
   currentTopic = document.querySelector(".currentTopic");
 (currentQuestionIndex = currentIndex.innerText), (lastClickedTopic = currentTopic.innerText);
 
+let i = 0,
+  current = 0;
 setQuestion();
 
 // Установка вопроса

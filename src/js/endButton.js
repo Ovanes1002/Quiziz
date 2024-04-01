@@ -25,9 +25,14 @@ endButton.addEventListener("click", (evt) => {
       lastClickedTopic == "история")
   ) {
     thirdWriteAnswer.classList.add("true");
+    thirdWriteAnswer.style.backgroundColor = "green";
+    quizList[currentQuestionIndex].isUserCorrect = true;
     result += 4;
+  } else {
+    thirdWriteAnswer.style.backgroundColor = "red";
+    quizList[currentQuestionIndex].isUserCorrect = false;
   }
-
+  sessionStorage.setItem("quizList", JSON.stringify(quizList));
   audioSport.classList.add("hide");
   audioMusic.classList.add("hide");
   audioArt.classList.add("hide");
@@ -51,6 +56,9 @@ endButton.addEventListener("click", (evt) => {
   firstWriteAnswer.value = "";
   secondWriteAnswer.value = "";
   thirdWriteAnswer.value = "";
+  firstWriteAnswer.style.backgroundColor = "white";
+  secondWriteAnswer.style.backgroundColor = "white";
+  thirdWriteAnswer.style.backgroundColor = "white";
   firstWriteAnswer.classList.add("hide");
   secondWriteAnswer.classList.add("hide");
   thirdWriteAnswer.classList.add("hide");

@@ -116,5 +116,6 @@ $user = currentUser();
   <script src="js/SetShowQuestion.js" defer></script>
   <script src="js/chooseAnswer.js" defer></script>
   <script src="js/nextButton.js" defer></script>
+  <script src="js/quitQuiz.js" defer></script>
   <script src="js/endButton.js" defer></script>
 </html>

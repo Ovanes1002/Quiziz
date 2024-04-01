@@ -1,4 +1,5 @@
 const nextButton = document.querySelector(".nextButton");
+let lastClickedButton = null;
 // endButton           = document.querySelector(".endButton"),
 // buttons             = document.querySelectorAll(".button"),
 // firstWriteAnswer    = document.querySelector(".firstWriteAnswer"),
@@ -21,7 +22,7 @@ buttons.forEach((button) => {
       class: evt.currentTarget.classList.contains("true"),
     };
     console.log(lastClickedButton);
-    console.log(lastClickedButton.element.textContent);
+    // console.log(lastClickedButton.element.textContent);
     // Проверка, последний ли следующий вопрос
     if (+currentQuestionIndex % 10 != 9) {
       nextButton.classList.remove("hide");
