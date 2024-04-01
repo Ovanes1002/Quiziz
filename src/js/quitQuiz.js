@@ -41,9 +41,6 @@ quitQuiz.addEventListener("click", function (evt) {
   // main.classList.add("hide");
   // footer.classList.add("hide");
   exitNext.classList.add("hide");
-  // buttons.forEach((button) => {
-  //   button.classList.remove("hide");
-  // });
   // firstWriteAnswer.classList.add("hide");
   // secondWriteAnswer.classList.add("hide");
   // thirdWriteAnswer.classList.add("hide");
