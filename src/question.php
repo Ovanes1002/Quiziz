@@ -98,7 +98,7 @@ $user = currentUser();
 			</div>
 		</main>
 		<footer id="footer">
-        	<div id="progressBar"></div>
+        	<div class="progressBar"></div>
       	</footer>
 		<div class="exitNext">
             <a class="quitQuiz" href="/profile.php">← Выйти</a>

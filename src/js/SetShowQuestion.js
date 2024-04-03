@@ -5,7 +5,7 @@ const // endButton = document.querySelector(".endButton"),
   // buttons             = document.querySelectorAll(".button"),
   count = document.querySelector(".questionNumber"),
   points = document.querySelector(".points"),
-  progress = document.getElementById("progressBar"),
+  progressBar = document.querySelector(".progressBar"),
   max = 100,
   firstWriteAnswer = document.querySelector(".firstWriteAnswer"),
   secondWriteAnswer = document.querySelector(".secondWriteAnswer"),
@@ -94,5 +94,5 @@ function updateProgress(value) {
   if (current >= max) {
     current = max;
   }
-  progress.style.width = `${(current / max) * 100}%`;
+  progressBar.style.width = `${(current / max) * 100}%`;
 }

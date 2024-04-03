@@ -19,7 +19,9 @@ $user = currentUser();
 			<span class="currentIndex">
 				<?php echo topicIndex($_SESSION['lastClickedTopic']);?>
 			</span>
-			<div class="finishAnswers"></div>
+			<div class="finishAnswers">
+				
+			</div>
 			<a class="menuButton" href="/profile.php">Главное меню</a>
 		</div>
 	</div>
@@ -27,7 +29,7 @@ $user = currentUser();
 	
 <script defer src="js/quizVariables.js"></script>
 <script defer src="js/questions.js"></script>
-<!-- <script defer src="js/chooseTopic.js"></script> -->
+<script defer src="js/chooseTopic.js"></script>
 <!-- <script defer src="js/SetShowQuestion.js"></script> -->
 <script defer src="js/finishQuiz.js"></script>
 
@@ -51,6 +53,9 @@ $user = currentUser();
 				<button class="button" data-button-id="4"></button>
 			</div>
 		</main>
+		<footer id="footer">
+        	<div id="progressBar"></div>
+      	</footer>
 4. Для последних 3 элементов конструкция вида
 			<div class="answer-buttons">
 				<input

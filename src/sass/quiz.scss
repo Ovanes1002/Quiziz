@@ -1,114 +1,112 @@
-@import 'base/animations';
+@import "base/animations";
 
 *,
 *:before,
 *:after {
-	padding: 0;
-	margin: 0;
-	border: 0;
-	// color: #cacaca;
-	-webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-	box-sizing: border-box;
-	-webkit-hyphens: auto;
-	-ms-hyphens: auto;
-	hyphens: auto;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  // color: #cacaca;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 html {
-	height: 100%;
+  height: 100%;
 }
 body {
-	width: 100%;
-	min-height: 100%;
-	font-family: "Times New Roman", Helvetica, sans-serif;
-	font-size: 28px;
-	line-height: 20px;
-	color: #cacaca ;
-	place-items: center;
-	// background: #2d53ff;
-	// background: -webkit-linear-gradient(top left, #2d53ff, #31b1a2);
-	// background: -moz-linear-gradient(top left, #2d53ff, #31b1a2);
-	// background: linear-gradient(to bottom right, #2d53ff, #31b1a2);
-	background-attachment: fixed;
-	background: url('../images/quiz_bg.jpg') center (center/cover) repeat;
+  width: 100%;
+  min-height: 100%;
+  font-family: "Times New Roman", Helvetica, sans-serif;
+  font-size: 28px;
+  line-height: 20px;
+  color: #cacaca;
+  place-items: center;
+  // background: #2d53ff;
+  // background: -webkit-linear-gradient(top left, #2d53ff, #31b1a2);
+  // background: -moz-linear-gradient(top left, #2d53ff, #31b1a2);
+  // background: linear-gradient(to bottom right, #2d53ff, #31b1a2);
+  background-attachment: fixed;
+  background: url("../images/quiz_bg.jpg") center (center/cover) repeat;
 }
 
 h1 {
-	display: block;
-	margin: 0 auto 50px;
-	padding: 30px 0;
-	text-align: center;
-	font-size: 1.9em;
+  display: block;
+  margin: 0 auto 50px;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 1.9em;
 }
 
-
 .button {
-	img {
-		height: calc(12em + 1.5vw);
-	}
+  img {
+    height: calc(12em + 1.5vw);
+  }
 }
 
 .topic-buttons form {
-	width: 22%;
+  width: 22%;
 }
 
 img {
-	display: block;
+  display: block;
 }
 
-a, .endButton {
-	display: block;
-	width: 40%;
-	margin: 0 auto;
-	padding: 20px 10px;
-	color: #cacaca;
-	line-height: normal;
-	text-decoration: none;
-	text-transform: uppercase;
-	text-align: center;
-	word-wrap: break-word;
-	border: 2px solid #0d0055;
-	border-radius: 15px;
-	background-color: #0022bb;
-	&:hover {
-		cursor: pointer;
-		background-color: #001989;
-		box-shadow: inset 0 0 5px 1px black;
-	}
+a,
+.endButton {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+  padding: 20px 10px;
+  color: #cacaca;
+  line-height: normal;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  word-wrap: break-word;
+  border: 2px solid #0d0055;
+  border-radius: 15px;
+  background-color: #0022bb;
+  &:hover {
+    cursor: pointer;
+    background-color: #001989;
+    box-shadow: inset 0 0 5px 1px black;
+  }
 }
 
 .exitNext a,
 .exitNext .endButton {
-	width: 30%;
+  width: 30%;
 }
 
 .container {
-	margin: 0 auto;
-	width: 80%;
-	padding: 30px 0;
+  margin: 0 auto;
+  width: 80%;
+  padding: 30px 0;
 }
 
 .headerSite {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #001884;
-	width: 100%;
-	height: 100px;
-	color: #cacaca;
-	font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #001884;
+  width: 100%;
+  height: 100px;
+  color: #cacaca;
+  font-size: 36px;
 }
 
 .exitNext {
-	display: flex;
-	justify-content: space-evenly;
-	padding-bottom: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
 }
 
-
-
 .hide {
-	display: none;
+  display: none;
 }
 
 // .currentIndex {
@@ -118,9 +116,9 @@ a, .endButton {
 // 	font-size: 14px;
 // }
 
-@import 'blocks/startPages';
-@import 'blocks/profile';
-@import 'blocks/card';
-@import 'blocks/results';
-@import 'blocks/topics';
-@import 'blocks/media';
+@import "blocks/startPages";
+@import "blocks/profile";
+@import "blocks/card";
+@import "blocks/results";
+@import "blocks/topics";
+@import "blocks/media";
