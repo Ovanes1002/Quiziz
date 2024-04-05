@@ -7,7 +7,7 @@
 // secondWriteAnswer   = document.querySelector(".secondWriteAnswer"),
 // thirdWriteAnswer    = document.querySelector(".thirdWriteAnswer");
 
-let dataButtonId, userAnswer, isAnswerTrue;
+let dataButtonId, userAnswer;
 let result = 0;
 
 const isCorrectUserAnswer = function () {
@@ -19,7 +19,7 @@ const isCorrectUserAnswer = function () {
   // console.log(rightAnswer);
 
   // ответ-объект-кнопка массива по которому нажал пользователь
-  // userAnswer = quizList[currentQuestionIndex].answers[dataButtonId];
+  userAnswer = quizList[currentQuestionIndex].answers[dataButtonId];
 
   // console.log(lastClickedButton.element.textContent);
   // isAnswerTrue = rightAnswer.text === lastClickedButton.element.textContent;
@@ -28,8 +28,8 @@ const isCorrectUserAnswer = function () {
   if (dataButtonId === rightAnswerIndex) {
     rightAnswer.isUserCorrect = true;
     lastClickedButton.element.style.backgroundColor = "green";
-  } else {
-    rightAnswer.isUserCorrect = false;
+  } else if (dataButtonId !== rightAnswerIndex) {
+    userAnswer.isUserCorrect = false;
     lastClickedButton.element.style.backgroundColor = "red";
   }
   console.log(dataButtonId);

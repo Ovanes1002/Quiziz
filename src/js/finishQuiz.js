@@ -1,12 +1,17 @@
 const finishAnswers = document.querySelector(".finishAnswers"),
   max = 100;
 let savedQuizList = JSON.parse(sessionStorage.getItem("quizList")),
+  userAnswer,
+  userAnswerIndex,
+  rightAnswer,
   AnswerButtons,
   lastAnswerButtons,
   buttonsOflastAnswerButtons,
+  lastPointsElement,
   current = 0,
   progressBars,
   lastProgressBar,
+  points = document.querySelectorAll(".points"),
   currentIndex = document.querySelector(".currentIndex");
 currentQuestionIndex = currentIndex.innerText;
 console.log(currentQuestionIndex);
@@ -45,39 +50,36 @@ for (let i = 0; i < 10; i++) {
     `;
 
     // Получаем правильный ответ для текущего вопроса
-    const rightAnswer = savedQuizList[currentQuestionIndex].answers.find((answer) => answer.correct === true);
-    // если пользователь тоже ответил правильно
-    if (rightAnswer.isUserCorrect === true) {
-      // у кнопки с правильным ответом меняем цвет на зелёный
-      //   classList.contains("true");
-    }
+    rightAnswer = savedQuizList[currentQuestionIndex].answers.find((answer) => answer.correct === true);
+    // Получаем ответ пользваетеля для текущего вопроса
+    userAnswer = savedQuizList[currentQuestionIndex].answers.find(
+      (answer) => answer.isUserCorrect !== undefined
+    );
+    userAnswerIndex = savedQuizList[currentQuestionIndex].answers.indexOf(userAnswer);
+    console.log(userAnswerIndex);
     // Получить все элементы с классом "answer-buttons"
     AnswerButtons = document.getElementsByClassName("answer-buttons");
 
     // Получить последний элемент с классом "answer-buttons"
     lastAnswerButtons = AnswerButtons[AnswerButtons.length - 1];
 
+    // Получить последний элемент с классом "points"
+    lastPointsElement = points[points.length - 1]; // не используется
+
     buttonsOflastAnswerButtons = lastAnswerButtons.querySelectorAll(".button");
     console.log(buttonsOflastAnswerButtons);
 
-    buttonsOflastAnswerButtons.forEach((button) => {
-      if (button.innerText == rightAnswer.text) {
+    buttonsOflastAnswerButtons.forEach((button, index) => {
+      if (button.innerText === rightAnswer.text) {
+        // если пользователь тоже ответил правильно
         if (rightAnswer.isUserCorrect === true) {
           // у кнопки с правильным ответом меняем цвет на зелёный
           button.style.backgroundColor = "green";
-        } else if (rightAnswer.isUserCorrect === false) {
-          button.style.backgroundColor = "red";
         }
+      } else if (index === userAnswerIndex && userAnswer.isUserCorrect === false) {
+        button.style.backgroundColor = "red";
       }
     });
-    // Найти кнопку с классом "true" в последнем блоке
-    const buttonTrue = lastAnswerButtons.querySelector("button.true");
-
-    // Проверить, была ли найдена кнопка
-    if (buttonTrue) {
-      // Пример: добавить класс для подсветки
-      buttonTrue.classList.add("highlighted");
-    }
 
     // Получить все элементы с классом "progressBar"
     progressBars = document.getElementsByClassName("progressBar");
@@ -90,6 +92,53 @@ for (let i = 0; i < 10; i++) {
       current = max;
     }
     lastProgressBar.style.width = `${(current / max) * 100}%`;
+  } else if (i < 7) {
+    finishAnswers.innerHTML += `
+            <header id="header">
+                <div class="questionNumber">${(+currentQuestionIndex % 10) + 1} / 10</div>
+                <div class="points">2 балла</div>
+            </header>
+            <main class="card">
+                <p class="question"></p>
+                <span class="currentIndex">
+                    <?php echo topicIndex($_SESSION['lastClickedTopic']);?>
+                </span>
+                <div class="answer-buttons">
+                    <button class="button" data-button-id="1">
+                        <img src="${
+                          savedQuizList[currentQuestionIndex].answers[0].text
+                        }" alt="фото викторины" />
+                    </button>
+                    <button class="button" data-button-id="2">
+                        <img src="${
+                          savedQuizList[currentQuestionIndex].answers[1].text
+                        }" alt="фото викторины" />
+                    </button>
+                    <button class="button" data-button-id="3">
+                        <img src="${
+                          savedQuizList[currentQuestionIndex].answers[2].text
+                        }" alt="фото викторины" /></button>
+                    <button class="button" data-button-id="4">
+                        <img src="${
+                          savedQuizList[currentQuestionIndex].answers[3].text
+                        }" alt="фото викторины" />
+                    </button>
+                </div>
+            </main>
+            <footer id="footer">
+                <div class="progressBar"></div>
+            </footer>`;
+    for (let button = 0; button < buttonsOflastAnswerButtons.length; button++) {
+      if (savedQuizList[currentQuestionIndex].answers[button].text === rightAnswer.text) {
+        // если пользователь тоже ответил правильно
+        if (rightAnswer.isUserCorrect === true) {
+          // у кнопки с правильным ответом меняем цвет на зелёный
+          buttonsOflastAnswerButtons[button].style.backgroundColor = "green";
+        } else if (rightAnswer.isUserCorrect === false) {
+          buttonsOflastAnswerButtons[button].style.backgroundColor = "red";
+        }
+      }
+    }
   }
   currentQuestionIndex++;
 }
