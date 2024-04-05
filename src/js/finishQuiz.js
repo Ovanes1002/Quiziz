@@ -17,6 +17,65 @@ currentQuestionIndex = currentIndex.innerText;
 console.log(currentQuestionIndex);
 console.log(savedQuizList);
 
+const checkUserAnswer = function (questionIndex) {
+  // Получаем правильный ответ для текущего вопроса
+  rightAnswer = savedQuizList[currentQuestionIndex].answers.find((answer) => answer.correct === true);
+  // Получаем ответ пользваетеля для текущего вопроса
+  userAnswer = savedQuizList[currentQuestionIndex].answers.find(
+    (answer) => answer.isUserCorrect !== undefined
+  );
+  userAnswerIndex = savedQuizList[currentQuestionIndex].answers.indexOf(userAnswer);
+  console.log(userAnswerIndex);
+  // Получить все элементы с классом "answer-buttons"
+  AnswerButtons = document.getElementsByClassName("answer-buttons");
+
+  // Получить последний элемент с классом "answer-buttons"
+  lastAnswerButtons = AnswerButtons[AnswerButtons.length - 1];
+
+  // Получить последний элемент с классом "points"
+  lastPointsElement = points[points.length - 1]; // не используется
+
+  buttonsOflastAnswerButtons = lastAnswerButtons.querySelectorAll(".button");
+  console.log(buttonsOflastAnswerButtons);
+
+  if (questionIndex < 4) {
+    buttonsOflastAnswerButtons.forEach((button, index) => {
+      if (button.innerText === rightAnswer.text) {
+        // если пользователь тоже ответил правильно
+        if (rightAnswer.isUserCorrect === true) {
+          // у кнопки с правильным ответом меняем цвет на зелёный
+          button.style.backgroundColor = "green";
+        }
+      } else if (index === userAnswerIndex && userAnswer.isUserCorrect === false) {
+        button.style.backgroundColor = "red";
+      }
+    });
+  } else if (questionIndex < 7) {
+    buttonsOflastAnswerButtons.forEach((button, index) => {
+      if (savedQuizList[currentQuestionIndex].answers[index].text === rightAnswer.text) {
+        // если пользователь тоже ответил правильно
+        if (rightAnswer.isUserCorrect === true) {
+          // у кнопки с правильным ответом меняем цвет на зелёный
+          button.style.backgroundColor = "green";
+        }
+      } else if (index === userAnswerIndex && userAnswer.isUserCorrect === false) {
+        button.style.backgroundColor = "red";
+      }
+    });
+  }
+  // Получить все элементы с классом "progressBar"
+  progressBars = document.getElementsByClassName("progressBar");
+
+  // Получить последний элемент с классом "progressBar"
+  lastProgressBar = progressBars[progressBars.length - 1];
+
+  current += 10;
+  if (current >= max) {
+    current = max;
+  }
+  lastProgressBar.style.width = `${(current / max) * 100}%`;
+};
+
 for (let i = 0; i < 10; i++) {
   if (i < 4) {
     finishAnswers.innerHTML += `
@@ -48,50 +107,7 @@ for (let i = 0; i < 10; i++) {
             <div class="progressBar"></div>
         </footer>
     `;
-
-    // Получаем правильный ответ для текущего вопроса
-    rightAnswer = savedQuizList[currentQuestionIndex].answers.find((answer) => answer.correct === true);
-    // Получаем ответ пользваетеля для текущего вопроса
-    userAnswer = savedQuizList[currentQuestionIndex].answers.find(
-      (answer) => answer.isUserCorrect !== undefined
-    );
-    userAnswerIndex = savedQuizList[currentQuestionIndex].answers.indexOf(userAnswer);
-    console.log(userAnswerIndex);
-    // Получить все элементы с классом "answer-buttons"
-    AnswerButtons = document.getElementsByClassName("answer-buttons");
-
-    // Получить последний элемент с классом "answer-buttons"
-    lastAnswerButtons = AnswerButtons[AnswerButtons.length - 1];
-
-    // Получить последний элемент с классом "points"
-    lastPointsElement = points[points.length - 1]; // не используется
-
-    buttonsOflastAnswerButtons = lastAnswerButtons.querySelectorAll(".button");
-    console.log(buttonsOflastAnswerButtons);
-
-    buttonsOflastAnswerButtons.forEach((button, index) => {
-      if (button.innerText === rightAnswer.text) {
-        // если пользователь тоже ответил правильно
-        if (rightAnswer.isUserCorrect === true) {
-          // у кнопки с правильным ответом меняем цвет на зелёный
-          button.style.backgroundColor = "green";
-        }
-      } else if (index === userAnswerIndex && userAnswer.isUserCorrect === false) {
-        button.style.backgroundColor = "red";
-      }
-    });
-
-    // Получить все элементы с классом "progressBar"
-    progressBars = document.getElementsByClassName("progressBar");
-
-    // Получить последний элемент с классом "progressBar"
-    lastProgressBar = progressBars[progressBars.length - 1];
-
-    current += 10;
-    if (current >= max) {
-      current = max;
-    }
-    lastProgressBar.style.width = `${(current / max) * 100}%`;
+    checkUserAnswer(i);
   } else if (i < 7) {
     finishAnswers.innerHTML += `
             <header id="header">
@@ -128,17 +144,7 @@ for (let i = 0; i < 10; i++) {
             <footer id="footer">
                 <div class="progressBar"></div>
             </footer>`;
-    for (let button = 0; button < buttonsOflastAnswerButtons.length; button++) {
-      if (savedQuizList[currentQuestionIndex].answers[button].text === rightAnswer.text) {
-        // если пользователь тоже ответил правильно
-        if (rightAnswer.isUserCorrect === true) {
-          // у кнопки с правильным ответом меняем цвет на зелёный
-          buttonsOflastAnswerButtons[button].style.backgroundColor = "green";
-        } else if (rightAnswer.isUserCorrect === false) {
-          buttonsOflastAnswerButtons[button].style.backgroundColor = "red";
-        }
-      }
-    }
+    checkUserAnswer(i);
   }
   currentQuestionIndex++;
 }
