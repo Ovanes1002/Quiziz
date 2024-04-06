@@ -95,7 +95,7 @@ const quizList = [
     ],
   },
   {
-    question: "Какой музыкальный стиль ассоциируется с исполнителями Elvis Presley и Jerry Lee Lewis?",
+    question: "Какой музыкальный стиль ассоциируется с исполнителями Элвис Пресли и Джерри Ли Льюис?",
     answers: [
       { text: "Джаз", correct: false },
       { text: "Регги", correct: false },

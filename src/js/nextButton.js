@@ -27,10 +27,10 @@ const isCorrectUserAnswer = function () {
   // console.log(isAnswerTrue);
   if (dataButtonId === rightAnswerIndex) {
     rightAnswer.isUserCorrect = true;
-    lastClickedButton.element.style.backgroundColor = "green";
+    // lastClickedButton.element.style.backgroundColor = "green";
   } else if (dataButtonId !== rightAnswerIndex) {
     userAnswer.isUserCorrect = false;
-    lastClickedButton.element.style.backgroundColor = "red";
+    // lastClickedButton.element.style.backgroundColor = "red";
   }
   console.log(dataButtonId);
   console.log(rightAnswerIndex);
@@ -60,7 +60,7 @@ nextButton.addEventListener("click", (evt) => {
     }
   }
 
-  if (points.innerText == "3 балла") {
+  if (points.innerText == "3 балла" && firstWriteAnswer.value !== "") {
     if (
       (firstWriteAnswer.value == "5" && lastClickedTopic == "спорт") ||
       (firstWriteAnswer.value == "18" && lastClickedTopic == "музыка") ||
@@ -68,17 +68,19 @@ nextButton.addEventListener("click", (evt) => {
       (firstWriteAnswer.value == "1961" && lastClickedTopic == "история")
     ) {
       firstWriteAnswer.classList.add("true");
-      firstWriteAnswer.style.backgroundColor = "green";
+      // firstWriteAnswer.style.backgroundColor = "green";
       quizList[currentQuestionIndex].isUserCorrect = true;
       result += 3;
-      console.log(quizList[currentQuestionIndex]);
-    } else {
-      firstWriteAnswer.style.backgroundColor = "red";
+    } else if (firstWriteAnswer.value !== "") {
+      // firstWriteAnswer.style.backgroundColor = "red";
       quizList[currentQuestionIndex].isUserCorrect = false;
-      console.log(quizList[currentQuestionIndex]);
     }
+    console.log(quizList[currentQuestionIndex].userValue);
+    console.log(quizList[currentQuestionIndex]);
+    quizList[currentQuestionIndex].userValue = firstWriteAnswer.value;
+    console.log(quizList[currentQuestionIndex].userValue);
     firstWriteAnswer.value = "";
-
+  } else if (points.innerText == "3 балла" && firstWriteAnswer.value === "") {
     if (
       (secondWriteAnswer.value == "245" && lastClickedTopic == "спорт") ||
       (secondWriteAnswer.value.toUpperCase() === "СКРИПКА" && lastClickedTopic == "музыка") ||
@@ -86,13 +88,17 @@ nextButton.addEventListener("click", (evt) => {
       (secondWriteAnswer.value.toUpperCase() === "ЯПОНИЯ" && lastClickedTopic == "история")
     ) {
       secondWriteAnswer.classList.add("true");
-      secondWriteAnswer.style.backgroundColor = "green";
+      // secondWriteAnswer.style.backgroundColor = "green";
       quizList[currentQuestionIndex].isUserCorrect = true;
       result += 3;
     } else if (secondWriteAnswer.value !== "") {
-      secondWriteAnswer.style.backgroundColor = "red";
+      // secondWriteAnswer.style.backgroundColor = "red";
       quizList[currentQuestionIndex].isUserCorrect = false;
     }
+    console.log(quizList[currentQuestionIndex].userValue);
+    console.log(quizList[currentQuestionIndex]);
+    quizList[currentQuestionIndex].userValue = secondWriteAnswer.value;
+    console.log(quizList[currentQuestionIndex].userValue);
     secondWriteAnswer.value = "";
   }
 

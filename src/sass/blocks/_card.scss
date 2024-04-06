@@ -19,6 +19,7 @@ header {
 }
 
 .question {
+  font-size: 1.2em;
   padding: 10px;
   text-align: center;
   line-height: 1.5;
@@ -78,6 +79,10 @@ audio {
   border-radius: 15px;
   text-align: center;
   margin: 15px;
+}
+
+input:disabled {
+  color: #fff;
 }
 
 audio {

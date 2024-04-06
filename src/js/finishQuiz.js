@@ -1,4 +1,5 @@
 const finishAnswers = document.querySelector(".finishAnswers"),
+  menuButton = document.querySelector(".menuButton"),
   max = 100;
 let savedQuizList = JSON.parse(sessionStorage.getItem("quizList")),
   userAnswer,
@@ -11,13 +12,21 @@ let savedQuizList = JSON.parse(sessionStorage.getItem("quizList")),
   current = 0,
   progressBars,
   lastProgressBar,
-  points = document.querySelectorAll(".points"),
+  question,
+  points,
+  firstWriteAnswer,
+  secondWriteAnswer,
+  thirdWriteAnswer,
+  audioSport,
+  audioMusic,
+  audioArt,
+  audioHistory,
   currentIndex = document.querySelector(".currentIndex");
 currentQuestionIndex = currentIndex.innerText;
 console.log(currentQuestionIndex);
 console.log(savedQuizList);
 
-const checkUserAnswer = function (questionIndex) {
+const findElements = function () {
   // Получаем правильный ответ для текущего вопроса
   rightAnswer = savedQuizList[currentQuestionIndex].answers.find((answer) => answer.correct === true);
   // Получаем ответ пользваетеля для текущего вопроса
@@ -32,37 +41,11 @@ const checkUserAnswer = function (questionIndex) {
   // Получить последний элемент с классом "answer-buttons"
   lastAnswerButtons = AnswerButtons[AnswerButtons.length - 1];
 
-  // Получить последний элемент с классом "points"
-  lastPointsElement = points[points.length - 1]; // не используется
-
   buttonsOflastAnswerButtons = lastAnswerButtons.querySelectorAll(".button");
   console.log(buttonsOflastAnswerButtons);
+};
 
-  if (questionIndex < 4) {
-    buttonsOflastAnswerButtons.forEach((button, index) => {
-      if (button.innerText === rightAnswer.text) {
-        // если пользователь тоже ответил правильно
-        if (rightAnswer.isUserCorrect === true) {
-          // у кнопки с правильным ответом меняем цвет на зелёный
-          button.style.backgroundColor = "green";
-        }
-      } else if (index === userAnswerIndex && userAnswer.isUserCorrect === false) {
-        button.style.backgroundColor = "red";
-      }
-    });
-  } else if (questionIndex < 7) {
-    buttonsOflastAnswerButtons.forEach((button, index) => {
-      if (savedQuizList[currentQuestionIndex].answers[index].text === rightAnswer.text) {
-        // если пользователь тоже ответил правильно
-        if (rightAnswer.isUserCorrect === true) {
-          // у кнопки с правильным ответом меняем цвет на зелёный
-          button.style.backgroundColor = "green";
-        }
-      } else if (index === userAnswerIndex && userAnswer.isUserCorrect === false) {
-        button.style.backgroundColor = "red";
-      }
-    });
-  }
+const changeProgressBar = function () {
   // Получить все элементы с классом "progressBar"
   progressBars = document.getElementsByClassName("progressBar");
 
@@ -81,10 +64,10 @@ for (let i = 0; i < 10; i++) {
     finishAnswers.innerHTML += `
         <header id="header">
             <div class="questionNumber">${(+currentQuestionIndex % 10) + 1} / 10</div>
-            <div class="points">1 балл</div>
+            <div class="points"></div>
         </header>
         <main class="card">
-            <p class="question"></p>
+            <p class="question">${savedQuizList[currentQuestionIndex].question}</p>
             <span class="currentIndex">
                 <?php echo topicIndex($_SESSION['lastClickedTopic']);?>
             </span>
@@ -107,15 +90,33 @@ for (let i = 0; i < 10; i++) {
             <div class="progressBar"></div>
         </footer>
     `;
-    checkUserAnswer(i);
+    findElements();
+    changeProgressBar();
+
+    points = document.querySelectorAll(".points");
+    // Получить последний элемент с классом "points"
+    lastPointsElement = points[points.length - 1];
+    lastPointsElement.innerText = "1 балл";
+
+    buttonsOflastAnswerButtons.forEach((button, index) => {
+      if (button.innerText === rightAnswer.text) {
+        // если пользователь тоже ответил правильно
+        if (rightAnswer.isUserCorrect === true) {
+          // у кнопки с правильным ответом меняем цвет на зелёный
+          button.style.backgroundColor = "green";
+        }
+      } else if (index === userAnswerIndex && userAnswer.isUserCorrect === false) {
+        button.style.backgroundColor = "red";
+      }
+    });
   } else if (i < 7) {
     finishAnswers.innerHTML += `
             <header id="header">
                 <div class="questionNumber">${(+currentQuestionIndex % 10) + 1} / 10</div>
-                <div class="points">2 балла</div>
+                <div class="points"></div>
             </header>
             <main class="card">
-                <p class="question"></p>
+                <p class="question">${savedQuizList[currentQuestionIndex].question}</p>
                 <span class="currentIndex">
                     <?php echo topicIndex($_SESSION['lastClickedTopic']);?>
                 </span>
@@ -144,7 +145,181 @@ for (let i = 0; i < 10; i++) {
             <footer id="footer">
                 <div class="progressBar"></div>
             </footer>`;
-    checkUserAnswer(i);
+    findElements();
+    changeProgressBar();
+    points = document.querySelectorAll(".points");
+    // Получить последний элемент с классом "points"
+    lastPointsElement = points[points.length - 1];
+    lastPointsElement.innerText = "2 балла";
+
+    buttonsOflastAnswerButtons.forEach((button, index) => {
+      if (savedQuizList[currentQuestionIndex].answers[index].text === rightAnswer.text) {
+        // если пользователь тоже ответил правильно
+        if (rightAnswer.isUserCorrect === true) {
+          // у кнопки с правильным ответом меняем цвет на зелёный
+          button.style.backgroundColor = "green";
+        }
+      } else if (index === userAnswerIndex && userAnswer.isUserCorrect === false) {
+        button.style.backgroundColor = "red";
+      }
+    });
+  } else if (i < 8) {
+    finishAnswers.innerHTML += `
+    <header id="header">
+    <div class="questionNumber">${(+currentQuestionIndex % 10) + 1} / 10</div>
+    <div class="points"></div>
+  </header>
+  <main class="card">
+      <p class="question">${savedQuizList[currentQuestionIndex].question}</p>
+      <span class="currentIndex">
+          <?php echo topicIndex($_SESSION['lastClickedTopic']);?>
+      </span>
+      <div class="answer-buttons">
+        <input
+        type="text"
+        class="firstWriteAnswer"
+        disabled
+        maxlength="30"
+        value="${savedQuizList[currentQuestionIndex].userValue}"
+        />
+      </div>
+  </main>
+  <footer id="footer">
+      <div class="progressBar"></div>
+  </footer>;
+    `;
+
+    firstWriteAnswer = document.querySelector(".firstWriteAnswer");
+    firstWriteAnswer.value = savedQuizList[currentQuestionIndex].userValue;
+    if (savedQuizList[currentQuestionIndex].isUserCorrect === true) {
+      firstWriteAnswer.style.backgroundColor = "green";
+    } else if (savedQuizList[currentQuestionIndex].isUserCorrect === false) {
+      firstWriteAnswer.style.backgroundColor = "red";
+    }
+    points = document.querySelectorAll(".points");
+    // Получить последний элемент с классом "points"
+    lastPointsElement = points[points.length - 1];
+    lastPointsElement.innerText = "3 балла";
+    changeProgressBar();
+    console.log(firstWriteAnswer.value);
+  } else if (i < 9) {
+    finishAnswers.innerHTML += `
+    <header id="header">
+    <div class="questionNumber">${(+currentQuestionIndex % 10) + 1} / 10</div>
+    <div class="points"></div>
+  </header>
+  <main class="card">
+      <p class="question">${savedQuizList[currentQuestionIndex].question}</p>
+      <span class="currentIndex">
+          <?php echo topicIndex($_SESSION['lastClickedTopic']);?>
+      </span>
+      <div class="answer-buttons">
+        <input
+        type="text"
+        class="secondWriteAnswer"
+        disabled
+        maxlength="30"
+        value="${savedQuizList[currentQuestionIndex].userValue}"
+        />
+      </div>
+  </main>
+  <footer id="footer">
+      <div class="progressBar"></div>
+  </footer>;
+    `;
+    secondWriteAnswer = document.querySelector(".secondWriteAnswer");
+    secondWriteAnswer.value = savedQuizList[currentQuestionIndex].userValue;
+    if (savedQuizList[currentQuestionIndex].isUserCorrect === true) {
+      secondWriteAnswer.style.backgroundColor = "green";
+    } else if (savedQuizList[currentQuestionIndex].isUserCorrect === false) {
+      secondWriteAnswer.style.backgroundColor = "red";
+    }
+    points = document.querySelectorAll(".points");
+    // Получить последний элемент с классом "points"
+    lastPointsElement = points[points.length - 1];
+    lastPointsElement.innerText = "3 балла";
+    changeProgressBar();
+    console.log(secondWriteAnswer.value);
+  } else if (i < 10) {
+    finishAnswers.innerHTML += `
+    <header id="header">
+    <div class="questionNumber">${(+currentQuestionIndex % 10) + 1} / 10</div>
+    <div class="points"></div>
+  </header>
+  <main class="card">
+      <p class="question">${savedQuizList[currentQuestionIndex].question}</p>
+      <span class="currentIndex">
+          <?php echo topicIndex($_SESSION['lastClickedTopic']);?>
+      </span>
+      <div class="answer-buttons">
+          <audio class="audioSport hide" controls>
+          <source src="quizAudio/LeoMessi/messi.opus" type="audio/ogg; codecs=opus" />
+          <source src="quizAudio/LeoMessi/messi.ogg" type="audio/ogg; codecs=vorbis" />
+          <source src="quizAudio/LeoMessi/messi.mp3" type="audio/mpeg" />
+          Ваш браузер не поддерживает встроенные аудио. Попробуйте
+          <a href="quizAudio/LeoMessi/messi.mp3" download>скачать</a> файл.
+        </audio>
+        <audio class="audioMusic hide" controls>
+          <source src="quizAudio/BobMarley/marley.opus" type="audio/ogg; codecs=opus" />
+          <source src="quizAudio/BobMarley/marley.ogg" type="audio/ogg; codecs=vorbis" />
+          <source src="quizAudio/BobMarley/marley.mp3" type="audio/mpeg" />
+          Ваш браузер не поддерживает встроенные аудио. Попробуйте
+          <a href="quizAudio/BobMarley/marley.mp3" download>скачать</a> файл.
+        </audio>
+        <audio class="audioArt hide" controls>
+          <source src="quizAudio/Interstellar/Zimmer.opus" type="audio/ogg; codecs=opus" />
+          <source src="quizAudio/Interstellar/Zimmer.ogg" type="audio/ogg; codecs=vorbis" />
+          <source src="quizAudio/Interstellar/Zimmer.mp3" type="audio/mpeg" />
+          Ваш браузер не поддерживает встроенные аудио. Попробуйте
+          <a href="quizAudio/Interstellar/Zimmer.mp3" download>скачать</a> файл.
+        </audio>
+        <audio class="audioHistory hide" controls>
+          <source src="quizAudio/BorisYeltsin/Yeltsin.opus" type="audio/ogg; codecs=opus" />
+          <source src="quizAudio/BorisYeltsin/Yeltsin.ogg" type="audio/ogg; codecs=vorbis" />
+          <source src="quizAudio/BorisYeltsin/Yeltsin.mp3" type="audio/mpeg" />
+          Ваш браузер не поддерживает встроенные аудио. Попробуйте
+          <a href="quizAudio/BorisYeltsin/Yeltsin.mp3" download>скачать</a> файл.
+        </audio>
+        <input
+          type="text"
+          class="thirdWriteAnswer"
+          disabled
+          maxlength="35"
+        />
+      </div>
+  </main>
+  <footer id="footer">
+      <div class="progressBar"></div>
+  </footer>;
+    `;
+    (audioSport = document.querySelector(".audioSport")),
+      (audioMusic = document.querySelector(".audioMusic")),
+      (audioArt = document.querySelector(".audioArt")),
+      (audioHistory = document.querySelector(".audioHistory"));
+    thirdWriteAnswer = document.querySelector(".thirdWriteAnswer");
+    if (currentQuestionIndex === 9) {
+      audioSport.classList.remove("hide");
+    } else if (currentQuestionIndex === 19) {
+      audioMusic.classList.remove("hide");
+    } else if (currentQuestionIndex === 29) {
+      audioArt.classList.remove("hide");
+    } else if (currentQuestionIndex === 39) {
+      audioHistory.classList.remove("hide");
+    }
+    thirdWriteAnswer.value = savedQuizList[currentQuestionIndex].userValue;
+    if (savedQuizList[currentQuestionIndex].isUserCorrect === true) {
+      thirdWriteAnswer.style.backgroundColor = "green";
+    } else if (savedQuizList[currentQuestionIndex].isUserCorrect === false) {
+      thirdWriteAnswer.style.backgroundColor = "red";
+    }
+    points = document.querySelectorAll(".points");
+    // Получить последний элемент с классом "points"
+    lastPointsElement = points[points.length - 1];
+    lastPointsElement.innerText = "4 балла";
+    changeProgressBar();
+    console.log();
+    console.log(secondWriteAnswer.value);
+    console.log(thirdWriteAnswer.value);
   }
   currentQuestionIndex++;
 }
@@ -152,3 +327,10 @@ for (let i = 0; i < 10; i++) {
 // for (let i = 0; i <= quizList.length; i++) {
 //   setQuestion();
 // }
+
+menuButton.addEventListener("click", () => {
+  audioSport.classList.add("hide");
+  audioMusic.classList.add("hide");
+  audioArt.classList.add("hide");
+  audioHistory.classList.add("hide");
+});

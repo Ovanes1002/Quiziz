@@ -32,6 +32,9 @@ endButton.addEventListener("click", (evt) => {
     thirdWriteAnswer.style.backgroundColor = "red";
     quizList[currentQuestionIndex].isUserCorrect = false;
   }
+  quizList[currentQuestionIndex].userValue = thirdWriteAnswer.value;
+  thirdWriteAnswer.value = "";
+
   sessionStorage.setItem("quizList", JSON.stringify(quizList));
   audioSport.classList.add("hide");
   audioMusic.classList.add("hide");
