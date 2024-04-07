@@ -19,7 +19,7 @@ header {
 }
 
 .question {
-  font-size: 1.2em;
+  font-size: 1.1em;
   padding: 10px;
   text-align: center;
   line-height: 1.5;
@@ -32,11 +32,17 @@ header {
   color: #001884;
 }
 
-.card .answer-buttons {
+.card .answer-buttons,
+.card .input-answer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 40px auto;
+}
+
+.input-answer:has(.thirdWriteAnswer) {
+  flex-direction: column;
+  align-items: center;
 }
 
 .questionNumber {
@@ -74,8 +80,8 @@ input.thirdWriteAnswer,
 audio {
   width: 60%;
   max-width: 350px;
-  font-size: 20px;
-  padding: 10px;
+  font-size: 24px;
+  padding: 15px;
   border-radius: 15px;
   text-align: center;
   margin: 15px;
@@ -88,6 +94,7 @@ input:disabled {
 audio {
   width: 90%;
   margin-bottom: 20px;
+  padding: 5px;
 }
 
 .progressBar {

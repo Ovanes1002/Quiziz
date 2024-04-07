@@ -40,6 +40,8 @@ $user = currentUser();
 				<button class="button" data-button-id="2"></button>
 				<button class="button" data-button-id="3"></button>
 				<button class="button" data-button-id="4"></button>
+			</div>
+			<div class="input-answer">
 				<input
 					type="text"
 					class="firstWriteAnswer hide"
@@ -58,6 +60,7 @@ $user = currentUser();
 					required
 					maxlength="30"
 				/>
+
 				<audio class="audioSport hide" controls>
 					<source src="quizAudio/LeoMessi/messi.opus" type="audio/ogg; codecs=opus" />
 					<source src="quizAudio/LeoMessi/messi.ogg" type="audio/ogg; codecs=vorbis" />

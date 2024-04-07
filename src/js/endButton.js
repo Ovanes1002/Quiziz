@@ -72,8 +72,4 @@ endButton.addEventListener("click", (evt) => {
   buttons.forEach((button) => {
     button.style.boxShadow = "none";
   });
-  main.style.height = "";
-  answerButtons.style.margin = "40px auto";
-  answerButtons.style.alignItems = "normal";
-  answerButtons.style.flexDirection = "row";
 });

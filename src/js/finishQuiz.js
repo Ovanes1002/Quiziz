@@ -5,7 +5,7 @@ let savedQuizList = JSON.parse(sessionStorage.getItem("quizList")),
   userAnswer,
   userAnswerIndex,
   rightAnswer,
-  AnswerButtons,
+  answerButtons,
   lastAnswerButtons,
   buttonsOflastAnswerButtons,
   lastPointsElement,
@@ -36,10 +36,10 @@ const findElements = function () {
   userAnswerIndex = savedQuizList[currentQuestionIndex].answers.indexOf(userAnswer);
   console.log(userAnswerIndex);
   // Получить все элементы с классом "answer-buttons"
-  AnswerButtons = document.getElementsByClassName("answer-buttons");
+  answerButtons = document.getElementsByClassName("answer-buttons");
 
   // Получить последний элемент с классом "answer-buttons"
-  lastAnswerButtons = AnswerButtons[AnswerButtons.length - 1];
+  lastAnswerButtons = answerButtons[answerButtons.length - 1];
 
   buttonsOflastAnswerButtons = lastAnswerButtons.querySelectorAll(".button");
   console.log(buttonsOflastAnswerButtons);
@@ -174,7 +174,7 @@ for (let i = 0; i < 10; i++) {
       <span class="currentIndex">
           <?php echo topicIndex($_SESSION['lastClickedTopic']);?>
       </span>
-      <div class="answer-buttons">
+      <div class="input-answer">
         <input
         type="text"
         class="firstWriteAnswer"
@@ -188,7 +188,6 @@ for (let i = 0; i < 10; i++) {
       <div class="progressBar"></div>
   </footer>;
     `;
-
     firstWriteAnswer = document.querySelector(".firstWriteAnswer");
     firstWriteAnswer.value = savedQuizList[currentQuestionIndex].userValue;
     if (savedQuizList[currentQuestionIndex].isUserCorrect === true) {
@@ -213,7 +212,7 @@ for (let i = 0; i < 10; i++) {
       <span class="currentIndex">
           <?php echo topicIndex($_SESSION['lastClickedTopic']);?>
       </span>
-      <div class="answer-buttons">
+      <div class="input-answer">
         <input
         type="text"
         class="secondWriteAnswer"
@@ -251,7 +250,7 @@ for (let i = 0; i < 10; i++) {
       <span class="currentIndex">
           <?php echo topicIndex($_SESSION['lastClickedTopic']);?>
       </span>
-      <div class="answer-buttons">
+      <div class="input-answer">
           <audio class="audioSport hide" controls>
           <source src="quizAudio/LeoMessi/messi.opus" type="audio/ogg; codecs=opus" />
           <source src="quizAudio/LeoMessi/messi.ogg" type="audio/ogg; codecs=vorbis" />
@@ -333,4 +332,8 @@ menuButton.addEventListener("click", () => {
   audioMusic.classList.add("hide");
   audioArt.classList.add("hide");
   audioHistory.classList.add("hide");
+  main.style.height = "";
+  answerButtons.style.margin = "40px auto";
+  answerButtons.style.alignItems = "normal";
+  answerButtons.style.flexDirection = "row";
 });

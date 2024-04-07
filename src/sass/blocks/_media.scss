@@ -269,6 +269,28 @@
     width: 44%;
   }
 
+  .card {
+    min-height: auto;
+  }
+
+  .card .answer-buttons,
+  .card .input-answer {
+    margin: 10px auto;
+  }
+
+  input.firstWriteAnswer,
+  input.secondWriteAnswer,
+  input.thirdWriteAnswer,
+  audio {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  audio {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
   .playerResult {
     font-size: 30px;
     line-height: 30px;
