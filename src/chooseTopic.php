@@ -59,6 +59,5 @@ $user = currentUser();
         </div>
     </div>
   </body>
-  <script src="js/quizVariables.js" defer></script>
   <script src="js/chooseTopic.js" defer></script>
 </html>

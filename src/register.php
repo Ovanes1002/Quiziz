@@ -150,7 +150,6 @@ checkGuest();
       </div>
     </div>
   </body>
-  <script defer src="js/quizVariables.js"></script>
   <script>
 	const terms = document.getElementById('terms');
 	const submit = document.getElementById('submit');
