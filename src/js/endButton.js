@@ -11,25 +11,27 @@ const header = document.getElementById("header"),
 // добавить 4 разных класса кнопке завершить
 endButton.addEventListener("click", (evt) => {
   if (
-    ((thirdWriteAnswer.value.toUpperCase() === "МЕССИ" || thirdWriteAnswer.value.toUpperCase() === "МЭССИ") &&
+    ((thirdWriteAnswer.value.toUpperCase().trim() === "МЕССИ" ||
+      thirdWriteAnswer.value.toUpperCase().trim() === "МЭССИ") &&
       lastClickedTopic == "спорт") ||
-    ((thirdWriteAnswer.value.toUpperCase() === "РЕГГИ" || thirdWriteAnswer.value.toUpperCase() === "РЭГГИ") &&
+    ((thirdWriteAnswer.value.toUpperCase().trim() === "РЕГГИ" ||
+      thirdWriteAnswer.value.toUpperCase().trim() === "РЭГГИ") &&
       lastClickedTopic == "музыка") ||
-    ((thirdWriteAnswer.value.toUpperCase() === "ИНТЕРСТЕЛЛАР" ||
-      thirdWriteAnswer.value.toUpperCase() === "ИНТЕРСТЕЛАР" ||
-      thirdWriteAnswer.value.toUpperCase() === "ИНТЕРСТЭЛАР" ||
-      thirdWriteAnswer.value.toUpperCase() === "ИНТЕРСТЭЛЛАР") &&
+    ((thirdWriteAnswer.value.toUpperCase().trim() === "ИНТЕРСТЕЛЛАР" ||
+      thirdWriteAnswer.value.toUpperCase().trim() === "ИНТЕРСТЕЛАР" ||
+      thirdWriteAnswer.value.toUpperCase().trim() === "ИНТЕРСТЭЛАР" ||
+      thirdWriteAnswer.value.toUpperCase().trim() === "ИНТЕРСТЭЛЛАР") &&
       lastClickedTopic == "искусство") ||
-    ((thirdWriteAnswer.value.toUpperCase() === "ЕЛЬЦИН" ||
-      thirdWriteAnswer.value.toUpperCase() === "ЕЛЬЦЫН") &&
+    ((thirdWriteAnswer.value.toUpperCase().trim() === "ЕЛЬЦИН" ||
+      thirdWriteAnswer.value.toUpperCase().trim() === "ЕЛЬЦЫН") &&
       lastClickedTopic == "история")
   ) {
     thirdWriteAnswer.classList.add("true");
-    thirdWriteAnswer.style.backgroundColor = "green";
+    // thirdWriteAnswer.style.backgroundColor = "green";
     quizList[currentQuestionIndex].isUserCorrect = true;
     result += 4;
   } else {
-    thirdWriteAnswer.style.backgroundColor = "red";
+    // thirdWriteAnswer.style.backgroundColor = "red";
     quizList[currentQuestionIndex].isUserCorrect = false;
   }
   quizList[currentQuestionIndex].userValue = thirdWriteAnswer.value;

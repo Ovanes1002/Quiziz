@@ -186,8 +186,7 @@ for (let i = 0; i < 10; i++) {
   </main>
   <footer id="footer">
       <div class="progressBar"></div>
-  </footer>;
-    `;
+  </footer>`;
     firstWriteAnswer = document.querySelector(".firstWriteAnswer");
     firstWriteAnswer.value = savedQuizList[currentQuestionIndex].userValue;
     if (savedQuizList[currentQuestionIndex].isUserCorrect === true) {
@@ -204,27 +203,27 @@ for (let i = 0; i < 10; i++) {
   } else if (i < 9) {
     finishAnswers.innerHTML += `
     <header id="header">
-    <div class="questionNumber">${(+currentQuestionIndex % 10) + 1} / 10</div>
-    <div class="points"></div>
-  </header>
-  <main class="card">
-      <p class="question">${savedQuizList[currentQuestionIndex].question}</p>
-      <span class="currentIndex">
-          <?php echo topicIndex($_SESSION['lastClickedTopic']);?>
-      </span>
-      <div class="input-answer">
-        <input
-        type="text"
-        class="secondWriteAnswer"
-        disabled
-        maxlength="30"
-        value="${savedQuizList[currentQuestionIndex].userValue}"
-        />
-      </div>
-  </main>
-  <footer id="footer">
-      <div class="progressBar"></div>
-  </footer>;
+      <div class="questionNumber">${(+currentQuestionIndex % 10) + 1} / 10</div>
+      <div class="points"></div>
+    </header>
+    <main class="card">
+        <p class="question">${savedQuizList[currentQuestionIndex].question}</p>
+        <span class="currentIndex">
+            <?php echo topicIndex($_SESSION['lastClickedTopic']);?>
+        </span>
+        <div class="input-answer">
+          <input
+          type="text"
+          class="secondWriteAnswer"
+          disabled
+          maxlength="30"
+          value="${savedQuizList[currentQuestionIndex].userValue}"
+          />
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="progressBar"></div>
+    </footer>
     `;
     secondWriteAnswer = document.querySelector(".secondWriteAnswer");
     secondWriteAnswer.value = savedQuizList[currentQuestionIndex].userValue;
@@ -284,13 +283,13 @@ for (let i = 0; i < 10; i++) {
           class="thirdWriteAnswer"
           disabled
           maxlength="35"
+          value="${savedQuizList[currentQuestionIndex].userValue}"
         />
       </div>
   </main>
   <footer id="footer">
       <div class="progressBar"></div>
-  </footer>;
-    `;
+  </footer>`;
     (audioSport = document.querySelector(".audioSport")),
       (audioMusic = document.querySelector(".audioMusic")),
       (audioArt = document.querySelector(".audioArt")),

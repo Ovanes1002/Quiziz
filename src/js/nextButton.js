@@ -62,10 +62,10 @@ nextButton.addEventListener("click", (evt) => {
 
   if (points.innerText == "3 балла" && firstWriteAnswer.value !== "") {
     if (
-      (firstWriteAnswer.value == "5" && lastClickedTopic == "спорт") ||
-      (firstWriteAnswer.value == "18" && lastClickedTopic == "музыка") ||
-      (firstWriteAnswer.value == "284" && lastClickedTopic == "искусство") ||
-      (firstWriteAnswer.value == "1961" && lastClickedTopic == "история")
+      (firstWriteAnswer.value.trim() == "5" && lastClickedTopic == "спорт") ||
+      (firstWriteAnswer.value.trim() == "18" && lastClickedTopic == "музыка") ||
+      (firstWriteAnswer.value.trim() == "284" && lastClickedTopic == "искусство") ||
+      (firstWriteAnswer.value.trim() == "1961" && lastClickedTopic == "история")
     ) {
       firstWriteAnswer.classList.add("true");
       // firstWriteAnswer.style.backgroundColor = "green";
@@ -82,10 +82,10 @@ nextButton.addEventListener("click", (evt) => {
     firstWriteAnswer.value = "";
   } else if (points.innerText == "3 балла" && firstWriteAnswer.value === "") {
     if (
-      (secondWriteAnswer.value == "245" && lastClickedTopic == "спорт") ||
-      (secondWriteAnswer.value.toUpperCase() === "СКРИПКА" && lastClickedTopic == "музыка") ||
-      (secondWriteAnswer.value.toUpperCase() === "ДАЛИ" && lastClickedTopic == "искусство") ||
-      (secondWriteAnswer.value.toUpperCase() === "ЯПОНИЯ" && lastClickedTopic == "история")
+      (secondWriteAnswer.value.trim() == "245" && lastClickedTopic == "спорт") ||
+      (secondWriteAnswer.value.toUpperCase().trim() === "СКРИПКА" && lastClickedTopic == "музыка") ||
+      (secondWriteAnswer.value.toUpperCase().trim() === "ДАЛИ" && lastClickedTopic == "искусство") ||
+      (secondWriteAnswer.value.toUpperCase().trim() === "ЯПОНИЯ" && lastClickedTopic == "история")
     ) {
       secondWriteAnswer.classList.add("true");
       // secondWriteAnswer.style.backgroundColor = "green";
