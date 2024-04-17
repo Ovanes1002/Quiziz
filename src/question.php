@@ -113,11 +113,11 @@ $user = currentUser();
         </div>
     </div>
   </body>
-  <script src="js/questions.js" defer></script>
-  <script src="js/chooseTopic.js" defer></script>
-  <script src="js/SetShowQuestion.js" defer></script>
-  <script src="js/chooseAnswer.js" defer></script>
-  <script src="js/nextButton.js" defer></script>
-  <script src="js/quitQuiz.js" defer></script>
-  <script src="js/endButton.js" defer></script>
+  <script src="js/questions.js?v1" defer></script>
+  <script src="js/chooseTopic.js?v1" defer></script>
+  <script src="js/SetShowQuestion.js?v1" defer></script>
+  <script src="js/chooseAnswer.js?v1" defer></script>
+  <script src="js/nextButton.js?v1" defer></script>
+  <script src="js/quitQuiz.js?v1" defer></script>
+  <script src="js/endButton.js?v1" defer></script>
 </html>

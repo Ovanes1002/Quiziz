@@ -59,5 +59,5 @@ $user = currentUser();
         </div>
     </div>
   </body>
-  <script src="js/chooseTopic.js" defer></script>
+  <script src="js/chooseTopic.js?v1" defer></script>
 </html>

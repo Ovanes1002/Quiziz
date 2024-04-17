@@ -27,8 +27,8 @@ $user = currentUser();
 	</div>
 </body>
 	
-<script defer src="js/questions.js"></script>
-<script defer src="js/chooseTopic.js"></script>
+<script defer src="js/questions.js?v1"></script>
+<script defer src="js/chooseTopic.js?v1"></script>
 <!-- <script defer src="js/SetShowQuestion.js"></script> -->
-<script defer src="js/finishQuiz.js"></script>
+<script defer src="js/finishQuiz.js?v1"></script>
 </html>

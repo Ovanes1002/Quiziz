@@ -43,5 +43,4 @@ $user = currentUser();
       </div>
     </div>
   </body>
-  <script defer src="js/quizVariables.js"></script>
 </html>

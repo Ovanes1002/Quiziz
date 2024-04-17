@@ -41,7 +41,6 @@ tr {
       &:first-child {
         width: 70%;
         border-right: 2px solid #142368;
-        padding-left: 75px;
       }
     }
   }
@@ -51,7 +50,6 @@ tr {
       &:first-child {
         width: 70%;
         border-right: 2px solid #0e1b54;
-        padding-left: 75px;
       }
     }
   }
@@ -64,28 +62,41 @@ tr {
 }
 
 tbody tr {
-  &:nth-child(1) td:nth-child(1) {
-    background-image: url(../../images/1st-place.png);
+  &:nth-child(1) td:nth-child(1)::before {
+    content: "";
+    background-image: url("../../images/1st-place.png");
   }
-  &:nth-child(2) td:nth-child(1) {
-    background-image: url(../../images/2nd-place.png);
+  &:nth-child(2) td:nth-child(1)::before {
+    content: "";
+    background-image: url("../../images/2nd-place.png");
   }
-  &:nth-child(3) td:nth-child(1) {
-    background-image: url(../../images/3rd-place.png);
+  &:nth-child(3) td:nth-child(1)::before {
+    content: "";
+    background-image: url("../../images/3rd-place.png");
+  }
+  &:nth-child(1) td:nth-child(1)::before,
+  &:nth-child(2) td:nth-child(1)::before,
+  &:nth-child(3) td:nth-child(1)::before {
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translate(25%, -50%);
+    -ms-transform: translate(25%, -50%);
+    transform: translate(25%, -50%);
   }
   &:nth-child(1) td:nth-child(1),
   &:nth-child(2) td:nth-child(1),
   &:nth-child(3) td:nth-child(1) {
-    background-position: 20px center;
-    background-size: 44px 44px;
-    background-repeat: no-repeat;
-    word-break: break-all;
+    position: relative;
   }
   &:nth-child(even),
   &:nth-child(odd) {
     td:first-child {
       width: 70%;
-      padding-left: 75px;
       line-height: 36px;
     }
   }
@@ -98,7 +109,6 @@ caption {
 th:nth-child(1) {
   border-top-left-radius: 25px;
   border-right: 2px solid #142368;
-  padding-left: 75px;
 }
 
 th:nth-child(2) {

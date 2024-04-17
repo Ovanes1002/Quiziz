@@ -175,7 +175,12 @@
   .button,
   .topic,
   .score_topic {
-    width: 80%;
+    width: 60%;
+    margin-bottom: 30px;
+  }
+
+  .button img {
+    height: 230px;
   }
 
   .startPage {
@@ -211,12 +216,6 @@
   .topic_name {
     font-size: 16px;
     padding: 5px 0;
-  }
-
-  .button,
-  .score_topic,
-  .topic {
-    margin-bottom: 30px;
   }
 
   .button:nth-child(-n + 2),
@@ -269,9 +268,9 @@
     width: 44%;
   }
 
-  .card {
-    min-height: auto;
-  }
+  // .card {
+  //   min-height: auto;
+  // }
 
   .card .answer-buttons,
   .card .input-answer {
@@ -312,24 +311,28 @@
   }
 
   tbody tr {
-    &:nth-child(1) td:nth-child(1),
-    &:nth-child(2) td:nth-child(1),
-    &:nth-child(3) td:nth-child(1) {
-      background-position: 15px center;
-      background-size: 32px 32px;
-      background-repeat: no-repeat;
-      word-break: break-all;
+    &:nth-child(1) td:nth-child(1)::before,
+    &:nth-child(2) td:nth-child(1)::before,
+    &:nth-child(3) td:nth-child(1)::before {
+      width: 30px;
+      height: 30px;
     }
     &:nth-child(even),
     &:nth-child(odd) {
       td:first-child {
         width: 50%;
-        padding-left: 60px;
+        padding-left: 30px;
       }
     }
   }
 
   th:nth-child(1) {
-    padding-left: 60px;
+    padding-left: 30px;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .button img {
+    height: 175px;
   }
 }
