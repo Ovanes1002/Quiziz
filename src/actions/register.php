@@ -14,16 +14,20 @@ $avatar = $_FILES['avatar'] ?? null;
 
 // Validation
 
-if (empty($name)) {
+if (empty(trim($name))) {
     setValidationError(fieldName: 'name', message: 'Имя не может быть пустым');
 }
 
-if (!filter_var($email, filter: FILTER_VALIDATE_EMAIL)) {
+if (!filter_var(trim($email), filter: FILTER_VALIDATE_EMAIL)) {
     setValidationError(fieldName: 'email', message: 'Некорректный email');
 }
 
-if (empty($password)) {
+if (empty(trim($password))) {
     setValidationError(fieldName: 'password', message: 'Пароль не может быть пустым');
+}
+
+if (empty(strlen(trim($password))) < 8) {
+    setValidationError(fieldName: 'password', message: 'Пароль должен иметь хотя бы 8 символов');
 }
 
 if ($password !== $password_confirm) {

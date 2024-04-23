@@ -21,6 +21,7 @@ $user = currentUser();
 					alt="<?php echo $user['name']; ?>"
 					>
 				<a class="startButton" href="/chooseTopic.php">Старт</a>
+				<a href="/quizBuilder.php">Конструктор</a>
 				<a class="score__button" href="/chooseScoreTopic.php">Результаты</a>
 				<form action="/actions/logout.php" method="post">
 					<button role="button">Выйти</button>

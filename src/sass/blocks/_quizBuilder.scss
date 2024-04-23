@@ -1,0 +1,134 @@
+.quizBuilder {
+  font-size: inherit;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #0c1120;
+  border-radius: 20px;
+  .quizName {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 175px;
+    margin: 30px auto;
+    justify-content: space-between;
+    align-items: center;
+    small {
+      color: rgb(225, 39, 11);
+    }
+    // label {
+    //   width: 40px;
+    //   margin: 0 auto;
+    //   text-align: center;
+    // }
+    input {
+      width: 35%;
+      color: #cacaca;
+      font-size: 26px;
+      padding: 7px 13px;
+      border: none;
+      outline: none;
+      border: none;
+      box-shadow: 0px 0px 10px 5px #001884;
+      border-radius: 20px;
+      background: transparent;
+      &[aria-invalid="true"] {
+        border: none;
+        box-shadow: 0px 0px 10px 5px red;
+        border-radius: 20px;
+      }
+    }
+  }
+  .quizQuestion {
+    margin: 20px auto;
+  }
+  .quizType {
+    margin: 20px auto;
+  }
+  // .questionMakeButton {
+  //   padding: 5px;
+  // }
+  .questionBlock {
+    width: 95%;
+    min-height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    // flex-direction: column;
+    justify-content: space-between;
+    // align-items: flex-start;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: rgba(77, 92, 73, 0.3);
+    .firstAnswer,
+    .secondAnswer,
+    .thirdAnswer,
+    .fourthAnswer {
+      width: 40%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      margin: 40px auto;
+      // align-items: baseline;
+      // justify-content: space-between;
+    }
+    .radioLabel {
+      position: relative;
+      // padding-left: 50px;
+      .radioInput {
+        position: absolute;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none; // «сброс» внешнего вида элемента. Приведение его к общему знаменателю во всех браузерах и всех операционных системах.
+      }
+      .radioSpan {
+        position: absolute;
+        // top: -23%;
+        // left: 54px;
+        width: 24px;
+        height: 24px;
+        margin-top: 10px;
+        border-radius: 4px;
+        background-color: white;
+        box-shadow: 0 0 0 4px rgb(28, 11, 183);
+        margin-left: -25px;
+      }
+      .radioInput:checked + .radioSpan {
+        background-color: rgb(28, 11, 183);
+        background-image: url("../images/checkmark.svg");
+      }
+      .radioInput:focus + .radioSpan {
+        box-shadow: 0 0 0 4px rgb(28, 11, 183), 0 0 0 8px rgb(11, 183, 88);
+      }
+    }
+    textarea {
+      width: 90%;
+      font-size: 22px;
+      border-radius: 10px;
+      resize: none;
+      padding: 5px;
+    }
+  }
+  .questionNextButton {
+    margin: 0 auto;
+  }
+  .writeInput {
+    width: 300px;
+    padding: 5px 10px;
+    font-size: 20px;
+    border: 2px solid #0d0055;
+    border-radius: 10px;
+  }
+  select {
+    width: 100px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    &#questionType {
+      width: 250px;
+    }
+    option {
+      width: 60px;
+      padding: 5px;
+    }
+  }
+}

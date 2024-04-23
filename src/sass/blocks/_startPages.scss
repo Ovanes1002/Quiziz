@@ -1,110 +1,110 @@
 .startPage {
-	margin: 0 auto;
-	padding-top: 60px;
-	text-align: center;
-	line-height: normal;
-	a, .endButton {
-		width: 150px;
-		min-height: 75px;
-		font-size: 24px;
-		border-radius: 15px;
-		line-height: 35px;
-	}
-
+  margin: 0 auto;
+  padding-top: 60px;
+  text-align: center;
+  line-height: normal;
+  a,
+  .endButton {
+    width: 150px;
+    min-height: 75px;
+    font-size: 24px;
+    border-radius: 15px;
+    line-height: 35px;
+  }
 }
 
 .nameInput {
-	width: 50%;
-	text-align: center;
-	margin: 20px auto;
-	line-height: 40px;
-	background-color: rgba(5, 7, 13, 0.9);
-	border-radius: 50px;
-	padding: 20px;
+  width: 50%;
+  text-align: center;
+  margin: 20px auto;
+  line-height: 40px;
+  background-color: rgba(5, 7, 13, 0.9);
+  border-radius: 50px;
+  padding: 20px;
 }
 
 .input-group {
-	position: relative;
-	width: 75%;
-	// max-width: 300px;
-	.playerName,
-	.playerEmail,
-	.playerAvatar,
-	.playerPassword,
-	.confirmPlayerPassword {
-		margin-bottom: 20px;
-		// position: relative;
-		small {
-			color: rgb(225, 39, 11);
-		}
-		input {
-			width: 100%;
-			color: #cacaca;
-			font-size: 20px;
-			padding: 7px 13px;
-			border: none;
-			outline: none;
-			border: none;
-			box-shadow: 0px 0px 10px 5px #001884;
-			border-radius: 20px;
-			background: transparent;	
-			&[aria-invalid="true"] {
-				border: none;
-				box-shadow: 0px 0px 10px 5px red;
-				border-radius: 20px;
-			}
-		}
-		label {
-			display: block;
-			text-align: start;
-			font-size: 24px;
-			pointer-events: none;
-			padding-left: 10px;
-			padding-bottom: 5px;
-		}
-	}
-	.playerAvatar input {
-		box-shadow: none;
-		border-radius: 20px;
-		&[aria-invalid="true"] {
-			box-shadow: none;
-			background-color: rgba(255, 0, 0, 0.25);
-		}
-	}
-	.flexPassword {
-		display: flex;
-		flex-wrap: nowrap;
-		justify-content: space-between;
-		.playerPassword,
-		.confirmPlayerPassword{
-			width: 45%;
-		}
-	}
+  position: relative;
+  width: 75%;
+  // max-width: 300px;
+  .playerName,
+  .playerEmail,
+  .playerAvatar,
+  .playerPassword,
+  .confirmPlayerPassword {
+    margin-bottom: 20px;
+    // position: relative;
+    small {
+      color: rgb(225, 39, 11);
+    }
+    input {
+      width: 100%;
+      color: #cacaca;
+      font-size: 20px;
+      padding: 7px 13px;
+      border: none;
+      outline: none;
+      border: none;
+      box-shadow: 0px 0px 10px 5px #001884;
+      border-radius: 20px;
+      background: transparent;
+      &[aria-invalid="true"] {
+        border: none;
+        box-shadow: 0px 0px 10px 5px red;
+        border-radius: 20px;
+      }
+    }
+    label {
+      display: block;
+      text-align: start;
+      font-size: 24px;
+      pointer-events: none;
+      padding-left: 10px;
+      padding-bottom: 5px;
+    }
+  }
+  .playerAvatar input {
+    box-shadow: none;
+    border-radius: 20px;
+    &[aria-invalid="true"] {
+      box-shadow: none;
+      background-color: rgba(255, 0, 0, 0.25);
+    }
+  }
+  .flexPassword {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    .playerPassword,
+    .confirmPlayerPassword {
+      width: 45%;
+    }
+  }
 }
 
 .inputButton {
-	display: block;
-    width: 40%;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 20px auto ;
-	padding: 20px;
-    // height: 55px;
-    text-align:center;
-	word-wrap: break-word;
-    border: none;
-    background-size: 300% 100%;
-	background-image: linear-gradient(to right, #0022bb, #184696, #0022bb,#001055, #183a74, #001055);
-    // box-shadow: 0 4px 15px 0 rgba(0, 45, 112, 0.75);
-    border-radius: 50px;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-	&:disabled {
-		background-image: none;
-	}
+  display: block;
+  width: 40%;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px auto;
+  padding: 20px;
+  // height: 55px;
+  text-align: center;
+  word-wrap: break-word;
+  border: none;
+  background-size: 300% 100%;
+  background-image: linear-gradient(to right, #0022bb, #184696, #0022bb, #001055, #183a74, #001055);
+  // box-shadow: 0 4px 15px 0 rgba(0, 45, 112, 0.75);
+  border-radius: 50px;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  &:disabled {
+    background-image: none;
+  }
 }
 
 // .inputButton:hover {
@@ -115,43 +115,40 @@
 // }
 
 .inputButton:focus {
-    outline: none;
+  outline: none;
 }
 
-
 form {
-	display: flex;
-	flex-direction: column;
-	// flex-wrap: wrap;
-	align-items: center;
-	h2 {
-		margin-bottom: 50px;
-	}
-	.error {
-		width: 90%;
-		background-color: rgba(255, 0, 0, 0.25);
-		border: 2px solid rgb(200, 0, 0);
-		border-radius: 20px;
-		margin-bottom: 20px;
-		padding: 5px 10px;
-	}
+  display: flex;
+  flex-direction: column;
+  // flex-wrap: wrap;
+  align-items: center;
+  h2 {
+    margin-bottom: 50px;
+  }
+  .error {
+    width: 90%;
+    background-color: rgba(255, 0, 0, 0.25);
+    border: 2px solid rgb(200, 0, 0);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+  }
 }
 
 p {
-	font-size: 24px;
-	a.registerLink, a.inputLink {
-		display: inline;
-		color: rgb(0, 89, 255);
-		border: none;
-		background: none;
-		box-shadow: none;
-		text-transform: none;
-		&:hover {
-			color: rgb(56, 139, 255);
-			text-decoration-line: underline;
-		}
-	}
+  font-size: 24px;
+  a.registerLink,
+  a.inputLink {
+    display: inline;
+    color: rgb(0, 89, 255);
+    border: none;
+    background: none;
+    box-shadow: none;
+    text-transform: none;
+    &:hover {
+      color: rgb(56, 139, 255);
+      text-decoration-line: underline;
+    }
+  }
 }
-
-
-

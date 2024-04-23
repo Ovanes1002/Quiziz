@@ -59,6 +59,10 @@ gulp.task("uploads", function () {
   return gulp.src("src/uploads/*.*").pipe(gulp.dest("dist/uploads"));
 });
 
+gulp.task("quizBuild", function () {
+  return gulp.src("src/quizBuild/*.*").pipe(gulp.dest("dist/quizBuild"));
+});
+
 gulp.task("php", function () {
   return (
     gulp
@@ -113,6 +117,7 @@ gulp.task(
     "styles",
     "phpActions",
     "uploads",
+    "quizBuild",
     "php",
     "scripts",
     "fonts",
