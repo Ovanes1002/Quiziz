@@ -22,29 +22,29 @@ $user = currentUser();
         <div class="choose_topic">
             <h1>Выберите тему</h1>
             <div class="topic-buttons">
-                <form action="/question.php" method="post">
-                    <button type="submit" class="topic sport_topic" value="спорт" name="lastClickedTopic" style="box-shadow: none">
+                <form class="topic" action="/question.php" method="post">
+                    <button type="submit" class="sport_topic" value="спорт" name="lastClickedTopic" style="box-shadow: none">
                         <img src="images/sport.jpg" alt="sport_img" class="sport_img" />
                         <div class="topic_name">Спорт</div>
                     </button>
                 </form>
 
-                <form action="/question.php" method="post">
-                    <button type="submit" class="topic music_topic" value="музыка" name="lastClickedTopic" style="box-shadow: none">
+                <form class="topic" action="/question.php" method="post">
+                    <button type="submit" class="music_topic" value="музыка" name="lastClickedTopic" style="box-shadow: none">
                         <img src="images/music.jpg" alt="music_img" class="music_img" />
                         <div class="topic_name">Музыка</div>
                     </button>
                 </form>
 
-                <form action="/question.php" method="post">
-                    <button type="submit" class="topic art_topic" value="искусство" name="lastClickedTopic" style="box-shadow: none">
+                <form class="topic" action="/question.php" method="post">
+                    <button type="submit" class="art_topic" value="искусство" name="lastClickedTopic" style="box-shadow: none">
                         <img src="images/art.png" alt="art_img" class="art_img" />
                         <div class="topic_name">Искусство</div>
                     </button>
                 </form>
 
-                <form action="/question.php" method="post">
-                    <button type="submit" class="topic history_topic" value="история" name="lastClickedTopic" style="box-shadow: none">
+                <form class="topic" action="/question.php" method="post">
+                    <button type="submit" class="history_topic" value="история" name="lastClickedTopic" style="box-shadow: none">
                         <img src="images/history.jpg" alt="history_img" class="history_img" />
                         <div class="topic_name">История</div>
                     </button>

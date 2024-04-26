@@ -1,34 +1,31 @@
 .choose_topic {
-	margin: 0 auto 50px;
-	width: 100%;
-	min-height: 350px;
-	// padding: 15px;
-	line-height: 27px;
-	// background-color: #0a133d;
-
+  margin: 0 auto 50px;
+  width: 100%;
+  min-height: 350px;
+  // padding: 15px;
+  line-height: 27px;
+  // background-color: #0a133d;
 }
 
 .topic-buttons {
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-evenly;
-	// margin: 20px auto;
-	// margin-top: 40px;
+  display: flex;
+  //   flex-wrap: nowrap;
+  justify-content: space-between;
+  // margin: 20px auto;
+  // margin-top: 40px;
 }
-
 
 .topic,
 .score_topic {
-	position: relative;
-	width: 80%;
-	height: 100%;
-	color: #cacaca;
-	font-size: 2vw;
-	// padding: 10px;
-	// background-color: #00082d;
-	// border: 3px #3153b1 solid;
-	// border-radius: 15px;
-	background: none;
+  position: relative;
+  width: 20%;
+  height: 100%;
+}
+
+.topic-buttons form button {
+  color: #cacaca;
+  font-size: 2vw;
+  background: none;
 }
 
 // form button.topic {
@@ -37,23 +34,24 @@
 // }
 
 .topic_name {
-	background-color: rgba(5, 7, 13, 0.9);
-	padding: 10px 0;
+  color: #cacaca;
+  background-color: rgba(5, 7, 13, 0.9);
+  padding: 10px 0;
 }
 
 .button:hover,
 .topic:hover,
 .score_topic:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .button img,
 .topic img,
 .score_topic img {
-	width: 100%;
-	height: 300px;
-	object-fit: cover;
-	max-height: 315px;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  max-height: 315px;
 }
 
 .backButton,
@@ -61,18 +59,18 @@
 .backButtonMusic,
 .backButtonArt,
 .backButtonHistory {
-	margin: 70px auto 20px;
-	text-align: center;
+  margin: 70px auto 20px;
+  text-align: center;
 }
 
 .endButtonForm {
-	margin: 0 auto;
-	width: 30%;
-	// align-items: none;
+  margin: 0 auto;
+  width: 30%;
+  // align-items: none;
 }
 
 .endButton {
-	width: 100% !important;
-	font-size: inherit;
-	font-family: inherit;
+  width: 100% !important;
+  font-size: inherit;
+  font-family: inherit;
 }

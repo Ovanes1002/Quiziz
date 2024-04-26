@@ -25,11 +25,11 @@
 
   .topic-buttons {
     flex-wrap: wrap;
-    margin-top: 20px;
+    // margin-top: 20px;
     form {
       width: 45%;
       button {
-        width: 80%;
+        width: 100%;
       }
     }
   }
@@ -42,13 +42,13 @@
 
   .topic img,
   .score_topic img {
-    height: 85%;
+    height: calc(12em + 1.5vw);
   }
 
   .button:nth-child(-n + 2),
   .topic:nth-child(-n + 2),
   .score_topic:nth-child(-n + 2) {
-    margin-bottom: 40px;
+    margin-bottom: 70px;
   }
 }
 
@@ -89,10 +89,16 @@
     font-size: 16px;
   }
 
-  .topic,
-  .score_topic {
-    height: calc(12em + 1.5vw);
-    padding-bottom: 0;
+  // .topic,
+  // .score_topic {
+  //   height: calc(12em + 1.5vw);
+  //   padding-bottom: 0;
+  // }
+
+  .button:nth-child(-n + 2),
+  .topic:nth-child(-n + 2),
+  .score_topic:nth-child(-n + 2) {
+    margin-bottom: 50px;
   }
 
   .nameInput {
@@ -214,8 +220,8 @@
   }
 
   .topic_name {
-    font-size: 16px;
-    padding: 5px 0;
+    font-size: 20px;
+    // padding: 5px 0;
   }
 
   .button:nth-child(-n + 2),
@@ -225,8 +231,8 @@
   }
 
   .button:nth-child(4),
-  .score_topic.button:nth-child(4),
-  .topi.button:nth-child(4)c {
+  .score_topic:nth-child(4),
+  .topic:nth-child(4) {
     margin-bottom: 0;
   }
 

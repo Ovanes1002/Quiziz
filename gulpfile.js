@@ -23,9 +23,12 @@ gulp.task("server", function () {
   gulp.watch("src/js/*.js").on("change", function () {
     browserSync.reload();
   });
-  // gulp.watch("src/actions/*.php").on('change', function () {
-  //     browserSync.reload();
-  // });
+  gulp.watch("src/actions/*.php").on("change", function () {
+    browserSync.reload();
+  });
+  gulp.watch("src/quizBuild/*.*").on("change", function () {
+    browserSync.reload();
+  });
 });
 
 gulp.task("styles", function () {
@@ -43,6 +46,8 @@ gulp.task("watch", function () {
   gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel("styles"));
   gulp.watch("src/*.php").on("change", gulp.parallel("php"));
   gulp.watch("src/js/*.js").on("change", gulp.parallel("scripts"));
+  gulp.watch("src/actions/*.php").on("change", gulp.parallel("phpActions"));
+  gulp.watch("src/quizBuild/*.*").on("change", gulp.parallel("quizBuild"));
 });
 
 // gulp.task('html', function () {

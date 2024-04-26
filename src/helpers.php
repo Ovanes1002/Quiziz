@@ -81,6 +81,29 @@ function uploadFile (array $file, string $prefix = ''):string
     }
 }
 
+function makeQuizObject(string $nameOfQuiz, string $prefix = ''): string
+{
+    $quizObjectPath = __DIR__ . '/userQuizObject';
+
+    if (!is_dir($quizObjectPath)) {
+        mkdir($quizObjectPath, 0777, true);
+    }
+
+    $fileName = $prefix . time() . ".js";
+    $filePath = "$quizObjectPath/$fileName";
+
+    // Создание JavaScript содержимого
+    $jsContent = "const quizName = '$nameOfQuiz';\n";
+    $jsContent .= "const quizList = [];\n";
+
+    // Запись в файл
+    file_put_contents($filePath, $jsContent);
+
+    // Возвращаем путь к файлу
+    return "userQuizObject/$fileName";
+}
+
+
 function setMessage (string $key, string $message): void 
 {
     $_SESSION['message'][$key] = $message; 
