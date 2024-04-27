@@ -76,5 +76,5 @@ $user = currentUser();
         <a href="/profile.php">Назад</a>
     </div>
   </body>
-  <!-- <script defer src="js/quizBuilder.js"></script> -->
+  <script defer src="js/quizBuilder.js"></script>
 </html>

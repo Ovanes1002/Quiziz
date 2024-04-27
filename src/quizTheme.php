@@ -14,28 +14,22 @@ $user = currentUser();
     <div class="container">
         <h1>Создать викторину</h1>
         <div class="quizBuilder">
-            <form class="quizNameForm" action="/quizBuild/quizName.php" method="post">
-                <div class="quizName">
-                    <label for="quizName">Тема:</label>
-                    <input 
-                        type="text"
-                        id="quizName"
-                        name="quizName" 
-                        class="writeInput"  
-                        maxlength="200" 
-                        autocomplete="off" 
-                    <?php validationErrorAttr(fieldName: 'quizName') ?>
-                    />
-                    <?php if(hasValidationError(fieldName: 'quizName')): ?>
-						<small><?php validationErrorMessage(fieldName: 'quizName') ?></small>
-					<?php endif; ?>
-                   <button class="button startMakeQuiz">Начать</button> 
-                </div>
-                
-            </form>
+            <div class="quizName">
+                <label for="quizName">Тема:</label>
+                <input 
+                    type="text"
+                    id="quizName"
+                    name="quizName" 
+                    class="writeInput"  
+                    maxlength="200" 
+                    autocomplete="off" 
+                />
+                <button class="button startMakeQuiz hide">Начать</button> 
+            </div>
         </div>
         <a href="/profile.php">Назад</a>
     </div>
   </body>
-  <!-- <script defer src="js/quizBuilder.js"></script> -->
+  <script defer src="js/quizTheme.js"></script>
+  <script defer src="js/usersQuizzes.js"></script>
 </html>

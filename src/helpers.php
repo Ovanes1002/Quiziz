@@ -81,27 +81,20 @@ function uploadFile (array $file, string $prefix = ''):string
     }
 }
 
-function makeQuizObject(string $nameOfQuiz, string $prefix = ''): string
-{
-    $quizObjectPath = __DIR__ . '/userQuizObject';
+// function addNewQuiz(string $nameOfQuiz) {
+//   // 1. Генерация уникального идентификатора для новой викторины
+//   const newQuizId = crypto.randomUUID();
 
-    if (!is_dir($quizObjectPath)) {
-        mkdir($quizObjectPath, 0777, true);
-    }
+//   // 2.Создание объекта новой викторины с её именем и пустым массивом для вопросов
+//   const newQuiz = {
+//     quizName: nameOfQuiz,
+//     quizList: [],
+//   };
 
-    $fileName = $prefix . time() . ".js";
-    $filePath = "$quizObjectPath/$fileName";
+//   // 3. Добавление объекта новой викторины в объект quizzes
+//   quizzes[newQuizId] = newQuiz;
 
-    // Создание JavaScript содержимого
-    $jsContent = "const quizName = '$nameOfQuiz';\n";
-    $jsContent .= "const quizList = [];\n";
-
-    // Запись в файл
-    file_put_contents($filePath, $jsContent);
-
-    // Возвращаем путь к файлу
-    return "userQuizObject/$fileName";
-}
+// }
 
 
 function setMessage (string $key, string $message): void 
