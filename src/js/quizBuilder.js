@@ -1,8 +1,13 @@
-const startMakeQuiz = document.querySelector(".startMakeQuiz"),
+const quizName = document.querySelector(".quizName"),
+  startMakeQuiz = document.querySelector(".startMakeQuiz"),
+  writeInput = document.querySelector(".writeInput"),
+  quizCard = document.querySelector(".quizCard"),
   questionMakeButton = document.querySelector(".questionMakeButton"),
   questionNextButton = document.querySelector(".questionNextButton"),
   questionType = document.getElementById("questionType"),
   questionBlock = document.querySelector(".questionBlock");
+
+let writeInputValue;
 
 questionMakeButton.addEventListener("click", () => {
   const selectedOption = questionType.options[questionType.selectedIndex].value;
@@ -51,6 +56,33 @@ questionMakeButton.addEventListener("click", () => {
   questionBlock.innerHTML = htmlToAdd;
 });
 
-startMakeQuiz.addEventListener("click", function (evt) {
-  console.log("клик");
-});
+// writeInput.addEventListener("input", () => {
+//   if (writeInput.value.trim().length !== 0) {
+//     startMakeQuiz.classList.remove("hide");
+//   } else {
+//     startMakeQuiz.classList.add("hide");
+//   }
+// });
+
+// startMakeQuiz.addEventListener("click", (evt) => {
+//   writeInputValue = writeInput.value;
+//   quizName.classList.add("hide");
+//   addNewQuiz(writeInputValue);
+//   console.log(quizzes);
+//   quizCard.classList.remove("hide");
+// });
+
+// function addNewQuiz(nameOfQuiz) {
+//   // 1. Генерация уникального идентификатора для новой викторины
+//   const newQuizId = crypto.randomUUID();
+
+//   // 2.Создание объекта новой викторины с её именем и пустым массивом для вопросов
+//   const newQuiz = {
+//     quizName: nameOfQuiz,
+//     quizList: [],
+//   };
+
+//   // 3. Добавление объекта новой викторины в объект quizzes
+//   quizzes[newQuizId] = newQuiz;
+//   console.log(quizzes);
+// }

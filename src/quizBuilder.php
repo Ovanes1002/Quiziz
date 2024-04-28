@@ -73,7 +73,7 @@ $user = currentUser();
             </div>
             <button type="button" class="button questionNextButton">Далее</button>
         </div>
-        <a href="/profile.php">Назад</a>
+        <a href="/profile.php">Выйти</a>
     </div>
   </body>
   <script defer src="js/quizBuilder.js"></script>

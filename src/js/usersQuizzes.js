@@ -1,1 +1,3 @@
-const quizzes = {};
+// const quizzes = {};
+
+// console.log(quizzes);

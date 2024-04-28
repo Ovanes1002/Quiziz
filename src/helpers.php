@@ -81,22 +81,6 @@ function uploadFile (array $file, string $prefix = ''):string
     }
 }
 
-// function addNewQuiz(string $nameOfQuiz) {
-//   // 1. Генерация уникального идентификатора для новой викторины
-//   const newQuizId = crypto.randomUUID();
-
-//   // 2.Создание объекта новой викторины с её именем и пустым массивом для вопросов
-//   const newQuiz = {
-//     quizName: nameOfQuiz,
-//     quizList: [],
-//   };
-
-//   // 3. Добавление объекта новой викторины в объект quizzes
-//   quizzes[newQuizId] = newQuiz;
-
-// }
-
-
 function setMessage (string $key, string $message): void 
 {
     $_SESSION['message'][$key] = $message; 
@@ -254,34 +238,46 @@ function insertValue($user, $result, $lastClickedTopic)
 
 function getValue($scoreTopic)
 {
-    // Получение подключения к базе данных
-$pdo = getPDO();
+        // Получение подключения к базе данных
+    $pdo = getPDO();
 
-// Запрос для извлечения данных из таблицы
-if($scoreTopic == 'спорт') {
-    $sql = "SELECT user, result FROM tableSport ORDER BY result DESC";
-} elseif ($scoreTopic == 'музыка') {
-    $sql = "SELECT user, result FROM tableMusic ORDER BY result DESC";
-} elseif ($scoreTopic == 'искусство') {
-    $sql = "SELECT user, result FROM tableArt ORDER BY result DESC";
-} else {
-    $sql = "SELECT user, result FROM tableHistory ORDER BY result DESC";
-}
-
-$result = $pdo->query($sql);
-
-if ($result->rowCount() > 0) {
-    
-    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-        echo "<tr>";
-        echo "<td>".$row["user"]."</td>";
-        echo "<td>".$row["result"]."</td>";
-        echo "</tr>";
+    // Запрос для извлечения данных из таблицы
+    if($scoreTopic == 'спорт') {
+        $sql = "SELECT user, result FROM tableSport ORDER BY result DESC";
+    } elseif ($scoreTopic == 'музыка') {
+        $sql = "SELECT user, result FROM tableMusic ORDER BY result DESC";
+    } elseif ($scoreTopic == 'искусство') {
+        $sql = "SELECT user, result FROM tableArt ORDER BY result DESC";
+    } else {
+        $sql = "SELECT user, result FROM tableHistory ORDER BY result DESC";
     }
 
-} 
+    $result = $pdo->query($sql);
+
+    if ($result->rowCount() > 0) {
+        
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            echo "<tr>";
+            echo "<td>".$row["user"]."</td>";
+            echo "<td>".$row["result"]."</td>";
+            echo "</tr>";
+        }
+
+    } 
 // else {
 //     echo "Таблица пуста.";
 // }
+}
+
+function insertQuizName($nameOfQuiz) {
+
+    $pdo = getPDO();
+
+    $sql = "INSERT INTO quizzes (quiz_name) VALUES (:quiz_name)";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':quiz_name', $nameOfQuiz, PDO::PARAM_STR);
+    $stmt->execute();   
+
 }
 ?>
