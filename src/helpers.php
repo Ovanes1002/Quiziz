@@ -269,8 +269,8 @@ function getValue($scoreTopic)
 // }
 }
 
-function insertQuizName($nameOfQuiz) {
-
+function insertQuizName($nameOfQuiz) 
+{
     $pdo = getPDO();
 
     $sql = "INSERT INTO quizzes (quiz_name) VALUES (:quiz_name)";
@@ -278,6 +278,17 @@ function insertQuizName($nameOfQuiz) {
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':quiz_name', $nameOfQuiz, PDO::PARAM_STR);
     $stmt->execute();   
+}
 
+function deleteQuizName($nameOfQuiz) 
+{
+    $pdo = getPDO();
+
+    $sql = "DELETE FROM quizzes WHERE quiz_name = :quiz_name";
+
+    $stmt = $pdo->prepare($sql);
+    
+    $stmt->bindParam(':quiz_name', $nameOfQuiz, PDO::PARAM_STR);
+    $stmt->execute();
 }
 ?>

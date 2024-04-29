@@ -6,6 +6,8 @@ $quizPath = null;
 $quizName = $_POST['quizName'] ?? null;
 $trimmedName = trim(preg_replace('/\s+/', ' ', $quizName));
 
+$_SESSION['quiz_name'] = $trimmedName;
+
 if (empty($trimmedName)) {
     setValidationError(fieldName: 'quizName', message: 'Задайте имя викторины');
 }
@@ -15,7 +17,7 @@ if (!empty($_SESSION['validation'])) {
 } 
 
 if (!empty($trimmedName)) {
-    insertQuizName($trimmedName);
+    insertQuizName($_SESSION['quiz_name']);
 }
 
 redirect(path: '/quizBuilder.php');

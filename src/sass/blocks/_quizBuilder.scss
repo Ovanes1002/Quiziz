@@ -48,64 +48,66 @@
   // .questionMakeButton {
   //   padding: 5px;
   // }
-  .questionBlock {
-    width: 95%;
-    min-height: 200px;
-    display: flex;
-    flex-wrap: wrap;
-    // flex-direction: column;
-    justify-content: space-between;
-    // align-items: flex-start;
-    margin: 10px auto;
-    padding: 10px;
-    background-color: rgba(77, 92, 73, 0.3);
-    .firstAnswer,
-    .secondAnswer,
-    .thirdAnswer,
-    .fourthAnswer {
-      width: 40%;
+  .questionBlockForm {
+    .questionBlock {
+      width: 95%;
+      min-height: 200px;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly;
-      margin: 40px auto;
-      // align-items: baseline;
-      // justify-content: space-between;
-    }
-    .radioLabel {
-      position: relative;
-      // padding-left: 50px;
-      .radioInput {
-        position: absolute;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none; // «сброс» внешнего вида элемента. Приведение его к общему знаменателю во всех браузерах и всех операционных системах.
+      // flex-direction: column;
+      justify-content: space-between;
+      // align-items: flex-start;
+      margin: 10px auto;
+      padding: 10px;
+      background-color: rgba(77, 92, 73, 0.3);
+      .firstAnswer,
+      .secondAnswer,
+      .thirdAnswer,
+      .fourthAnswer {
+        width: 40%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: 40px auto;
+        // align-items: baseline;
+        // justify-content: space-between;
       }
-      .radioSpan {
-        position: absolute;
-        // top: -23%;
-        // left: 54px;
-        width: 24px;
-        height: 24px;
-        margin-top: 10px;
-        border-radius: 4px;
-        background-color: white;
-        box-shadow: 0 0 0 4px rgb(28, 11, 183);
-        margin-left: -25px;
+      .radioLabel {
+        position: relative;
+        // padding-left: 50px;
+        .radioInput {
+          position: absolute;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none; // «сброс» внешнего вида элемента. Приведение его к общему знаменателю во всех браузерах и всех операционных системах.
+        }
+        .radioSpan {
+          position: absolute;
+          // top: -23%;
+          // left: 54px;
+          width: 24px;
+          height: 24px;
+          margin-top: 10px;
+          border-radius: 4px;
+          background-color: white;
+          box-shadow: 0 0 0 4px rgb(28, 11, 183);
+          margin-left: -25px;
+        }
+        .radioInput:checked + .radioSpan {
+          background-color: rgb(28, 11, 183);
+          background-image: url("../images/checkmark.svg");
+        }
+        .radioInput:focus + .radioSpan {
+          box-shadow: 0 0 0 4px rgb(28, 11, 183), 0 0 0 8px rgb(11, 183, 88);
+        }
       }
-      .radioInput:checked + .radioSpan {
-        background-color: rgb(28, 11, 183);
-        background-image: url("../images/checkmark.svg");
+      textarea {
+        width: 90%;
+        font-size: 22px;
+        border-radius: 10px;
+        resize: none;
+        padding: 5px;
       }
-      .radioInput:focus + .radioSpan {
-        box-shadow: 0 0 0 4px rgb(28, 11, 183), 0 0 0 8px rgb(11, 183, 88);
-      }
-    }
-    textarea {
-      width: 90%;
-      font-size: 22px;
-      border-radius: 10px;
-      resize: none;
-      padding: 5px;
     }
   }
   .questionNextButton {
