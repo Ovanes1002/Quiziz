@@ -28,7 +28,8 @@ checkGuest();
 					<input 
 						type="text" 
 						id="name" 
-						name="name" 
+						name="name"
+						class="inputStylized"
 						autocomplete="off"
 						placeholder="Иван"
 						value="<?php echo getOldValue(key: 'name') ?>"
@@ -52,6 +53,7 @@ checkGuest();
 						type="text" 
 						id="email" 
 						name="email"
+						class="inputStylized"
 						autocomplete="off"
 						placeholder="example@gmail.com"
 						value="<?php echo getOldValue(key: 'email') ?>"
@@ -75,6 +77,7 @@ checkGuest();
 						type="file"
 						id="avatar"
 						name="avatar"
+						class="inputStylized"
 						<?php echo validationErrorAttr('avatar'); ?>
 					/>
 						
@@ -94,6 +97,7 @@ checkGuest();
 							type="password" 
 							id="password" 
 							name="password"
+							class="inputStylized"
 							autocomplete="off" 
 							placeholder="********"
 							<?php validationErrorAttr(fieldName: 'password') ?>
@@ -117,6 +121,7 @@ checkGuest();
 							type="password" 
 							id="confirmPassword"
 							name="confirmPassword"
+							class="inputStylized"
 							autocomplete="off" 
 							placeholder="********"
 							<?php validationErrorAttr(fieldName: 'confirmPassword') ?>

@@ -21,7 +21,7 @@ $user = currentUser();
                         type="text"
                         id="quizName"
                         name="quizName" 
-                        class="writeInput"  
+                        class="inputStylized"  
                         maxlength="200" 
                         autocomplete="off" 
                     <?php validationErrorAttr(fieldName: 'quizName') ?>

@@ -44,7 +44,7 @@ $user = currentUser();
 			<div class="input-answer">
 				<input
 					type="text"
-					class="firstWriteAnswer hide"
+					class="firstWriteAnswer inputStylized hide"
 					autofocus
 					autocomplete="off"
 					placeholder="Ответ..."
@@ -53,7 +53,7 @@ $user = currentUser();
 				/>
 				<input
 					type="text"
-					class="secondWriteAnswer hide"
+					class="secondWriteAnswer inputStylized hide"
 					autofocus
 					autocomplete="off"
 					placeholder="Ответ..."
@@ -91,7 +91,7 @@ $user = currentUser();
 				</audio>
 				<input
 					type="text"
-					class="thirdWriteAnswer hide"
+					class="thirdWriteAnswer inputStylized hide"
 					autofocus
 					autocomplete="off"
 					placeholder="Ответ..."

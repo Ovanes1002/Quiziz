@@ -1,8 +1,8 @@
 .quizBuilder {
   font-size: inherit;
   margin-bottom: 20px;
-  padding: 10px;
-  background-color: #0c1120;
+  padding: 30px 20px;
+  background-color: rgba(5, 7, 13, 0.9);
   border-radius: 20px;
   .quizName {
     display: flex;
@@ -20,30 +20,31 @@
     //   margin: 0 auto;
     //   text-align: center;
     // }
-    input {
-      width: 35%;
-      color: #cacaca;
-      font-size: 26px;
-      padding: 7px 13px;
-      border: none;
-      outline: none;
-      border: none;
-      box-shadow: 0px 0px 10px 5px #001884;
-      border-radius: 20px;
-      background: transparent;
-      &[aria-invalid="true"] {
-        border: none;
-        box-shadow: 0px 0px 10px 5px red;
-        border-radius: 20px;
+  }
+  .error {
+    padding: 20px 10px;
+  }
+  .quizQuestion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    label {
+      margin-bottom: 20px;
+      input {
+        margin-left: 20px;
       }
     }
+    small {
+      color: rgb(225, 39, 11);
+    }
   }
-
-  .quizQuestion {
-    margin: 20px auto;
+  .quizDifficulty {
+    margin-bottom: 20px;
   }
   .quizType {
-    margin: 20px auto;
+    margin-bottom: 20px;
   }
   // .questionMakeButton {
   //   padding: 5px;
@@ -59,7 +60,7 @@
       // align-items: flex-start;
       margin: 10px auto;
       padding: 10px;
-      background-color: rgba(77, 92, 73, 0.3);
+      // background-color: rgba(77, 92, 73, 0.3);
       .firstAnswer,
       .secondAnswer,
       .thirdAnswer,
@@ -89,7 +90,7 @@
           height: 24px;
           margin-top: 10px;
           border-radius: 4px;
-          background-color: white;
+          background: none;
           box-shadow: 0 0 0 4px rgb(28, 11, 183);
           margin-left: -25px;
         }
@@ -107,18 +108,21 @@
         border-radius: 10px;
         resize: none;
         padding: 5px;
+        background-color: #d7dee6;
       }
     }
   }
   .questionNextButton {
     margin: 0 auto;
   }
-  .writeInput {
-    width: 300px;
-    padding: 5px 10px;
-    font-size: 20px;
-    border: 2px solid #0d0055;
-    border-radius: 10px;
+  .inputStylized {
+    width: 70%;
+    padding: 10px 15px;
+    &[aria-invalid="true"] {
+      border: none;
+      box-shadow: 0px 0px 10px 5px red;
+      border-radius: 20px;
+    }
   }
   select {
     width: 100px;

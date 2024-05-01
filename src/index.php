@@ -32,6 +32,7 @@ checkGuest();
 								type="text" 
 								id="email"
 								name="email"
+								class="inputStylized"
 								autocomplete="off"
 								placeholder="example@gmail.com"
 								value="<?php echo getOldValue(key: 'email') ?>"
@@ -52,6 +53,7 @@ checkGuest();
 							type="password" 
 							id="password"
 							name="password"
+							class="inputStylized"
 							autocomplete="off"
 							placeholder="********"
 							<?php validationErrorAttr(fieldName: 'password') ?>

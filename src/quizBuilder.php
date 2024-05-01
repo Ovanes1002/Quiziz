@@ -14,11 +14,23 @@ $user = currentUser();
     <div class="container">
         <h1>Создать викторину</h1>
         <div class="quizBuilder">
+        <form class="questionBlockForm" action="/quizBuild/createQuestion.php" method="post">
             <div class="quizQuestion">
                 <label>
                     Вопрос:
-                    <input type="text" class="writeInput" maxlength="200" autocomplete="off">
+                    <input 
+                        type="text"
+                        name="quizQuestion"
+                        class="inputStylized" 
+                        maxlength="200" 
+                        autocomplete="off"
+                        value="<?php echo getOldValue(key: 'quizQuestion') ?>"
+                        <?php validationErrorAttr(fieldName: 'quizQuestion') ?>
+                    />
                 </label>
+                <?php if(hasValidationError(fieldName: 'quizQuestion')): ?>
+                    <small><?php validationErrorMessage(fieldName: 'quizQuestion') ?></small>
+                <?php endif; ?>
             </div>
             <div class="quizDifficulty">
                 <label for="questionDifficulty">Сложнось вопроса:</label>
@@ -41,7 +53,7 @@ $user = currentUser();
             </div> -->
 
             <!-- <button type="button" class="button questionMakeButton">Создать</button> -->
-            <form class="questionBlockForm" action="/quizBuild/createQuestion.php" method="post">
+
                 <?php if(hasMessage(key:'error')): ?>
                     <div class="error">
                         <?php echo getMessage(key:'error') ?>
@@ -58,9 +70,8 @@ $user = currentUser();
                             cols="30" 
                             rows="3" 
                             maxlength="500" 
-                            required 
                             autocomplete="off"
-                        ></textarea>
+                        ><?php echo getOldValue(key: 'firstTextarea') ?></textarea>
                     </div>
                     <div class="secondAnswer">
                         <label class="radioLabel">
@@ -72,9 +83,8 @@ $user = currentUser();
                             cols="30" 
                             rows="3" 
                             maxlength="500" 
-                            required 
                             autocomplete="off"
-                        ></textarea>
+                        ><?php echo getOldValue(key: 'secondTextarea') ?></textarea>
                     </div>
                     <div class="thirdAnswer">
                         <label class="radioLabel">
@@ -86,9 +96,8 @@ $user = currentUser();
                             cols="30" 
                             rows="3" 
                             maxlength="500" 
-                            required 
                             autocomplete="off"
-                        ></textarea>
+                        ><?php echo getOldValue(key: 'thirdTextarea') ?></textarea>
                     </div>
                     <div class="fourthAnswer">
                         <label class="radioLabel">
@@ -100,9 +109,8 @@ $user = currentUser();
                             cols="30" 
                             rows="3" 
                             maxlength="500" 
-                            required 
                             autocomplete="off"
-                        ></textarea>
+                        ><?php echo getOldValue(key: 'fourthTextarea') ?></textarea>
                     </div>
                 </div>
                 <button class="button questionNextButton">Далее</button>

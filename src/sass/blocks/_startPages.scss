@@ -39,20 +39,7 @@
     }
     input {
       width: 100%;
-      color: #cacaca;
       font-size: 20px;
-      padding: 7px 13px;
-      border: none;
-      outline: none;
-      border: none;
-      box-shadow: 0px 0px 10px 5px #001884;
-      border-radius: 20px;
-      background: transparent;
-      &[aria-invalid="true"] {
-        border: none;
-        box-shadow: 0px 0px 10px 5px red;
-        border-radius: 20px;
-      }
     }
     label {
       display: block;
