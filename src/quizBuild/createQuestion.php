@@ -3,10 +3,17 @@
 require_once __DIR__ . '/../helpers.php';
 
 $quizQuestion = $_POST['quizQuestion'] ?? null;
+
+$questionDifficulty = $_POST['questionDifficulty'] ?? null;
 $firstTextarea = $_POST['firstTextarea'] ?? null;
 $secondTextarea = $_POST['secondTextarea'] ?? null;
 $thirdTextarea = $_POST['thirdTextarea'] ?? null;
 $fourthTextarea = $_POST['fourthTextarea'] ?? null;
+
+$firstRadioGroup = $_POST['firstRadioGroup'] ?? null;
+$secondRadioGroup = $_POST['secondRadioGroup'] ?? null;
+$thirdRadioGroup = $_POST['thirdRadioGroup'] ?? null;
+$fourthRadioGroup = $_POST['fourthRadioGroup'] ?? null;
 
 $trimmedQuizQuestion = trim(preg_replace('/\s+/', ' ', $quizQuestion));
 $trimmedFirstTextarea = trim(preg_replace('/\s+/', ' ', $firstTextarea));
@@ -23,10 +30,39 @@ if (empty($trimmedFirstTextarea) ||
     empty($trimmedThirdTextarea) ||
     empty($trimmedFourthTextarea)) {
     setMessage(key:'error', message:"Заполните все варианты ответов");
+    setOldValue('quizQuestion', $trimmedQuizQuestion);
+    setOldValue('firstTextarea', $trimmedFirstTextarea);
+    setOldValue('secondTextarea', $trimmedSecondTextarea);
+    setOldValue('thirdTextarea', $trimmedThirdTextarea);
+    setOldValue('fourthTextarea', $trimmedFourthTextarea);
+    redirect(path: '/quizBuilder.php');
 }
 
-if(!empty($_SESSION['validation']) ||
-    !empty($_SESSION['message'])) {
+// Проверяем наличие непустого параметра value в массиве $_POST
+$hasNonEmptyValue = true;
+if(strlen($firstRadioGroup) > 0) {
+    $correctAnswer = $trimmedFirstTextarea;
+} else if (strlen($secondRadioGroup) > 0) {
+    $correctAnswer = $trimmedSecondTextarea;
+} else if (strlen($thirdRadioGroup) > 0) {
+    $correctAnswer = $trimmedThirdTextarea;
+} else if (strlen($fourthRadioGroup) > 0) {
+    $correctAnswer = $trimmedFourthTextarea;
+} else {
+    $hasNonEmptyValue = false;
+}
+
+if (!$hasNonEmptyValue) {
+    setMessage(key:'error', message:"Выберите правильный вариант ответа");
+    setOldValue('quizQuestion', $trimmedQuizQuestion);
+    setOldValue('firstTextarea', $trimmedFirstTextarea);
+    setOldValue('secondTextarea', $trimmedSecondTextarea);
+    setOldValue('thirdTextarea', $trimmedThirdTextarea);
+    setOldValue('fourthTextarea', $trimmedFourthTextarea);
+    redirect(path: '/quizBuilder.php');
+}
+    
+if(!empty($_SESSION['validation'])) {
         setOldValue('quizQuestion', $trimmedQuizQuestion);
         setOldValue('firstTextarea', $trimmedFirstTextarea);
         setOldValue('secondTextarea', $trimmedSecondTextarea);
@@ -35,6 +71,15 @@ if(!empty($_SESSION['validation']) ||
         redirect(path:'/quizBuilder.php');
     }
 
-redirect(path: '/quizTheme.php');
+createQuestion($trimmedQuizQuestion, 
+                $questionDifficulty, 
+                $trimmedFirstTextarea, 
+                $trimmedSecondTextarea, 
+                $trimmedThirdTextarea, 
+                $trimmedFourthTextarea,
+                $correctAnswer);
+
+$_SESSION['quiz_question_number'] += 1;
+redirect(path: '/quizBuilder.php');
 
 ?>

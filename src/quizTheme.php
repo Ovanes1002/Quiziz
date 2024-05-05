@@ -29,7 +29,7 @@ $user = currentUser();
                     <?php if(hasValidationError(fieldName: 'quizName')): ?>
 						<small><?php validationErrorMessage(fieldName: 'quizName') ?></small>
 					<?php endif; ?>
-                   <button class="button startMakeQuiz">Начать</button> 
+                   <button type="submit" class="button startMakeQuiz">Начать</button> 
                 </div>
                 
             </form>

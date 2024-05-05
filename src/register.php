@@ -101,8 +101,6 @@ checkGuest();
 							autocomplete="off" 
 							placeholder="********"
 							<?php validationErrorAttr(fieldName: 'password') ?>
-							minlength="8" 
-							maxlength="20" 
 						/>
 
 
@@ -125,8 +123,6 @@ checkGuest();
 							autocomplete="off" 
 							placeholder="********"
 							<?php validationErrorAttr(fieldName: 'confirmPassword') ?>
-							minlength="8" 
-							maxlength="20" 
 						/>
 
 						<?php if(hasValidationError(fieldName: 'confirmPassword')): ?>

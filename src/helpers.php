@@ -135,6 +135,7 @@ function currentUser(): array|bool
 function logout (): void
 {
     unset($_SESSION['user']['id']);
+    unset($_SESSION['quiz_name']);
     redirect(path: '/');
 }
 
@@ -290,5 +291,63 @@ function deleteQuizName($nameOfQuiz)
     
     $stmt->bindParam(':quiz_name', $nameOfQuiz, PDO::PARAM_STR);
     $stmt->execute();
+}
+
+function createQuestion(
+                        $trimmedQuizQuestion, 
+                        $questionDifficulty, 
+                        $trimmedFirstTextarea, 
+                        $trimmedSecondTextarea, 
+                        $trimmedThirdTextarea, 
+                        $trimmedFourthTextarea,
+                        $correctAnswer)
+{
+    try {
+        // Создаём карточку вопроса
+        $pdo = getPDO();
+
+        // SQL запрос для получения последнего значения столбца 'quiz_id' из таблицы 'quizzes'
+        $sql = "SELECT MAX(quiz_id) AS max_quiz_id FROM quizzes";
+
+        // Подготавливаем запрос
+        $stmt = $pdo->prepare($sql);
+
+        // Выполняем запрос
+        $stmt->execute();
+
+        // Получаем результат запроса
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Проверяем наличие результата
+        if ($row) {
+            $last_quiz_id = $row['max_quiz_id'];
+            echo "Последнее значение 'quiz_id' из таблицы 'quizzes': " . $last_quiz_id;
+        } else {
+            echo "Результат запроса пуст.";
+        }
+    } catch(PDOException $e) {
+        echo "Ошибка при получении последнего значения 'quiz_id': " . $e->getMessage();
+    }
+
+    $query = "INSERT INTO questions (quiz_id, question_text, question_difficulty, first_variant, second_variant, third_variant, fourth_variant, correct_answer) VALUES (:quiz_id, :question_text, :question_difficulty, :first_variant, :second_variant, :third_variant, :fourth_variant, :correct_answer)";
+    $params = [
+        'quiz_id' => $last_quiz_id,
+        'question_text' => $trimmedQuizQuestion,
+        'question_difficulty' => $questionDifficulty,
+        'first_variant' => $trimmedFirstTextarea,
+        'second_variant' => $trimmedSecondTextarea,
+        'third_variant' => $trimmedThirdTextarea,
+        'fourth_variant' => $trimmedFourthTextarea,
+        'correct_answer' => $correctAnswer
+    ];
+
+    $stmt = $pdo->prepare($query);
+
+    try {
+        $stmt->execute($params);
+    } catch (\Exception $e) {
+        die($e->getMessage());
+    }
+    // return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 ?>

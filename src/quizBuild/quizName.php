@@ -20,6 +20,7 @@ if (!empty($trimmedName)) {
     insertQuizName($_SESSION['quiz_name']);
 }
 
+$_SESSION['quiz_question_number'] = 1;
 redirect(path: '/quizBuilder.php');
 
 ?>

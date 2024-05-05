@@ -26,7 +26,7 @@ if (empty(trim($password))) {
     setValidationError(fieldName: 'password', message: 'Пароль не может быть пустым');
 }
 
-if (empty(strlen(trim($password))) < 8) {
+if (strlen(trim($password)) < 8) {
     setValidationError(fieldName: 'password', message: 'Пароль должен иметь хотя бы 8 символов');
 }
 

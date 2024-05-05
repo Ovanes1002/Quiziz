@@ -15,6 +15,7 @@ $user = currentUser();
         <h1>Создать викторину</h1>
         <div class="quizBuilder">
         <form class="questionBlockForm" action="/quizBuild/createQuestion.php" method="post">
+            <h3>Вопрос №<?php echo $_SESSION['quiz_question_number'] ?></h3>
             <div class="quizQuestion">
                 <label>
                     Вопрос:
@@ -60,9 +61,9 @@ $user = currentUser();
                     </div>
                 <?php endif; ?>
                 <div class="questionBlock">
-                    <div class="firstAnswer">
+                    <div class="questionBlockAnswer firstAnswer">
                         <label class="radioLabel">
-                            <input type="radio" class="radioInput" name="radioGroup">
+                            <input type="radio" class="radioInput" value="<?php echo getOldValue(key: 'firstRadioGroup') ?>" name="firstRadioGroup">
                             <span class="radioSpan"></span>
                         </label>
                         <textarea 
@@ -73,9 +74,9 @@ $user = currentUser();
                             autocomplete="off"
                         ><?php echo getOldValue(key: 'firstTextarea') ?></textarea>
                     </div>
-                    <div class="secondAnswer">
+                    <div class="questionBlockAnswer secondAnswer">
                         <label class="radioLabel">
-                            <input type="radio" class="radioInput" name="radioGroup">
+                            <input type="radio" class="radioInput" value="<?php echo getOldValue(key: 'secondRadioGroup') ?>" name="secondRadioGroup">
                             <span class="radioSpan"></span>
                         </label>
                         <textarea 
@@ -86,9 +87,9 @@ $user = currentUser();
                             autocomplete="off"
                         ><?php echo getOldValue(key: 'secondTextarea') ?></textarea>
                     </div>
-                    <div class="thirdAnswer">
+                    <div class="questionBlockAnswer thirdAnswer">
                         <label class="radioLabel">
-                            <input type="radio" class="radioInput" name="radioGroup">
+                            <input type="radio" class="radioInput" value="<?php echo getOldValue(key: 'thirdRadioGroup') ?>" name="thirdRadioGroup">
                             <span class="radioSpan"></span>
                         </label>
                         <textarea 
@@ -99,9 +100,9 @@ $user = currentUser();
                             autocomplete="off"
                         ><?php echo getOldValue(key: 'thirdTextarea') ?></textarea>
                     </div>
-                    <div class="fourthAnswer">
+                    <div class="questionBlockAnswer fourthAnswer">
                         <label class="radioLabel">
-                            <input type="radio" class="radioInput" name="radioGroup">
+                            <input type="radio" class="radioInput" value="<?php echo getOldValue(key: 'fourthRadioGroup') ?>" name="fourthRadioGroup">
                             <span class="radioSpan"></span>
                         </label>
                         <textarea 
@@ -113,9 +114,10 @@ $user = currentUser();
                         ><?php echo getOldValue(key: 'fourthTextarea') ?></textarea>
                     </div>
                 </div>
-                <button class="button questionNextButton">Далее</button>
+                <button type="submit" class="button questionNextButton">Далее</button>
             </form>
         </div>
+
         <form action="/quizBuild/quizBuildQuit.php" method="post">
             <button role="button">Выйти</button>
         </form>
