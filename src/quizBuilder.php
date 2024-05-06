@@ -63,7 +63,7 @@ $user = currentUser();
                 <div class="questionBlock">
                     <div class="questionBlockAnswer firstAnswer">
                         <label class="radioLabel">
-                            <input type="radio" class="radioInput" value="<?php echo getOldValue(key: 'firstRadioGroup') ?>" name="firstRadioGroup">
+                            <input type="radio" class="radioInput" value="firstRadio" name="radioGroup">
                             <span class="radioSpan"></span>
                         </label>
                         <textarea 
@@ -76,7 +76,7 @@ $user = currentUser();
                     </div>
                     <div class="questionBlockAnswer secondAnswer">
                         <label class="radioLabel">
-                            <input type="radio" class="radioInput" value="<?php echo getOldValue(key: 'secondRadioGroup') ?>" name="secondRadioGroup">
+                            <input type="radio" class="radioInput" value="secondRadio" name="radioGroup">
                             <span class="radioSpan"></span>
                         </label>
                         <textarea 
@@ -89,7 +89,7 @@ $user = currentUser();
                     </div>
                     <div class="questionBlockAnswer thirdAnswer">
                         <label class="radioLabel">
-                            <input type="radio" class="radioInput" value="<?php echo getOldValue(key: 'thirdRadioGroup') ?>" name="thirdRadioGroup">
+                            <input type="radio" class="radioInput" value="thirdRadio" name="radioGroup">
                             <span class="radioSpan"></span>
                         </label>
                         <textarea 
@@ -102,7 +102,7 @@ $user = currentUser();
                     </div>
                     <div class="questionBlockAnswer fourthAnswer">
                         <label class="radioLabel">
-                            <input type="radio" class="radioInput" value="<?php echo getOldValue(key: 'fourthRadioGroup') ?>" name="fourthRadioGroup">
+                            <input type="radio" class="radioInput" value="fourthRadio" name="radioGroup">
                             <span class="radioSpan"></span>
                         </label>
                         <textarea 

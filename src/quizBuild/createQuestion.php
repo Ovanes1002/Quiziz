@@ -10,10 +10,10 @@ $secondTextarea = $_POST['secondTextarea'] ?? null;
 $thirdTextarea = $_POST['thirdTextarea'] ?? null;
 $fourthTextarea = $_POST['fourthTextarea'] ?? null;
 
-$firstRadioGroup = $_POST['firstRadioGroup'] ?? null;
-$secondRadioGroup = $_POST['secondRadioGroup'] ?? null;
-$thirdRadioGroup = $_POST['thirdRadioGroup'] ?? null;
-$fourthRadioGroup = $_POST['fourthRadioGroup'] ?? null;
+$radioGroup = $_POST['radioGroup'] ?? null;
+// $secondRadioGroup = $_POST['secondRadioGroup'] ?? null;
+// $thirdRadioGroup = $_POST['thirdRadioGroup'] ?? null;
+// $fourthRadioGroup = $_POST['fourthRadioGroup'] ?? null;
 
 $trimmedQuizQuestion = trim(preg_replace('/\s+/', ' ', $quizQuestion));
 $trimmedFirstTextarea = trim(preg_replace('/\s+/', ' ', $firstTextarea));
@@ -40,17 +40,33 @@ if (empty($trimmedFirstTextarea) ||
 
 // Проверяем наличие непустого параметра value в массиве $_POST
 $hasNonEmptyValue = true;
-if(strlen($firstRadioGroup) > 0) {
+// Проверяем выбранную радиокнопку
+if ($radioGroup === "firstRadio") {
     $correctAnswer = $trimmedFirstTextarea;
-} else if (strlen($secondRadioGroup) > 0) {
+} elseif ($radioGroup === "secondRadio") {
     $correctAnswer = $trimmedSecondTextarea;
-} else if (strlen($thirdRadioGroup) > 0) {
+} elseif ($radioGroup === "thirdRadio") {
     $correctAnswer = $trimmedThirdTextarea;
-} else if (strlen($fourthRadioGroup) > 0) {
+} elseif ($radioGroup === "fourthRadio") {
     $correctAnswer = $trimmedFourthTextarea;
 } else {
     $hasNonEmptyValue = false;
 }
+
+// foreach($radioGroup as $radioValue) {
+//     if(strlen($radioValue) > 0) {
+//         $correctAnswer = $trimmedFirstTextarea;
+//     } else if (strlen($secondRadioGroup) > 0) {
+//         $correctAnswer = $trimmedSecondTextarea;
+//     } else if (strlen($thirdRadioGroup) > 0) {
+//         $correctAnswer = $trimmedThirdTextarea;
+//     } else if (strlen($fourthRadioGroup) > 0) {
+//         $correctAnswer = $trimmedFourthTextarea;
+//     } else {
+//         $hasNonEmptyValue = false;
+//     }
+// }
+
 
 if (!$hasNonEmptyValue) {
     setMessage(key:'error', message:"Выберите правильный вариант ответа");

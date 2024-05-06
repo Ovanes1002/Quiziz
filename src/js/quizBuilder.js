@@ -14,42 +14,42 @@ let writeInputValue,
   optionValue = 1,
   clickedRadio;
 
-// Добавляем обработчик события change, который будет вызываться при изменении выбранной опции
-selectElement.addEventListener("change", function (event) {
-  // Получаем выбранную опцию
-  selectedOption = selectElement.options[selectElement.selectedIndex];
+// // Добавляем обработчик события change, который будет вызываться при изменении выбранной опции
+// selectElement.addEventListener("change", function (event) {
+//   // Получаем выбранную опцию
+//   selectedOption = selectElement.options[selectElement.selectedIndex];
 
-  // Получаем значение выбранной опции и сохраняем его в переменной optionValue
-  optionValue = selectedOption.value;
+//   // Получаем значение выбранной опции и сохраняем его в переменной optionValue
+//   optionValue = selectedOption.value;
 
-  if (clickedRadio) {
-    clickedRadio.setAttribute("value", optionValue);
-  }
-  // Выводим значение в консоль (это можно изменить на ваше действие с полученным значением)
-  console.log("Выбранное значение:", optionValue);
-});
+//   if (clickedRadio) {
+//     clickedRadio.setAttribute("value", optionValue);
+//   }
+//   // Выводим значение в консоль (это можно изменить на ваше действие с полученным значением)
+//   console.log("Выбранное значение:", optionValue);
+// });
 
-// Перебираем все блоки и для каждого добавляем слушатель события клика
-radioInput.forEach(function (answer) {
-  answer.addEventListener("click", function (event) {
-    clickedRadio = event.target;
-    // Перебираем все блоки и удаляем атрибут value у всех элементов, кроме того, на который был совершен клик
-    radioInput.forEach(function (item) {
-      if (item !== clickedRadio) {
-        item.setAttribute("value", "");
-      }
-    });
+// // Перебираем все блоки и для каждого добавляем слушатель события клика
+// radioInput.forEach(function (answer) {
+//   answer.addEventListener("click", function (event) {
+//     clickedRadio = event.target;
+//     // Перебираем все блоки и удаляем атрибут value у всех элементов, кроме того, на который был совершен клик
+//     radioInput.forEach(function (item) {
+//       if (item !== clickedRadio) {
+//         item.setAttribute("value", "");
+//       }
+//     });
 
-    // Проверяем, имеет ли элемент атрибут value
-    if (clickedRadio.hasAttribute("value")) {
-      // Изменяем значение атрибута value на 'новое значение'
-      clickedRadio.setAttribute("value", optionValue);
-    } else {
-      console.log("У данного элемента нет атрибута value");
-    }
-    console.log(clickedRadio);
-  });
-});
+//     // Проверяем, имеет ли элемент атрибут value
+//     if (clickedRadio.hasAttribute("value")) {
+//       // Изменяем значение атрибута value на 'новое значение'
+//       clickedRadio.setAttribute("value", optionValue);
+//     } else {
+//       console.log("У данного элемента нет атрибута value");
+//     }
+//     console.log(clickedRadio);
+//   });
+// });
 
 // questionMakeButton.addEventListener("click", () => {
 //   const selectedOption = questionType.options[questionType.selectedIndex].value;
