@@ -290,6 +290,45 @@ function deleteQuizName($nameOfQuiz)
     $stmt = $pdo->prepare($sql);
     
     $stmt->bindParam(':quiz_name', $nameOfQuiz, PDO::PARAM_STR);
+    $stmt->execute();   
+}
+
+function deleteQuiz() 
+{
+    try {
+        // Создаём карточку вопроса
+        $pdo = getPDO();
+
+        // SQL запрос для получения последнего значения столбца 'quiz_id' из таблицы 'quizzes'
+        $sql = "SELECT MAX(quiz_id) AS max_quiz_id FROM quizzes";
+
+        // Подготавливаем запрос
+        $stmt = $pdo->prepare($sql);
+
+        // Выполняем запрос
+        $stmt->execute();
+
+        // Получаем результат запроса
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Проверяем наличие результата
+        if ($row) {
+            $last_quiz_id = $row['max_quiz_id'];
+            echo "Последнее значение 'quiz_id' из таблицы 'quizzes': " . $last_quiz_id;
+        } else {
+            echo "Результат запроса пуст.";
+        }
+    } catch(PDOException $e) {
+        echo "Ошибка при получении последнего значения 'quiz_id': " . $e->getMessage();
+    }
+
+    $pdo = getPDO();
+
+    $sql = "DELETE FROM questions WHERE quiz_id = :quiz_id";
+
+    $stmt = $pdo->prepare($sql);
+    
+    $stmt->bindParam(':quiz_id', $last_quiz_id, PDO::PARAM_STR);
     $stmt->execute();
 }
 

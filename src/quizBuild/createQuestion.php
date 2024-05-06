@@ -31,6 +31,7 @@ if (empty($trimmedFirstTextarea) ||
     empty($trimmedFourthTextarea)) {
     setMessage(key:'error', message:"Заполните все варианты ответов");
     setOldValue('quizQuestion', $trimmedQuizQuestion);
+    setOldValue('questionDifficulty', $questionDifficulty);
     setOldValue('firstTextarea', $trimmedFirstTextarea);
     setOldValue('secondTextarea', $trimmedSecondTextarea);
     setOldValue('thirdTextarea', $trimmedThirdTextarea);
@@ -71,6 +72,7 @@ if ($radioGroup === "firstRadio") {
 if (!$hasNonEmptyValue) {
     setMessage(key:'error', message:"Выберите правильный вариант ответа");
     setOldValue('quizQuestion', $trimmedQuizQuestion);
+    setOldValue('questionDifficulty', $questionDifficulty);
     setOldValue('firstTextarea', $trimmedFirstTextarea);
     setOldValue('secondTextarea', $trimmedSecondTextarea);
     setOldValue('thirdTextarea', $trimmedThirdTextarea);
@@ -80,6 +82,7 @@ if (!$hasNonEmptyValue) {
     
 if(!empty($_SESSION['validation'])) {
         setOldValue('quizQuestion', $trimmedQuizQuestion);
+        setOldValue('questionDifficulty', $questionDifficulty);
         setOldValue('firstTextarea', $trimmedFirstTextarea);
         setOldValue('secondTextarea', $trimmedSecondTextarea);
         setOldValue('thirdTextarea', $trimmedThirdTextarea);
