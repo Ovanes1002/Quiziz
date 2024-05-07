@@ -4,6 +4,8 @@ require_once __DIR__ . '/helpers.php';
 
 checkAuth();
 
+checkQuizCreate();
+
 $user = currentUser();
 
 ?>
@@ -121,6 +123,12 @@ $user = currentUser();
         <form action="/quizBuild/quizBuildQuit.php" method="post">
             <button role="button">Выйти</button>
         </form>
+        <?php if ($_SESSION['quiz_question_number'] > 1): ?>
+            <form action="/quizBuild/quizBuildQuit.php" method="post">
+                <button role="button">Завершить</button>
+            </form>
+        <?php endif; ?>
+
     </div>
   </body>
   <script defer src="js/quizBuilder.js"></script>

@@ -49,17 +49,20 @@ checkGuest();
 							<label for="password"> 
 								Ваш пароль: 
 							</label>
-							<input 
-							type="password" 
-							id="password"
-							name="password"
-							class="inputStylized"
-							autocomplete="off"
-							placeholder="********"
-							<?php validationErrorAttr(fieldName: 'password') ?>
-							minlength="8" 
-							maxlength="20" 
-							/>
+							<div class="passwordInput">
+								<input 
+								type="password" 
+								id="password"
+								name="password"
+								class="inputStylized"
+								autocomplete="off"
+								placeholder="********"
+								<?php validationErrorAttr(fieldName: 'password') ?>
+								minlength="8" 
+								maxlength="20" 
+								/>
+								<span id="eyeIcon" onclick="showHideEye();"></span>
+							</div>
 							<?php if(hasValidationError(fieldName: 'password')): ?>
 								<small><?php validationErrorMessage(fieldName: 'password') ?></small>
 							<?php endif; ?>
@@ -78,4 +81,5 @@ checkGuest();
 			</div>
 		</div>
 	</body>
+	<script defer src="js/eyePassword.js"></script>
 </html>

@@ -4,6 +4,8 @@ require_once __DIR__ . '/helpers.php';
 
 checkAuth();
 
+checkQuizName();
+
 $user = currentUser();
 
 ?>

@@ -69,10 +69,6 @@ checkGuest();
 				
 				<div class="playerAvatar">
 
-					<label id="playerAvatar" for="avatar">
-						Изображение профиля
-					</label>
-
 					<input
 						type="file"
 						id="avatar"
@@ -80,7 +76,11 @@ checkGuest();
 						class="inputStylized"
 						<?php echo validationErrorAttr('avatar'); ?>
 					/>
-						
+
+					<label id="playerAvatar" for="avatar">
+						Изображение профиля
+					</label>	
+
 					<?php if(hasValidationError('avatar')): ?>
 						<small><?php echo validationErrorMessage('avatar'); ?></small>
 					<?php endif; ?>
@@ -93,16 +93,18 @@ checkGuest();
 							Пароль: 
 						</label>
 
-						<input 
-							type="password" 
-							id="password" 
-							name="password"
-							class="inputStylized"
-							autocomplete="off" 
-							placeholder="********"
-							<?php validationErrorAttr(fieldName: 'password') ?>
-						/>
-
+						<div class="passwordInput">
+							<input 
+								type="password" 
+								id="password" 
+								name="password"
+								class="inputStylized"
+								autocomplete="off" 
+								placeholder="********"
+								<?php validationErrorAttr(fieldName: 'password') ?>
+							/>
+							<span id="eyeIcon" onclick="showHideEye();"></span>
+						</div>
 
 						<?php if(hasValidationError(fieldName: 'password')): ?>
 							<small><?php validationErrorMessage(fieldName: 'password') ?></small>
@@ -124,7 +126,6 @@ checkGuest();
 							placeholder="********"
 							<?php validationErrorAttr(fieldName: 'confirmPassword') ?>
 						/>
-
 						<?php if(hasValidationError(fieldName: 'confirmPassword')): ?>
 							<small><?php validationErrorMessage(fieldName: 'confirmPassword') ?></small>
 						<?php endif; ?>
@@ -159,4 +160,7 @@ checkGuest();
 		submit.disabled = !e.currentTarget.checked;
 	});
   </script>
+  	<script defer src="js/eyePassword.js"></script>
+	<script defer src="js/fileUpload.js"></script>
+
 </html>

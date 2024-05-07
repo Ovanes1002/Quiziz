@@ -23,6 +23,69 @@
   padding: 20px;
 }
 
+.playerAvatar {
+  display: flex;
+  flex-direction: column;
+}
+
+label#playerAvatar {
+  display: inline-block;
+  cursor: pointer;
+  padding: 20px;
+  line-height: 28px;
+  background-color: #0022bb;
+  border-radius: 10px;
+  pointer-events: auto;
+}
+
+#playerAvatar:active {
+  transform: scale(0.9);
+}
+
+#avatar {
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+  padding: 0;
+}
+
+#avatar:focus + #playerAvatar,
+#avatar + #playerAvatar:hover {
+  background-color: #4858a1;
+}
+
+.passwordInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+input#password {
+  padding-right: 45px;
+}
+
+#eyeIcon {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-image: url("/images/eye-close.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+#eyeIcon.eye-open {
+  background-image: url("/images/eye-open.svg");
+}
+
 .input-group {
   position: relative;
   width: 75%;

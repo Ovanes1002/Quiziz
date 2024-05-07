@@ -157,6 +157,20 @@ function checkGuest(): void
     }
 }
 
+function checkQuizCreate(): void
+{
+    if(!isset($_SESSION['quiz_name'])) {
+        redirect(path: '/quizTheme.php');
+    }
+}
+
+function checkQuizName(): void
+{
+    if(isset($_SESSION['quiz_name'])) {
+        redirect(path: '/quizBuilder.php');
+    }
+}
+
 function setTopic()
 {
     if(isset($_POST['lastClickedTopic'])) {
