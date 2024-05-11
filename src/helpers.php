@@ -81,6 +81,38 @@ function uploadFile (array $file, string $prefix = ''):string
     }
 }
 
+function uploadQuizIconFile (array $file, string $prefix = ''):string 
+{
+
+    $uploadPath = __DIR__ . '/quizIconUploads';
+
+    if (!is_dir($uploadPath)) {
+        mkdir($uploadPath, permissions: 0777, recursive: true);
+    }
+
+    if ($file !== null && $file['error'] === UPLOAD_ERR_OK) {
+
+        $quizIconExtension = pathinfo($file['name'], flags: PATHINFO_EXTENSION);
+        $fileName = $prefix . time() . ".$quizIconExtension";
+
+        if(!move_uploaded_file($file['tmp_name'], "$uploadPath/$fileName")) {
+            die('Ошибка загрузки файла на сервер');
+        }
+        return "quizIconUploads/$fileName";
+    } else {
+        // Файл не был загружен, используем иконку по умолчанию
+        $defaultIconPath = __DIR__ . '/quizIconUploads/picture_icon.png';
+        $newFileName = $prefix . time() . ".png";
+
+        // Переименовываем иконку по умолчанию
+        if (!copy($defaultIconPath, "$uploadPath/$newFileName")) {
+            die('Ошибка копирования файла на сервер');
+        }
+
+        return "quizIconUploads/$newFileName";
+    }
+}
+
 function setMessage (string $key, string $message): void 
 {
     $_SESSION['message'][$key] = $message; 
@@ -284,15 +316,23 @@ function getValue($scoreTopic)
 // }
 }
 
-function insertQuizName($nameOfQuiz) 
+function insertQuizName($name, $quizIconPath) 
 {
     $pdo = getPDO();
 
-    $sql = "INSERT INTO quizzes (quiz_name) VALUES (:quiz_name)";
+    $sql = "INSERT INTO quizzes (quiz_name, quiz_img) VALUES (:quiz_name, :quiz_img)";
+    $params = [
+        'quiz_name' => $name,
+        'quiz_img' => $quizIconPath,
+    ];
 
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':quiz_name', $nameOfQuiz, PDO::PARAM_STR);
-    $stmt->execute();   
+
+    try {
+        $stmt->execute($params);
+    } catch (\Exception $e) {
+        die($e->getMessage());
+    }
 }
 
 function deleteQuizName($nameOfQuiz) 
@@ -402,5 +442,28 @@ function createQuestion(
         die($e->getMessage());
     }
     // return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function getAllUsersQuizzes () {
+    $pdo = getPDO();
+
+    $sql = "SELECT quiz_id, quiz_name, quiz_img FROM quizzes";
+
+    $result = $pdo->query($sql);
+
+    if ($result->rowCount() > 0) {
+        
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            echo '<form class="topic" action="/question.php" method="post">';
+            echo '<button type="submit" value="' . $row['quiz_id'] . '" name="lastClickedTopic">';
+            echo '<img src="' . $row['quiz_img'] . '" />';
+            echo '<div class="topic_name">' . $row['quiz_name'] . '</div>';
+            echo '</button>';
+            echo '</form>';
+        }
+
+    } else {
+        echo "0 результатов";
+    }
 }
 ?>

@@ -52,7 +52,7 @@ $user = currentUser();
             </div>
         </div>
         <div class="exitNext">
-            <a class="quitQuiz" href="/profile.php">← Выйти</a>
+            <a class="quitQuiz" href="/startQuiz.php">Назад</a>
             <!-- <a class="nextButton hide" href="#">Далее →</a> -->
             <a class="endButton hide" href="#">Завершить</a>
             <a class="launchButton hide" href="/question.php">Начать</a>

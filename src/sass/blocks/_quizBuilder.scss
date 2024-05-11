@@ -4,22 +4,49 @@
   padding: 30px 20px;
   background-color: rgba(5, 7, 13, 0.9);
   border-radius: 20px;
-  .quizName {
+  .quizNameForm {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    min-height: 200px;
-    margin: 30px auto;
-    justify-content: space-evenly;
+    // min-height: 300px;
     align-items: center;
-    small {
-      color: rgb(225, 39, 11);
+    // justify-content: space-between;
+    .quizName {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 120px;
+      align-items: center;
+      justify-content: space-evenly;
     }
-    // label {
-    //   width: 40px;
-    //   margin: 0 auto;
-    //   text-align: center;
-    // }
+    .quizIcon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .startMakeQuiz {
+      margin: 0;
+    }
+    .quizBuildFooter {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background: none;
+      .quizBuildButton {
+        width: 35%;
+        color: white;
+        font-size: 2.2vw;
+        margin: 0;
+        padding: 15px;
+        background-color: #0800be;
+        border: 3px #05133b solid;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+  small {
+    color: rgb(225, 39, 11);
   }
   .error {
     padding: 20px 10px;

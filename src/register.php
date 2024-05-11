@@ -152,15 +152,7 @@ checkGuest();
       </div>
     </div>
   </body>
-  <script>
-	const terms = document.getElementById('terms');
-	const submit = document.getElementById('submit');
-
-	terms.addEventListener('change', (e) => {
-		submit.disabled = !e.currentTarget.checked;
-	});
-  </script>
-  	<script defer src="js/eyePassword.js"></script>
-	<script defer src="js/fileUpload.js"></script>
+	<script defer src="js/eyePassword.js"></script>
+	<script defer src="js/register.js"></script>
 
 </html>

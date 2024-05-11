@@ -14,18 +14,15 @@ $user = currentUser();
     <div class="container">
 		<div class="startPage">
 			<div class="startMenu">
-				<h2>Привет, <?php echo $user['name']; ?>!</h2>
+                <h2>Привет, <?php echo $user['name']; ?>!</h2>
 				<img 
 					class="avatar" 
 					src="<?php echo $user['avatar']; ?>" 
 					alt="<?php echo $user['name']; ?>"
-					>
-				<a href="/startQuiz.php">Старт</a>
-				<a href="/quizTheme.php">Конструктор</a>
-				<a href="/chooseScoreTopic.php">Результаты</a>
-				<form action="/actions/logout.php" method="post">
-					<button role="button">Выйти</button>
-				</form>
+				>
+				<a href="/chooseTopic.php">Обычные</a>
+				<a href="/usersQuizzes.php">Пользовательские</a>
+				<a href="/profile.php">Назад</a>
 			</div>
 		</div>
     </div>

@@ -121,11 +121,11 @@ $user = currentUser();
         </div>
 
         <form action="/quizBuild/quizBuildQuit.php" method="post">
-            <button role="button">Выйти</button>
+            <button>Выйти</button>
         </form>
         <?php if ($_SESSION['quiz_question_number'] > 1): ?>
-            <form action="/quizBuild/quizBuildQuit.php" method="post">
-                <button role="button">Завершить</button>
+            <form action="/quizBuild/quizBuildFinish.php" method="post">
+                <button>Завершить</button>
             </form>
         <?php endif; ?>
 
