@@ -39,6 +39,17 @@
   padding: 10px 0;
 }
 
+.topicId {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.1px;
+  height: 0.1px;
+  color: #001884;
+  resize: none;
+  background: 0;
+}
+
 .button:hover,
 .topic:hover,
 .score_topic:hover {

@@ -24,6 +24,10 @@ if ($quizIcon !== null && $quizIcon['error'] === UPLOAD_ERR_OK) {
     }
 }
 
+if (!empty($_SESSION['validation'])) {
+    redirect(path: '/quizTheme.php');
+} 
+
 if (!empty($quizIcon)) {
     $quizIconPath = uploadQuizIconFile(file: $quizIcon, prefix: 'quizIcon_');
 }
@@ -31,9 +35,7 @@ if (!empty($quizIcon)) {
 //     setValidationError(fieldName: 'quizName', message: 'Задайте имя викторины');
 // }
 
-if (!empty($_SESSION['validation'])) {
-    redirect(path: '/quizTheme.php');
-} 
+
 
 // if (!empty($trimmedName)) {
 //     insertQuizName($_SESSION['quiz_name']);

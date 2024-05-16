@@ -16,35 +16,35 @@ $user = currentUser();
     <div class="container">
         <h1>Создать викторину</h1>
         <div class="quizBuilder">
-        <form class="questionBlockForm" action="/quizBuild/createQuestion.php" method="post">
-            <h3>Вопрос №<?php echo $_SESSION['quiz_question_number'] ?></h3>
-            <div class="quizQuestion">
-                <label>
-                    Вопрос:
-                    <input 
-                        type="text"
-                        name="quizQuestion"
-                        class="inputStylized" 
-                        maxlength="200" 
-                        autocomplete="off"
-                        value="<?php echo getOldValue(key: 'quizQuestion') ?>"
-                        <?php validationErrorAttr(fieldName: 'quizQuestion') ?>
-                    />
-                </label>
-                <?php if(hasValidationError(fieldName: 'quizQuestion')): ?>
-                    <small><?php validationErrorMessage(fieldName: 'quizQuestion') ?></small>
-                <?php endif; ?>
-            </div>
-            <div class="quizDifficulty">
-                <label for="questionDifficulty">Сложнось вопроса:</label>
-                <select name="questionDifficulty" id="questionDifficulty" size="1">
-                    <option value="1">1 балл</option>
-                    <option value="2">2 балла</option>
-                    <option value="3">3 балла</option>
-                    <option value="4">4 балла</option>
-                    <option value="5">5 баллов</option>
-                </select>
-            </div>
+            <form class="questionBlockForm" action="/quizBuild/createQuestion.php" method="post">
+                <h3>Вопрос №<?php echo $_SESSION['quiz_question_number'] ?></h3>
+                <div class="quizQuestion">
+                    <label>
+                        Вопрос:
+                        <input 
+                            type="text"
+                            name="quizQuestion"
+                            class="inputStylized" 
+                            maxlength="200" 
+                            autocomplete="off"
+                            value="<?php echo getOldValue(key: 'quizQuestion') ?>"
+                            <?php validationErrorAttr(fieldName: 'quizQuestion') ?>
+                        />
+                    </label>
+                    <?php if(hasValidationError(fieldName: 'quizQuestion')): ?>
+                        <small><?php validationErrorMessage(fieldName: 'quizQuestion') ?></small>
+                    <?php endif; ?>
+                </div>
+                <div class="quizDifficulty">
+                    <label for="questionDifficulty">Сложнось вопроса:</label>
+                    <select name="questionDifficulty" id="questionDifficulty" size="1">
+                        <option value="1">1 балл</option>
+                        <option value="2">2 балла</option>
+                        <option value="3">3 балла</option>
+                        <option value="4">4 балла</option>
+                        <option value="5">5 баллов</option>
+                    </select>
+                </div>
             <!-- <div class="quizType">
                 <label for="questionType">Тип вопроса:</label>
                 <select name="questionType" id="questionType" size="1">
@@ -116,20 +116,22 @@ $user = currentUser();
                         ><?php echo getOldValue(key: 'fourthTextarea') ?></textarea>
                     </div>
                 </div>
-                <button type="submit" class="button questionNextButton">Далее</button>
+                <button type="submit" class="button questionAddButton">Добавить</button>
             </form>
         </div>
 
-        <form action="/quizBuild/quizBuildQuit.php" method="post">
-            <button>Выйти</button>
-        </form>
-        <?php if ($_SESSION['quiz_question_number'] > 1): ?>
-            <form action="/quizBuild/quizBuildFinish.php" method="post">
-                <button>Завершить</button>
+        <div class="quizBuilderFooter">
+            <form action="/quizBuild/quizBuildQuit.php" method="post">
+                <button class="quizBuildQuit">Выйти</button>
             </form>
-        <?php endif; ?>
+            <?php if ($_SESSION['quiz_question_number'] > 1): ?>
+                <form action="/quizBuild/quizBuildFinish.php" method="post">
+                    <button class="quizBuildFinish">Завершить</button>
+                </form>
+            <?php endif; ?>
+        </div>
 
     </div>
   </body>
-  <script defer src="js/quizBuilder.js"></script>
+  <!-- <script defer src="js/quizBuilder.js"></script> -->
 </html>

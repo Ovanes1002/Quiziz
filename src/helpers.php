@@ -218,6 +218,21 @@ function setTopic()
 
 }
 
+function setTopicId()
+{
+    if(isset($_POST['topicId'])) {
+
+        $_SESSION['topicId'] = $_POST['topicId'];
+        // return $_SESSION['lastClickedTopic'];
+        unset($_POST['topicId']);
+        return $_SESSION['topicId'];
+      
+    } else {
+        echo "topicId not set in POST";
+      }
+
+}
+
 // function setTopic (string $key, mixed $lastClickedTopic): void 
 // {
 //     $_SESSION['topic'][$key] = $lastClickedTopic; 
@@ -231,10 +246,18 @@ function topicIndex($topic)
         $currentIndex = 10;
     } elseif ($topic == 'искусство') {
         $currentIndex = 20;
-    } else {
+    } elseif ($topic == 'история') {
         $currentIndex = 30;
+    } else {
+        return '';
     }
     return $currentIndex;
+}
+
+function topicId($topicid)
+{
+    $currentId = $topicid;
+    return $currentId;
 }
 
 function playerResult() 
@@ -455,7 +478,10 @@ function getAllUsersQuizzes () {
         
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             echo '<form class="topic" action="/question.php" method="post">';
-            echo '<button type="submit" value="' . $row['quiz_id'] . '" name="lastClickedTopic">';
+            echo '<textarea class="topicId" value="' . $row['quiz_id'] . '" name="topicId">';
+            echo $row['quiz_id'];
+            echo '</textarea>';
+            echo '<button type="submit" value="' . $row['quiz_name'] . '" name="lastClickedTopic">';
             echo '<img src="' . $row['quiz_img'] . '" />';
             echo '<div class="topic_name">' . $row['quiz_name'] . '</div>';
             echo '</button>';

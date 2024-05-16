@@ -142,7 +142,7 @@
       }
     }
   }
-  .questionNextButton {
+  .questionAddButton {
     margin: 0 auto;
   }
   .inputStylized {
@@ -166,6 +166,36 @@
     option {
       width: 60px;
       padding: 5px;
+    }
+  }
+}
+
+.quizBuilderFooter {
+  display: flex;
+  justify-content: space-around;
+  form {
+    width: 40%;
+    button.quizBuildQuit,
+    button.quizBuildFinish {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px 10px;
+      font-size: 20px;
+      color: #cacaca;
+      line-height: normal;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      word-wrap: break-word;
+      border: 2px solid #0d0055;
+      border-radius: 15px;
+      background-color: #0022bb;
+      &:hover {
+        cursor: pointer;
+        background-color: #001989;
+        box-shadow: inset 0 0 5px 1px black;
+      }
     }
   }
 }
