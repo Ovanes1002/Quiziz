@@ -71,7 +71,9 @@
       margin-bottom: 20px;
     }
     a,
-    .endButton {
+    .endButton,
+    .userQuizNextButton,
+    .userQuizEndButton {
       width: 120px;
       min-height: 60px;
       font-size: 24px;
@@ -181,7 +183,9 @@
 
 @media only screen and (max-width: 576px) {
   a,
-  .endButton {
+  .endButton,
+  .userQuizNextButton,
+  .userQuizEndButton {
     padding: 10px;
   }
 
@@ -213,7 +217,9 @@
       font-size: 18px;
     }
     a,
-    .endButton {
+    .endButton,
+    .userQuizNextButton,
+    .userQuizEndButton {
       font-size: 20px;
     }
   }
@@ -288,7 +294,9 @@
   }
 
   .exitNext a,
-  .endButtonForm {
+  .endButtonForm,
+  .userQuizNextButtonForm,
+  .userQuizEndButtonForm {
     width: 44%;
   }
 

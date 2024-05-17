@@ -32,12 +32,6 @@ $user = currentUser();
       	</header>
 		<main class="card">
 			<p class="question"></p>
-			<span class="currentTopicId">
-				<?php echo setTopicId();?>
-			</span>
-			<span>
-				<?php echo topicId($_SESSION['topicId']); ?>
-			</span>
 			<span class="currentIndex">
 				<?php echo topicIndex($_SESSION['lastClickedTopic']);?>
 			</span>

@@ -248,8 +248,6 @@ function topicIndex($topic)
         $currentIndex = 20;
     } elseif ($topic == 'история') {
         $currentIndex = 30;
-    } else {
-        return '';
     }
     return $currentIndex;
 }
@@ -477,7 +475,7 @@ function getAllUsersQuizzes () {
     if ($result->rowCount() > 0) {
         
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            echo '<form class="topic" action="/question.php" method="post">';
+            echo '<form class="topic" action="/beforeQuestionQuizBuild.php" method="post">';
             echo '<textarea class="topicId" value="' . $row['quiz_id'] . '" name="topicId">';
             echo $row['quiz_id'];
             echo '</textarea>';
@@ -492,4 +490,19 @@ function getAllUsersQuizzes () {
         echo "0 результатов";
     }
 }
+
+function getAllThemeQuestions () {
+    $pdo = getPDO();
+    $sql = "SELECT * FROM questions WHERE quiz_id = '{$_SESSION['topicId']}'";
+    $result = $pdo->query($sql);
+    $allThemeQuestions = [];
+    if($result) {
+        $allThemeQuestions = $result->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        print_r($pdo->errorInfo());
+    }
+    return $allThemeQuestions;
+}
+
+
 ?>

@@ -26,7 +26,10 @@ header {
 }
 
 .currentIndex,
-.currentTopicId {
+.currentTopicId,
+.currentTopicIdValue,
+.currentNumberOfQuestion,
+.numberOfAllQuestions {
   position: absolute;
   top: 0;
   left: 0;
@@ -148,6 +151,8 @@ footer {
 
 .quitQuiz,
 .nextButton,
-.endButton {
+.endButton,
+.userQuizNextButton,
+.userQuizEndButton {
   text-align: center;
 }
