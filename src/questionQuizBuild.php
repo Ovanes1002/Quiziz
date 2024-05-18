@@ -26,7 +26,7 @@ $user = currentUser();
     <div class="container">
 		<h1>Тема: <span class="currentTopic"><?php echo $_SESSION['currentTopic']?></span></h1>
         <span class="currentTopicId">
-            <?php echo setTopicId();?>
+            <?php echo $_SESSION['currentTopicId'];?>
         </span>
         <span class="currentTopicIdValue">
             <?php echo topicId($_SESSION['topicId']); ?>
