@@ -13,14 +13,58 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         $difficulty = $questions[$currentQuestionIndex]['question_difficulty'];
 
         if ($lastClickedButton == $correctAnswer) {
-            if (!isset($_SESSION['finalResult'])) {
-                $_SESSION['finalResult'] = 0;
-            }
+            // if (!isset($_SESSION['finalResult'])) {
+            //     $_SESSION['finalResult'] = 0;
+            // }
             $_SESSION['finalResult'] += $difficulty;
         }
         
         // Очистим последний кликнутый ответ
         unset($_SESSION['lastClickedButton']);
     }
+    $user = currentUser();
+    $currentTopicId = $_SESSION['currentTopicId'];
+    try {
+        $pdo = getPDO();
+    
+        // Запрос для получения имен таблиц, содержащих фрагмент '___$currentTopicId' в названии
+        $sql = "SHOW TABLES LIKE :pattern";
+        $stmt = $pdo->prepare($sql);
+        $pattern = "%___" . $currentTopicId . "%";
+        $stmt->bindParam(':pattern', $pattern);
+    
+        $stmt->execute();
+    
+        // Получение первого результата
+        $tableName = $stmt->fetchColumn();
+    
+        if ($tableName) {
+            $_SESSION['currentTableName'] = $tableName;
+        } else {
+            echo "Таблицы, содержащие фрагмент '___$currentTopicId' в названии, не найдены.";
+        }
+    } catch(PDOException $e) {
+        echo "Ошибка: " . $e->getMessage();
+    }
+    $currentTableName = $_SESSION['currentTableName'];
+    $pdo = getPDO();
+    
+    $query = "INSERT INTO `$currentTableName` (quiz_id, user_id, user_name, user_result) VALUES (:quiz_id, :user_id, :user_name, :user_result)";
+    $params = [
+        'quiz_id' => $_SESSION['currentTopicId'],
+        'user_id' => $user['id'],
+        'user_name' => $user['name'],
+        'user_result' => $_SESSION['finalResult'],
+    ];
+
+    $stmt = $pdo->prepare($query);  
+
+    try {
+        $stmt->execute($params);
+    } catch (\Exception $e) {
+        die($e->getMessage());
+    }
+    unset($_SESSION['currentTopicId']);
+    unset($_SESSION['currentTableName']);
     redirect(path: '/userQuizResult.php');
 }

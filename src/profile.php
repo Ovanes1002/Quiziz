@@ -22,7 +22,7 @@ $user = currentUser();
 					>
 				<a href="/startQuiz.php">Старт</a>
 				<a href="/quizTheme.php">Конструктор</a>
-				<a href="/chooseScoreTopic.php">Результаты</a>
+				<a href="/quizResults.php">Результаты</a>
 				<form action="/actions/logout.php" method="post">
 					<button role="button">Выйти</button>
 				</form>

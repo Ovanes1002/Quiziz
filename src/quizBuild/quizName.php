@@ -8,7 +8,7 @@ $trimmedName = trim(preg_replace('/\s+/', ' ', $quizName));
 $quizIconPath = null;
 $quizIcon = $_FILES['quizIcon'] ?? null;
 
-$_SESSION['quiz_name'] = $trimmedName;
+$_SESSION['quiz_name'] = substr($trimmedName, 0, 30);
 $_SESSION['quizIcon'] = $quizIcon;
 
 if ($quizIcon !== null && $quizIcon['error'] === UPLOAD_ERR_OK) {
@@ -31,17 +31,9 @@ if (!empty($_SESSION['validation'])) {
 if (!empty($quizIcon)) {
     $quizIconPath = uploadQuizIconFile(file: $quizIcon, prefix: 'quizIcon_');
 }
-// if (empty($trimmedName)) {
-//     setValidationError(fieldName: 'quizName', message: 'Задайте имя викторины');
-// }
-
-
-
-// if (!empty($trimmedName)) {
-//     insertQuizName($_SESSION['quiz_name']);
-// }
 
 insertQuizName($trimmedName, $quizIconPath);
+$_SESSION['lastQuizId'] = lastQuizId();
 $_SESSION['quiz_question_number'] = 1;
 redirect(path: '/quizBuilder.php');
 

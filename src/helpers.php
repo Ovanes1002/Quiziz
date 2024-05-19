@@ -356,6 +356,32 @@ function insertQuizName($name, $quizIconPath)
     }
 }
 
+function lastQuizId()
+{
+    // Создаём карточку вопроса
+    $pdo = getPDO();
+
+    // SQL запрос для получения последнего значения столбца 'quiz_id' из таблицы 'quizzes'
+    $sql = "SELECT MAX(quiz_id) AS max_quiz_id FROM quizzes";
+
+    // Подготавливаем запрос
+    $stmt = $pdo->prepare($sql);
+
+    // Выполняем запрос
+    $stmt->execute();
+
+    // Получаем результат запроса
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    // Проверяем наличие результата
+    if ($row) {
+        $lastQuizId = $row['max_quiz_id'];
+        return strval($lastQuizId);
+    } else {
+        return 'ошибка в функции lastQuizId()';
+    }
+}
+
 function deleteQuizName($nameOfQuiz) 
 {
     $pdo = getPDO();
@@ -491,6 +517,32 @@ function getAllUsersQuizzes () {
     }
 }
 
+function getAllUsersQuizzesResults () {
+    $pdo = getPDO();
+
+    $sql = "SELECT quiz_id, quiz_name, quiz_img FROM quizzes";
+
+    $result = $pdo->query($sql);
+
+    if ($result->rowCount() > 0) {
+        
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            echo '<form class="topic" action="/beforeUserTableResult.php" method="post">';
+            echo '<textarea class="topicId" value="' . $row['quiz_id'] . '" name="topicId">';
+            echo $row['quiz_id'];
+            echo '</textarea>';
+            echo '<button type="submit" value="' . $row['quiz_name'] . '" name="lastClickedTopic">';
+            echo '<img src="' . $row['quiz_img'] . '" />';
+            echo '<div class="topic_name">' . $row['quiz_name'] . '</div>';
+            echo '</button>';
+            echo '</form>';
+        }
+
+    } else {
+        echo "0 результатов";
+    }
+}
+
 function getAllThemeQuestions () {
     $pdo = getPDO();
     $sql = "SELECT * FROM questions WHERE quiz_id = '{$_SESSION['topicId']}'";
@@ -504,5 +556,41 @@ function getAllThemeQuestions () {
     return $allThemeQuestions;
 }
 
+function getAllUserTableResults ($topicId)
+{
+        // Получение подключения к базе данных
+    $pdo = getPDO();
+    // Запрос для получения имен таблиц, содержащих фрагмент '___$currentTopicId' в названии
+    $sql = "SHOW TABLES LIKE :pattern";
+    $stmt = $pdo->prepare($sql);
+    $pattern = "%___" . $topicId . "%";
+    $stmt->bindParam(':pattern', $pattern);
+
+    $stmt->execute();
+
+    // Получение первого результата
+    $tableName = $stmt->fetchColumn();
+
+    if ($tableName) {
+        $sql = "SELECT user_name, user_result FROM $tableName ORDER BY user_result DESC";
+        $_SESSION['currentTableName'] = $tableName;
+    } else {    
+        echo "Таблицы, содержащие фрагмент '___$topicId' в названии, не найдены.";
+    }
+
+    $result = $pdo->query($sql);
+
+    if ($result->rowCount() > 0) {
+        
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            echo "<tr>";
+            echo "<td>".$row["user_name"]."</td>";
+            echo "<td>".$row["user_result"]."</td>";
+            echo "</tr>";
+        }
+
+    } 
+
+}
 
 ?>

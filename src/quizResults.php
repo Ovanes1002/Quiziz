@@ -14,14 +14,14 @@ $user = currentUser();
     <div class="container">
 		<div class="startPage">
 			<div class="startMenu">
-                <h2>Начать викторину</h2>
+                <h2>Результаты викторин</h2>
 				<img 
 					class="avatar" 
 					src="<?php echo $user['avatar']; ?>" 
 					alt="<?php echo $user['name']; ?>"
 				>
-				<a href="/chooseTopic.php">Обычные</a>
-				<a href="/usersQuizzesStart.php">Пользовательские</a>
+				<a href="/chooseScoreTopic.php">Обычные</a>
+				<a href="/usersQuizzesResults.php">Пользовательские</a>
 				<a href="/profile.php">Назад</a>
 			</div>
 		</div>
