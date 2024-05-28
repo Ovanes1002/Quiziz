@@ -14,7 +14,7 @@ $user = currentUser();
 	<div class="container">
 		<table>
 			<caption>
-            	Рейтинг игроков по теме <?=$_SESSION['currentTopic']?>
+            	Рейтинг игроков по теме "<?=$_SESSION['currentTopic']?>"
           	</caption>
 			<thead>
 				<tr>

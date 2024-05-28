@@ -56,7 +56,7 @@ endButton.addEventListener("click", (evt) => {
   points.innerText = "1 балл";
   progress.style.width = `${current}%`;
   endButtonForm.classList.add("hide");
-  endButton.classList.add("hide");
+  // endButton.classList.add("hide");
   // nameId.value = "";
   firstWriteAnswer.value = "";
   secondWriteAnswer.value = "";

@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     unset($_SESSION['quiz_name']);
     unset($_SESSION['quiz_question_number']);
     unset($_SESSION['lastQuizId']);
-    redirect(path: '/profile.php');
+    redirect(path:'/profile.php');
 }
 
 ?>

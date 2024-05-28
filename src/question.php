@@ -108,7 +108,7 @@ $user = currentUser();
             <a class="quitQuiz" href="/profile.php">← Выйти</a>
             <a class="nextButton hide" href="#">Далее →</a>
             <form class="endButtonForm hide" action="/finishQuiz.php" method="post">
-				<button class="endButton hide" value="" name="playerResult">Завершить</button>
+				<button class="endButton" value="" name="playerResult">Завершить</button>
 			</form>
             <!-- <a class="launchButton hide" href="/card.php">Начать</a> -->
         </div>

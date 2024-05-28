@@ -415,7 +415,7 @@ function deleteQuiz()
         // Проверяем наличие результата
         if ($row) {
             $last_quiz_id = $row['max_quiz_id'];
-            echo "Последнее значение 'quiz_id' из таблицы 'quizzes': " . $last_quiz_id;
+            // echo "Последнее значение 'quiz_id' из таблицы 'quizzes': " . $last_quiz_id;
         } else {
             echo "Результат запроса пуст.";
         }
@@ -461,7 +461,7 @@ function createQuestion(
         // Проверяем наличие результата
         if ($row) {
             $last_quiz_id = $row['max_quiz_id'];
-            echo "Последнее значение 'quiz_id' из таблицы 'quizzes': " . $last_quiz_id;
+            // echo "Последнее значение 'quiz_id' из таблицы 'quizzes': " . $last_quiz_id;
         } else {
             echo "Результат запроса пуст.";
         }

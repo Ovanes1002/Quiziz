@@ -47,6 +47,28 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         echo "Ошибка: " . $e->getMessage();
     }
     $currentTableName = $_SESSION['currentTableName'];
+        // // Создаём карточку вопроса
+        // $pdo = getPDO();
+
+        // // SQL запрос для получения последнего значения столбца 'quiz_id' из таблицы 'quizzes'
+        // $sql = "SELECT MAX(id) AS max_id FROM $currentTableName";
+    
+        // // Подготавливаем запрос
+        // $stmt = $pdo->prepare($sql);
+    
+        // // Выполняем запрос
+        // $stmt->execute();
+    
+        // // Получаем результат запроса
+        // $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // // Проверяем наличие результата
+        // if ($row) {
+        //     $lastId = $row['max_id'];
+        // } else {
+        //     return 'ошибка в функции lastQuizId()';
+        // }
+
     $pdo = getPDO();
     
     $query = "INSERT INTO `$currentTableName` (quiz_id, user_id, user_name, user_result) VALUES (:quiz_id, :user_id, :user_name, :user_result)";
