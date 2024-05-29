@@ -58,7 +58,10 @@ img {
 a,
 .endButton,
 .userQuizNextButton,
-.userQuizEndButton {
+.userQuizEndButton,
+.quizBuildButton,
+.quizBuildQuit,
+.quizBuildFinish {
   display: block;
   width: 40%;
   margin: 0 auto;
@@ -122,6 +125,40 @@ a,
     border: none;
     box-shadow: 0px 0px 10px 5px red;
     border-radius: 20px;
+  }
+}
+
+// .topic-buttons {
+//   flex-wrap: wrap;
+//   // margin-top: 20px;
+//   form {
+//     width: 45%;
+//     button {
+//       width: 100%;
+//     }
+//   }
+// }
+
+// .button:nth-child(-n + 2),
+// .topic:nth-child(-n + 2),
+// .score_topic:nth-child(-n + 2) {
+//   margin-bottom: 70px;
+// }
+.topic-buttons.user-topic-buttons {
+  flex-wrap: wrap;
+  form {
+    width: 32%;
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.topic-buttons.user-topic-buttons {
+  .button:nth-child(n),
+  .topic:nth-child(n),
+  .score_topic:nth-child(n) {
+    margin-bottom: 70px;
   }
 }
 

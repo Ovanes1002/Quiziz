@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     // if (!$pdo) {
     //     die("Ошибка подключения к базе данных");
     // }
-    $sql = "CREATE TABLE `ovik328_quiziz`.`$userTableName` ( 
+    $sql = "CREATE TABLE `Quiziz_database`.`$userTableName` ( 
         `id` INT NOT NULL AUTO_INCREMENT,
         `quiz_id` INT NULL, 
         `user_id` INT NULL, 

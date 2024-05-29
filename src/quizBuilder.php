@@ -19,10 +19,12 @@ $user = currentUser();
             <form class="questionBlockForm" action="/quizBuild/createQuestion.php" method="post">
                 <h3>Вопрос №<?php echo $_SESSION['quiz_question_number'] ?></h3>
                 <div class="quizQuestion">
-                    <label>
+                    <label for="labelQuizText">
                         Вопрос:
-                        <input 
+                    </label>
+                    <input 
                             type="text"
+                            id="labelQuizText"
                             name="quizQuestion"
                             class="inputStylized" 
                             maxlength="200" 
@@ -30,7 +32,6 @@ $user = currentUser();
                             value="<?php echo getOldValue(key: 'quizQuestion') ?>"
                             <?php validationErrorAttr(fieldName: 'quizQuestion') ?>
                         />
-                    </label>
                     <?php if(hasValidationError(fieldName: 'quizQuestion')): ?>
                         <small><?php validationErrorMessage(fieldName: 'quizQuestion') ?></small>
                     <?php endif; ?>

@@ -14,7 +14,7 @@ $user = currentUser();
     <div class="container">
         <div class="choose_topic">
             <h1>Выберите тему</h1>
-            <div class="topic-buttons">
+            <div class="topic-buttons user-topic-buttons">
                 <?php getAllUsersQuizzes(); ?>
             </div>
         </div>

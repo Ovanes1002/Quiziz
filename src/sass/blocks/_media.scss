@@ -23,7 +23,8 @@
     font-size: 25px;
   }
 
-  .topic-buttons {
+  .topic-buttons,
+  .topic-buttons.user-topic-buttons {
     flex-wrap: wrap;
     // margin-top: 20px;
     form {
@@ -73,7 +74,8 @@
     a,
     .endButton,
     .userQuizNextButton,
-    .userQuizEndButton {
+    .userQuizEndButton,
+    .quizBuildButton {
       width: 120px;
       min-height: 60px;
       font-size: 24px;
@@ -91,16 +93,18 @@
     font-size: 16px;
   }
 
-  // .topic,
-  // .score_topic {
-  //   height: calc(12em + 1.5vw);
-  //   padding-bottom: 0;
-  // }
-
   .button:nth-child(-n + 2),
   .topic:nth-child(-n + 2),
   .score_topic:nth-child(-n + 2) {
     margin-bottom: 50px;
+  }
+
+  .topic-buttons.user-topic-buttons {
+    .button:nth-child(n),
+    .topic:nth-child(n),
+    .score_topic:nth-child(n) {
+      margin-bottom: 50px;
+    }
   }
 
   .nameInput {
@@ -179,13 +183,22 @@
     width: 20px;
     height: 20px;
   }
+
+  #preview {
+    width: 125px;
+  }
+
+  .quizBuilder .quizNameForm .quizBuildFooter .quizBuildButton {
+    width: 45%;
+  }
 }
 
 @media only screen and (max-width: 576px) {
   a,
   .endButton,
   .userQuizNextButton,
-  .userQuizEndButton {
+  .userQuizEndButton,
+  .quizBuildButton {
     padding: 10px;
   }
 
@@ -219,7 +232,8 @@
     a,
     .endButton,
     .userQuizNextButton,
-    .userQuizEndButton {
+    .userQuizEndButton,
+    .quizBuildButton {
       font-size: 20px;
     }
   }
@@ -257,11 +271,19 @@
     margin-bottom: 30px;
   }
 
-  .button:nth-child(4),
-  .score_topic:nth-child(4),
-  .topic:nth-child(4) {
-    margin-bottom: 0;
+  .topic-buttons.user-topic-buttons {
+    .button:nth-child(n),
+    .topic:nth-child(n),
+    .score_topic:nth-child(n) {
+      margin-bottom: 30px;
+    }
   }
+
+  // .button:nth-child(4),
+  // .score_topic:nth-child(4),
+  // .topic:nth-child(4) {
+  //   margin-bottom: 0;
+  // }
 
   .backButton,
   .backButtonArt,
@@ -284,6 +306,47 @@
         font-size: 18px;
         padding-bottom: 0;
       }
+    }
+  }
+  .quizBuilder {
+    .quizQuestion {
+      flex-direction: column;
+      margin-bottom: 20px;
+      label {
+        margin-bottom: 20px;
+      }
+      input {
+        margin-left: 0;
+      }
+    }
+    .inputStylized {
+      width: 100%;
+      padding: 10px 15px;
+    }
+  }
+
+  .quizBuilder .questionBlockForm .questionBlock {
+    .firstAnswer,
+    .secondAnswer,
+    .thirdAnswer,
+    .fourthAnswer {
+      width: 90%;
+      margin: 25px auto;
+      // align-items: baseline;
+      // justify-content: space-between;
+    }
+    .radioLabel {
+      .radioSpan {
+        margin-left: -35px;
+      }
+    }
+    textarea {
+      width: 90%;
+      font-size: 22px;
+      border-radius: 10px;
+      resize: none;
+      padding: 5px;
+      background-color: #d7dee6;
     }
   }
 
