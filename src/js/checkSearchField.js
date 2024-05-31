@@ -1,5 +1,6 @@
 const searchInput = document.querySelector(".searchInput");
 const userTopicButtons = document.querySelector(".user-topic-buttons");
+const userTopicButtonsContent = userTopicButtons.innerHTML;
 
 searchInput.addEventListener("input", (evt) => {
   userTopicButtons.innerHTML = "";
@@ -24,5 +25,7 @@ searchInput.addEventListener("input", (evt) => {
       .catch((error) => {
         console.log("Ошибка:", error);
       });
+  } else {
+    userTopicButtons.innerHTML = userTopicButtonsContent;
   }
 });

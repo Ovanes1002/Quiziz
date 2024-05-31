@@ -3,7 +3,7 @@
 require_once __DIR__ . "/helpers.php";
 
 if (isset($_POST['inputValue'])) {
-    $_SESSION['searchInputValue'] = $_POST['inputValue']; // Сохранение ID нажатой кнопки в сессии
+    $_SESSION['searchInputValue'] = $_POST['inputValue'];
     
     $pdo = getPDO();
 
@@ -13,7 +13,7 @@ if (isset($_POST['inputValue'])) {
 
     if ($result->rowCount() > 0) {
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            if ($row['quiz_name'] == $_SESSION['searchInputValue']) {
+            if (strpos($row['quiz_name'], $_SESSION['searchInputValue']) !== false) {
                 $searchInputValue = '1';
                 echo '<form class="topic" action="/beforeQuestionQuizBuild.php" method="post">';
                 echo '<textarea class="topicId" value="' . $row['quiz_id'] . '" name="topicId">';
