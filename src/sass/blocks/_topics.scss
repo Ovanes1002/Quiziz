@@ -1,3 +1,14 @@
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  input {
+    margin-left: 20px;
+  }
+}
+
 .choose_topic {
   margin: 0 auto 50px;
   width: 100%;
