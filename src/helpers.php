@@ -572,6 +572,8 @@ function getAllUserTableResults ($topicId)
     $tableName = $stmt->fetchColumn();
 
     if ($tableName) {
+        // Экранирование имени таблицы
+        $tableName = "`" . str_replace("`", "``", $tableName) . "`";
         $sql = "SELECT user_name, user_result FROM $tableName ORDER BY user_result DESC";
         $_SESSION['currentTableName'] = $tableName;
     } else {    

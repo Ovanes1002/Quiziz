@@ -14,6 +14,12 @@ $user = currentUser();
     <div class="container">
         <div class="choose_topic">
             <h1>Выберите тему</h1>
+
+            <div class="searchResult">
+                <label for="searchResultField">Поиск по теме:</label>
+                <input id="searchResultField" class="searchResultInput inputStylized"></input>
+            </div>
+
             <div class="topic-buttons user-topic-buttons">
                 <?php getAllUsersQuizzesResults(); ?>
             </div>
@@ -21,4 +27,5 @@ $user = currentUser();
         <a class="quitQuiz" href="/startQuiz.php">Назад</a>
     </div>
   </body>
+  <script src="js/checkSearchResultField.js"></script>
 </html>

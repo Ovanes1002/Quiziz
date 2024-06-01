@@ -2,8 +2,8 @@
 
 require_once __DIR__ . "/helpers.php";
 
-if (isset($_POST['inputValue'])) {
-    $_SESSION['searchInputValue'] = $_POST['inputValue'];
+if (isset($_POST['resultInputValue'])) {
+    $_SESSION['searchResultInputValue'] = $_POST['resultInputValue'];
     
     $pdo = getPDO();
 
@@ -13,8 +13,8 @@ if (isset($_POST['inputValue'])) {
 
     if ($result->rowCount() > 0) {
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            if (strpos($row['quiz_name'], $_SESSION['searchInputValue']) !== false) {
-                echo '<form class="topic" action="/beforeQuestionQuizBuild.php" method="post">';
+            if (strpos($row['quiz_name'], $_SESSION['searchResultInputValue']) !== false) {
+                echo '<form class="topic" action="/beforeUserTableResult.php" method="post">';
                 echo '<textarea class="topicId" value="' . $row['quiz_id'] . '" name="topicId">';
                 echo $row['quiz_id'];
                 echo '</textarea>';
